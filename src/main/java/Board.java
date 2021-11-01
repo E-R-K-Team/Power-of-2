@@ -45,6 +45,7 @@ public class Board {
         ArrayList<Tile> emptyTiles = findEmptyTiles();
         int index = (int)(Math.random() * ((emptyTiles.size() )));
         emptyTiles.get(index).value= 2;
+        wasMoved=false;
     }
 
     @Override
@@ -73,7 +74,6 @@ public class Board {
     }
 
     public void slideUp(){
-        wasMoved=false;
         for(int y = 1 ;y<sideLength; y++){
             for(int x = 0 ; x<sideLength;x++){
                 if(trySlide(getTileByCoordinates(y,x),-1,0)){
@@ -84,7 +84,6 @@ public class Board {
     }
 
     public void slideDown(){
-        wasMoved=false;
         for(int y = sideLength-2;y>=0; y--){
             for(int x = 0 ; x<sideLength;x++){
                 if(trySlide(getTileByCoordinates(y,x),1,0)){
@@ -95,7 +94,6 @@ public class Board {
     }
 
     public void slideRight(){
-        wasMoved=false;
         for(int y = 0 ;y<sideLength; y++){
             for(int x = sideLength-2 ; x>=0;x--){
                 if(trySlide(getTileByCoordinates(y,x),0,1)){
@@ -106,7 +104,6 @@ public class Board {
     }
 
     public void slideLeft(){
-        wasMoved=false;
         for(int y = 0 ;y<sideLength; y++){
             for(int x = 1 ; x<sideLength;x++){
                 if(trySlide(getTileByCoordinates(y,x),0,-1)){
@@ -128,7 +125,7 @@ public class Board {
                     tile.value = 0;
                     return true;
                 }
-                if (neighbour.value == 0) {
+                else if(neighbour.value == 0) {
                     neighbour.value = tile.value;
                     tile.value = 0;
                     trySlide(neighbour, yDirection, xDirection);

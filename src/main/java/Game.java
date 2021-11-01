@@ -2,12 +2,6 @@ import java.util.Scanner;
 
 public class Game {
     private static int boardSize;
-    private final static int MIN_BOARD_SIZE = 3;
-    private final static int MAX_BOARD_SIZE = 11;
-    private final static char SLIDE_UP_CHAR = 'w';
-    private final static char SLIDE_DOWN_CHAR = 's';
-    private final static char SLIDE_RIGHT_CHAR = 'd';
-    private final static char SLIDE_LEFT_CHAR = 'a';
     private static Scanner scanner;
 
     public static void main(String[] args){
@@ -19,13 +13,13 @@ public class Game {
         do{
             do{
                 char ch = readSlideDirection();
-                if(ch==SLIDE_UP_CHAR){
+                if(ch==GameConstants.SLIDE_UP_CHAR){
                     board.slideUp();
                 }
-                else if(ch==SLIDE_DOWN_CHAR){
+                else if(ch==GameConstants.SLIDE_DOWN_CHAR){
                     board.slideDown();
                 }
-                else if(ch==SLIDE_LEFT_CHAR){
+                else if(ch==GameConstants.SLIDE_LEFT_CHAR){
                     board.slideLeft();
                 }
                 else{
@@ -39,21 +33,21 @@ public class Game {
     }
 
     private static void readBoardSize(){
-        System.out.println("Insert board size (from"+ MIN_BOARD_SIZE+" to "+MAX_BOARD_SIZE+" ) :");
+        System.out.println("Insert board size (from "+ GameConstants.MIN_BOARD_SIZE+" to "+GameConstants.MAX_BOARD_SIZE+" ) :");
         boolean isIncorrect;
         do {
             if (scanner.hasNextInt()) {
                 boardSize = scanner.nextInt();
-                if (isNumberInBounds(boardSize,MIN_BOARD_SIZE, MAX_BOARD_SIZE)) {
+                if (isNumberInBounds(boardSize,GameConstants.MIN_BOARD_SIZE, GameConstants.MAX_BOARD_SIZE)) {
                     isIncorrect = false;
                 } else {
-                    System.out.print("Value must be from " + MIN_BOARD_SIZE +
-                            " to " + MAX_BOARD_SIZE + " :");
+                    System.out.print("Value must be from " + GameConstants.MIN_BOARD_SIZE +
+                            " to " + GameConstants.MAX_BOARD_SIZE + " :");
                     isIncorrect = true;
                 }
             } else {
-                System.out.print("Insert number from " + MIN_BOARD_SIZE +
-                        " to " + MAX_BOARD_SIZE + " :");
+                System.out.print("Insert number from " + GameConstants.MIN_BOARD_SIZE +
+                        " to " + GameConstants.MAX_BOARD_SIZE + " :");
                 scanner.next();
                 isIncorrect = true;
             }
@@ -70,7 +64,7 @@ public class Game {
         do{
             isIncorrect=false;
             ch=scanner.next().charAt(0);
-            if(ch!= SLIDE_DOWN_CHAR && ch!=SLIDE_LEFT_CHAR && ch!=SLIDE_RIGHT_CHAR && ch!=SLIDE_UP_CHAR){
+            if(ch!= GameConstants.SLIDE_DOWN_CHAR && ch!=GameConstants.SLIDE_LEFT_CHAR && ch!=GameConstants.SLIDE_RIGHT_CHAR && ch!=GameConstants.SLIDE_UP_CHAR){
                 isIncorrect=true;
             }
         }while(isIncorrect);
