@@ -28,8 +28,17 @@ public class Game {
                 board.spawnTile();
                 System.out.println(board);
             }while(!board.wasMoved());
-        }while(!board.isGameOver());
+        }while(board.getGameState() == GameStates.Unfinished);
         scanner.close();
+    }
+
+    private static void outputGameResult(GameStates state){
+        if(state == GameStates.Win){
+            System.out.println("you lost");
+        }
+        else{
+            System.out.println("You won");
+        }
     }
 
     private static void readBoardSize(){

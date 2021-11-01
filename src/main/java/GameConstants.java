@@ -6,4 +6,5 @@ public class GameConstants {
     public final static char SLIDE_DOWN_CHAR = 's';
     public final static char SLIDE_RIGHT_CHAR = 'd';
     public final static char SLIDE_LEFT_CHAR = 'a';
+    public final static int WIN_TILE_VALUE = 4096;
 }

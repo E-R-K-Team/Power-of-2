@@ -1,10 +1,13 @@
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class Board {
     private final int sideLength;
     private ArrayList<Tile> board;
     private boolean wasMoved = false;
+    private GameStates currentState;
 
     private static class Tile{
         private final int y;
@@ -45,6 +48,7 @@ public class Board {
         int index = (int)(Math.random() * ((emptyTiles.size() )));
         emptyTiles.get(index).value = takeSpawnTileValue();
         wasMoved=false;
+        checkGameState();
     }
 
     private int takeSpawnTileValue(){
@@ -72,10 +76,6 @@ public class Board {
         return new ArrayList<>(tilesList);
     }
 
-    public boolean isGameOver(){
-        return board.stream().noneMatch(tile->tile.value==0);
-    }
-
     public void slideUp(){
         for(int y = 1 ;y<sideLength; y++){
             for(int x = 0 ; x<sideLength;x++){
@@ -84,6 +84,26 @@ public class Board {
                 }
             }
         }
+    }
+
+    private int getHighestTileValue(){
+        return board.stream().mapToInt(tile->tile.value).max().getAsInt();
+    }
+
+    private void checkGameState(){
+        if(getHighestTileValue() == GameConstants.WIN_TILE_VALUE){
+            currentState=GameStates.Win;
+        }
+        else if(board.stream().noneMatch(tile->tile.value==0)){
+            currentState=GameStates.Lose;
+        }
+        else{
+            currentState=GameStates.Unfinished;
+        }
+    }
+
+    public GameStates getGameState(){
+        return currentState;
     }
 
     public void slideDown(){
