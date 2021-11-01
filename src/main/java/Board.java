@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,8 +43,12 @@ public class Board {
     public void spawnTile(){
         ArrayList<Tile> emptyTiles = findEmptyTiles();
         int index = (int)(Math.random() * ((emptyTiles.size() )));
-        emptyTiles.get(index).value= 2;
+        emptyTiles.get(index).value = takeSpawnTileValue();
         wasMoved=false;
+    }
+
+    private int takeSpawnTileValue(){
+        return  Math.random() < GameConstants.CHANCE_TO_SPAWN_FOUR ? 4 : 2;
     }
 
     @Override
