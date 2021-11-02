@@ -1,4 +1,4 @@
-package com.company;
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,12 +14,8 @@ public class Tile {
 
     }
 
-    private void drawTile(Graphics g, Tile tile, int x, int y){
-        g.setColor(Color.gray);
-        g.fillRect(x, y, 100,100);
-        g.setColor(Color.CYAN);
-        g.drawString( "2", x + 50, y + 50);
-    }
+
+
 
     public int getY(){
         return y;

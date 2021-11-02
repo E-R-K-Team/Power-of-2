@@ -1,4 +1,4 @@
-package com.company;
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,9 +9,7 @@ import java.awt.event.KeyListener;
 
 public class Logic extends JPanel implements ActionListener, KeyListener {
     private Timer time;
-    private enum coordinates{
 
-    };
     public Logic(){
         addKeyListener(this);
         time = new Timer(35, this);
@@ -23,6 +21,36 @@ public class Logic extends JPanel implements ActionListener, KeyListener {
     private static final Color BG_COLOR = new Color(0xbbada0);
     // set the font of the numbers, the size and font style can be changed here
     private static final Font STR_FONT = new Font(Font.SERIF, Font.BOLD, 32);
+
+    public enum Coordinates{
+        first (100, 100),
+        second (100, 200),
+        third (100, 300),
+        fourth (100, 400),
+        fifth (200, 100),
+        sixth (200, 200),
+        seventh (200, 300),
+        eighth (200, 400),
+        ninth (300, 100),
+        tenth (300, 200),
+        eleventh (300, 300),
+        twelfth (300, 400),
+        thirteenth (400, 100),
+        fourteenth (400, 200),
+        fifteenth (400, 300),
+        sixteenth (400, 400);
+
+        private final int CorY;
+        private final int CorX;
+
+        Coordinates(int Y, int X){
+            CorY = Y;
+            CorX = X;
+        }
+
+    }
+
+
     @Override
     public void paint(Graphics g) {
         g.setColor(BG_COLOR);
@@ -42,15 +70,17 @@ public class Logic extends JPanel implements ActionListener, KeyListener {
         g.drawLine(100,200,500,200);
         g.drawLine(100,300,500,300);
         g.drawLine(100,400,500,400);
-        //Tile
-        g.setColor(Color.gray);
-        g.fillRect(TileX, TileY, 100,100);
-        g.setColor(Color.CYAN);
-        g.setFont(STR_FONT);
-        g.drawString("2",TileX + 45, TileY + 60);
+        //Tiles 0
+        g.setColor(Design._0.color());
+        g.fillRect(100,100, 100, 100);
+
 
     }
 
+    public void drawTile(Graphics g, Tile tile, int x, int y){
+
+
+    }
 
 
     private Tile[] tiles;
