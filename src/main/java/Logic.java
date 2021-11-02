@@ -48,6 +48,7 @@ public class Logic extends JPanel implements ActionListener, KeyListener {
             CorX = X;
         }
 
+
     }
 
 
@@ -73,8 +74,6 @@ public class Logic extends JPanel implements ActionListener, KeyListener {
         //Tiles 0
         g.setColor(Design._0.color());
         g.fillRect(100,100, 100, 100);
-
-
     }
 
     public void drawTile(Graphics g, Tile tile, int x, int y){
