@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+
 public class Board {
     private final int sideLength;
     private ArrayList<Tile> board;
