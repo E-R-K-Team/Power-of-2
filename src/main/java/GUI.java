@@ -9,9 +9,9 @@ public class GUI extends JFrame {
 
 
     public GUI() {
-        this.setSize(600, 600);
+        this.setSize(GameConstants.WINDOW_WIDTH, GameConstants.WINDOW_HEIGHT);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setLocation(300,600);
+        this.setLocation(GameConstants.SET_WINDOW_LOCATION_X, GameConstants.SET_WINDOW_LOCATION_Y);
         Logic PowerLogic = new Logic();
         this.add(PowerLogic);
         this.setResizable(false);
