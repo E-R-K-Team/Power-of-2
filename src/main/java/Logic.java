@@ -1,4 +1,3 @@
-package com.company;
 
 import javax.swing.*;
 import java.awt.*;
@@ -42,7 +41,7 @@ public class Logic extends JPanel implements ActionListener, KeyListener {
         g.drawLine(100,200,500,200);
         g.drawLine(100,300,500,300);
         g.drawLine(100,400,500,400);
-        //Tile
+        //TileUI
         g.setColor(Color.gray);
         g.fillRect(TileX, TileY, 100,100);
         g.setColor(Color.CYAN);
@@ -53,15 +52,15 @@ public class Logic extends JPanel implements ActionListener, KeyListener {
 
 
 
-    private Tile[] tiles;
+    private TileUI[] tiles;
 
 
 
-    /*public static class Tile{
+    /*public static class TileUI{
         public int value;
         public static int TileX;
         public static int TileY;
-        Tile(){
+        TileUI(){
             value = 2;
             TileX = 450;
             TileY = 100;
