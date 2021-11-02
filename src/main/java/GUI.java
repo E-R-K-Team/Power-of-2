@@ -1,8 +1,6 @@
-package com.company;
-
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class GUI extends JFrame {
     private JButton button = new JButton("Start Game");
