@@ -1,3 +1,4 @@
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,6 +8,7 @@ public class Board {
     private ArrayList<Tile> board;
     private boolean wasMoved = false;
     private GameStates currentState;
+    private final SecureRandom random = new SecureRandom();
 
     public Board(int sideLength) {
         this.sideLength = sideLength;
@@ -29,14 +31,14 @@ public class Board {
 
     public void spawnTile() {
         ArrayList<Tile> emptyTiles = findEmptyTiles();
-        int index = (int) (Math.random() * ((emptyTiles.size())));
+        int index = random.nextInt(emptyTiles.size());
         emptyTiles.get(index).value = takeSpawnTileValue();
         wasMoved = false;
         checkGameState();
     }
 
     private int takeSpawnTileValue() {
-        return Math.random() < GameConstants.CHANCE_TO_SPAWN_FOUR ? 4 : 2; }
+        return random.nextDouble() < GameConstants.CHANCE_TO_SPAWN_FOUR ? 4 : 2; }
 
     @Override
     public String toString() {
