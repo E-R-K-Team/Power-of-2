@@ -5,33 +5,15 @@ import java.util.List;
 
 public class Board {
     private final int sideLength;
-    private ArrayList<Tile> board;
+    public ArrayList<Tile> board;
     private boolean wasMoved = false;
     private GameStates currentState;
 
-    private static class Tile{
-        private final int y;
-        private final int x;
-        public int value = 0;
-
-        public Tile(int y ,int x){
-            this.y = y;
-            this.x = x;
-        }
-
-        public int getY(){
-            return y;
-        }
-
-        public int getX(){
-            return x;
-        }
-
-    }
 
     public Board(int sideLength){
         this.sideLength=sideLength;
         initializeBoard(sideLength);
+        spawnTile();
     }
 
     private void initializeBoard(int sideLength){

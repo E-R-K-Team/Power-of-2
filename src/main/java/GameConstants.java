@@ -11,4 +11,8 @@ public class GameConstants {
     public final static int WINDOW_HEIGHT = 600;
     public final static int SET_WINDOW_LOCATION_X = 500;
     public final static int SET_WINDOW_LOCATION_Y = 500;
+    public final static int LEFT_UPPER_X = 300;
+    public final static int LEFT_UPPER_Y = 200;
+    public final static int LABEL_WIDTH = 100;
+    public final static int LABEL_HEIGHT = 100;
 }

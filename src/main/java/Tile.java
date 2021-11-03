@@ -8,7 +8,7 @@ public class Tile {
     private final int x;
     public int value = 0;
 
-    public Tile(int y , int x, Graphics g){
+    public Tile(int y , int x){
         this.y = y;
         this.x = x;
 
