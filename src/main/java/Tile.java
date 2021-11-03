@@ -1,5 +1,3 @@
-import java.awt.*;
-
 public class Tile {
     private final int y;
     private final int x;
@@ -10,9 +8,6 @@ public class Tile {
         this.x = x;
 
     }
-
-
-
 
     public int getY(){
         return y;
