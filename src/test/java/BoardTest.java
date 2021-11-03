@@ -18,13 +18,13 @@ public class BoardTest {
 
     private void setValuesToTiles(int[] inputValues, Board board) {
         for (int i = 0; i < inputValues.length; i++) {
-            board.getBoard().get(i).value = inputValues[i];
+            board.board.get(i).value = inputValues[i];
         }
     }
 
     private boolean checkValues(int[] expectedValues, Board board) {
         for (int i = 0; i < expectedValues.length; i++) {
-            if (expectedValues[i] != board.getBoard().get(i).value) {
+            if (expectedValues[i] != board.board.get(i).value) {
                 return false;
             }
         }
