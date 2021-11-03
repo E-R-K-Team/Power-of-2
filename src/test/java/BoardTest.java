@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class BoardTest {
 
     @Test
-    public void testSlideLeftPass() {
+    public void testSlideLeft() {
         int[] inputTileValues = new int[]{ 0, 0, 0, 2, 2, 2, 0, 0, 0, 2, 0, 0, 0, 0, 4, 0};
         int[] expectedTileValues = new int[]{2, 0, 0, 0, 4, 0, 0, 0, 2, 0, 0, 0, 4, 0, 0, 0,};
         Board board = new Board(4);
@@ -14,19 +14,6 @@ public class BoardTest {
 
         assertTrue(checkValues(expectedTileValues, board));
     }
-
-    @Test
-    public void testSlideLeftFail() {
-        int[] inputTileValues = new int[]{2, 2, 4, 4, 2, 2, 2, 2, 4, 2, 2, 0, 8, 0, 0, 8};
-        int[] expectedTileValues = new int[]{4, 8, 0, 0, 4, 4, 0, 0, 4, 4, 0, 0, 16, 0, 0, 0};
-        Board board = new Board(4);
-        setValuesToTiles(inputTileValues, board);
-        board.slideLeft();
-
-        assertTrue(checkValues(expectedTileValues, board));
-    }
-
-
 
     private void setValuesToTiles(int[] inputValues, Board board) {
         for (int i = 0; i < inputValues.length; i++) {
