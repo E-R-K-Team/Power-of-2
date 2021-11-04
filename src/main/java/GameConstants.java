@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.Arrays;
 import java.util.List;
 
@@ -11,12 +12,15 @@ public class GameConstants {
     public static final char SLIDE_LEFT_CHAR = 'a';
     public static final int WIN_TILE_VALUE = 2048;
     public static final List<Character> CONTROL_BUTTONS = Arrays.asList(SLIDE_UP_CHAR, SLIDE_DOWN_CHAR, SLIDE_LEFT_CHAR, SLIDE_RIGHT_CHAR);
-    public static final int WINDOW_WIDTH = 600;
-    public static final int WINDOW_HEIGHT = 600;
-    public static final int SET_WINDOW_LOCATION_X = 500;
-    public static final int SET_WINDOW_LOCATION_Y = 500;
-    public static final int LEFT_UPPER_X = 300;
-    public static final int LEFT_UPPER_Y = 200;
+    public static final int WINDOW_WIDTH = 400;
+    public static final int WINDOW_HEIGHT = 425;
+    public static final int SET_WINDOW_LOCATION_X = 550;
+    public static final int SET_WINDOW_LOCATION_Y = 250;
+    public static final int LEFT_UPPER_X = 0;
+    public static final int LEFT_UPPER_Y = 0;
     public static final int LABEL_WIDTH = 100;
     public static final int LABEL_HEIGHT = 100;
+    public static final Color BG_COLOR = new Color(0xbbada0);
+    public static final Font STR_FONT = new Font(Font.SERIF, Font.BOLD, 22);
+
 }
