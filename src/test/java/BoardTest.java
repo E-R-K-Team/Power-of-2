@@ -15,6 +15,7 @@ public class BoardTest {
         assertTrue(checkValues(expectedTileValues, board));
     }
 
+
     private void setValuesToTiles(int[] inputValues, Board board) {
         for (int i = 0; i < inputValues.length; i++) {
             board.board.get(i).value = inputValues[i];
