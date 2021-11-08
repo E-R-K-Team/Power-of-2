@@ -20,12 +20,14 @@ public class StartWindow extends JFrame{
         startButton.addActionListener(new StartButtonListener());
         startButton.setBorder(START_BUTTON_BOARDER);
 
+
         infoButton.addActionListener(new InfoButtonListener());
         infoButton.setBorder(START_BUTTON_BOARDER);
         infoButton.setPreferredSize(GameConstants.START_BUTTON_DIMENSION);
 
 
         JPanel buttonPanel = new JPanel(new GridLayout(2,1));
+        buttonPanel.setSize(GameConstants.START_BUTTON_DIMENSION);
         buttonPanel.add(startButton);
         buttonPanel.add(infoButton);
 

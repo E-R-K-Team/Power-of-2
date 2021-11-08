@@ -1,5 +1,4 @@
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,7 +15,7 @@ public class GameGUI extends  JFrame  implements KeyListener, ActionListener {
         setFocusable(true);
         addKeyListener(this);
         this.board=board;
-        initalizeUITiles(board.board,boardSize);
+        initializeUITiles(board.board,boardSize);
     }
 
 
@@ -24,7 +23,7 @@ public class GameGUI extends  JFrame  implements KeyListener, ActionListener {
         uiTiles.forEach(tile->tile.update());
     }
 
-    private void initalizeUITiles(ArrayList<Tile> tiles, int boardSize) {
+    private void initializeUITiles(ArrayList<Tile> tiles, int boardSize) {
         uiTiles = new ArrayList<>();
         for (int y = 0; y < boardSize; y++) {
             for (int x = 0; x < boardSize; x++) {
@@ -38,6 +37,7 @@ public class GameGUI extends  JFrame  implements KeyListener, ActionListener {
                 label.setBackground(Color.pink);
                 label.setFont(GameConstants.STR_FONT);
                 label.setForeground(Color.gray);
+                label.setBorder(GameConstants.LABEL_BOARDER);
                 this.add(label);
                 uiTiles.add(new TileUI(label, tiles.get(x + y * boardSize)));
             }
@@ -70,8 +70,8 @@ public class GameGUI extends  JFrame  implements KeyListener, ActionListener {
         else if (e.getKeyCode() == KeyEvent.VK_W) {
             board.slideUp();
         }
-        else if (e.getKeyCode() == KeyEvent.VK_D) {
-            board.slideRight();;
+        else if ((e.getKeyCode() == KeyEvent.VK_D) ) {
+            board.slideRight();
         }
         else if (e.getKeyCode() == KeyEvent.VK_S) {
             board.slideDown();

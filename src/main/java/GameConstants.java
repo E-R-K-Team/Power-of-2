@@ -1,3 +1,5 @@
+import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.util.Arrays;
 import java.util.List;
@@ -25,6 +27,8 @@ public class GameConstants {
     public static final int START_WINDOW_HEIGHT = 1000;
     public static final int START_WINDOW_WIDTH = 1000;
     public static final Color BORDER_COLOR = new Color(000);
+    public static final Color LABEL_BOARDER_COLOR = new Color(0xbbada0);
     public static final Dimension START_BUTTON_DIMENSION = new Dimension(50, 50);
+    public static final Border LABEL_BOARDER = BorderFactory.createLineBorder(GameConstants.LABEL_BOARDER_COLOR,5, false);
 
 }
