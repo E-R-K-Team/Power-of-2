@@ -19,7 +19,7 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
         setFocusable(true);
         addKeyListener(this);
         this.board = board;
-        initializeUITiles(board.board, boardSize);
+        initializeUITiles(board.tiles, boardSize);
     }
 
 

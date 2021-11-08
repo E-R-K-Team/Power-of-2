@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
@@ -7,6 +8,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * @author Roman
  */
 public class BoardTest {
+
+    @Test
+    public void testBoardCreation(){
+        int N = 4;
+        Board board = new Board(N);
+        assertEquals(N*N, board.tiles.size());
+        assertEquals(1, board.tiles.stream().filter(t -> t.value != 0).count());
+    }
 
     @Test
     public void testSlideLeft() {
@@ -57,13 +66,13 @@ public class BoardTest {
 
     private void setValuesToTiles(int[] inputValues, Board board) {
         for (int i = 0; i < inputValues.length; i++) {
-            board.board.get(i).setValue(inputValues[i]);
+            board.tiles.get(i).setValue(inputValues[i]);
         }
     }
 
     private boolean checkValues(int[] expectedValues, Board board) {
         for (int i = 0; i < expectedValues.length; i++) {
-            if (expectedValues[i] != board.board.get(i).getValue()) {
+            if (expectedValues[i] != board.tiles.get(i).getValue()) {
                 return false;
             }
         }

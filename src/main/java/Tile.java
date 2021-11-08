@@ -5,12 +5,12 @@
 public class Tile {
     private final int y;
     private final int x;
-    private int value = 0;
+    private int value;
 
     public Tile(int y , int x){
         this.y = y;
         this.x = x;
-
+        this.value = 0;
     }
 
     public int getY(){
