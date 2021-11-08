@@ -28,16 +28,16 @@ public class GameGUI extends  JFrame  implements KeyListener, ActionListener {
         for (int y = 0; y < boardSize; y++) {
             for (int x = 0; x < boardSize; x++) {
                 JLabel label = new JLabel(" ",SwingConstants.CENTER);
-                int xCoord =GameConstants.LEFT_UPPER_X+x*GameConstants.LABEL_WIDTH;
-                int yCoord = GameConstants.LEFT_UPPER_Y+y*GameConstants.LABEL_HEIGHT;
+                int xCoord =GUIConstants.LEFT_UPPER_X+x*GUIConstants.LABEL_WIDTH;
+                int yCoord = GUIConstants.LEFT_UPPER_Y+y*GUIConstants.LABEL_HEIGHT;
                 label.setLocation(xCoord,yCoord);
-                label.setSize(GameConstants.LABEL_WIDTH, GameConstants.LABEL_HEIGHT);
+                label.setSize(GUIConstants.LABEL_WIDTH, GUIConstants.LABEL_HEIGHT);
                 label.setVisible(true);
                 label.setOpaque(true);
                 label.setBackground(Color.pink);
-                label.setFont(GameConstants.STR_FONT);
+                label.setFont(GUIConstants.STR_FONT);
                 label.setForeground(Color.gray);
-                label.setBorder(GameConstants.LABEL_BOARDER);
+                label.setBorder(GUIConstants.LABEL_BOARDER);
                 this.add(label);
                 uiTiles.add(new TileUI(label, tiles.get(x + y * boardSize)));
             }

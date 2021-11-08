@@ -9,25 +9,25 @@ public class StartWindow extends JFrame{
     private JButton infoButton = new JButton("The Game Rules");
     private static Board board;
     private static GameGUI gameGUI;
-    public static final Border START_BUTTON_BOARDER = BorderFactory.createLineBorder(GameConstants.BORDER_COLOR,4, true);
+    public static final Border START_BUTTON_BOARDER = BorderFactory.createLineBorder(GUIConstants.BORDER_COLOR,4, true);
     public StartWindow() {
-        this.setBounds(GameConstants.SET_WINDOW_LOCATION_X, GameConstants.SET_WINDOW_LOCATION_Y, GameConstants.START_WINDOW_WIDTH, GameConstants.START_WINDOW_HEIGHT);
-        this.setBackground(GameConstants.BG_COLOR);
+        this.setBounds(GUIConstants.SET_WINDOW_LOCATION_X, GUIConstants.SET_WINDOW_LOCATION_Y, GUIConstants.START_WINDOW_WIDTH, GUIConstants.START_WINDOW_HEIGHT);
+        this.setBackground(GUIConstants.BG_COLOR);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLayout(null);
 
-        startButton.setPreferredSize(GameConstants.START_BUTTON_DIMENSION);
+        startButton.setPreferredSize(GUIConstants.START_BUTTON_DIMENSION);
         startButton.addActionListener(new StartButtonListener());
         startButton.setBorder(START_BUTTON_BOARDER);
 
 
         infoButton.addActionListener(new InfoButtonListener());
         infoButton.setBorder(START_BUTTON_BOARDER);
-        infoButton.setPreferredSize(GameConstants.START_BUTTON_DIMENSION);
+        infoButton.setPreferredSize(GUIConstants.START_BUTTON_DIMENSION);
 
 
         JPanel buttonPanel = new JPanel(new GridLayout(2,1));
-        buttonPanel.setSize(GameConstants.START_BUTTON_DIMENSION);
+        buttonPanel.setSize(GUIConstants.START_BUTTON_DIMENSION);
         buttonPanel.add(startButton);
         buttonPanel.add(infoButton);
 
@@ -45,9 +45,9 @@ public class StartWindow extends JFrame{
             board = new Board(4);
             gameGUI = new GameGUI(board,4);
             gameGUI.setVisible(true);
-            gameGUI.setSize(GameConstants.WINDOW_WIDTH, GameConstants.WINDOW_HEIGHT);
+            gameGUI.setSize(GUIConstants.WINDOW_WIDTH, GUIConstants.WINDOW_HEIGHT);
             gameGUI.setFocusable(true);
-            gameGUI.setLocation(GameConstants.SET_WINDOW_LOCATION_X, GameConstants.SET_WINDOW_LOCATION_Y);
+            gameGUI.setLocation(GUIConstants.SET_WINDOW_LOCATION_X, GUIConstants.SET_WINDOW_LOCATION_Y);
             gameGUI.updateLabels();
         }
     }
