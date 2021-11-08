@@ -14,7 +14,7 @@ public class StartWindow extends JFrame{
         this.setBounds(GameConstants.SET_WINDOW_LOCATION_X, GameConstants.SET_WINDOW_LOCATION_Y, GameConstants.START_WINDOW_WIDTH, GameConstants.START_WINDOW_HEIGHT);
         this.setBackground(GameConstants.BG_COLOR);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-
+        this.setLayout(null);
 
         startButton.setPreferredSize(GameConstants.START_BUTTON_DIMENSION);
         startButton.addActionListener(new StartButtonListener());
@@ -38,6 +38,7 @@ public class StartWindow extends JFrame{
 
 
     }
+
 
     class StartButtonListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {

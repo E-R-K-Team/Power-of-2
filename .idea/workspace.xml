@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f6abe252-44a1-4d5a-965d-b5cc1fbcbe89" name="Changes" comment="StartWindow added, constants to it, without customising. Main changed to call StartWindow.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/StartWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StartWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GameConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GameConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GameGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GameGUI.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
