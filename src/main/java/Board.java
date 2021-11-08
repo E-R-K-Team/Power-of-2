@@ -23,10 +23,6 @@ public class Board {
                 board.add(new Tile(y, x));
             }
         }
-        board.get(0).value=2;
-        board.get(1).value=2;
-        board.get(2).value=4;
-        board.get(3).value=4;
     }
 
     public void spawnTile() {
