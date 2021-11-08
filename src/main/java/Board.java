@@ -6,6 +6,7 @@ public class Board {
     private final int sideLength;
     public ArrayList<Tile> board;
     private boolean wasMoved = false;
+    private int lastMergedX,lastMergedY;
     private GameStates currentState;
     private final SecureRandom random = new SecureRandom();
 
@@ -22,6 +23,10 @@ public class Board {
                 board.add(new Tile(y, x));
             }
         }
+        board.get(0).value=2;
+        board.get(1).value=2;
+        board.get(2).value=4;
+        board.get(3).value=4;
     }
 
     public void spawnTile() {
@@ -30,6 +35,8 @@ public class Board {
         emptyTiles.get(index).value = takeSpawnTileValue();
         wasMoved = false;
         checkGameState();
+        lastMergedX=-1;
+        lastMergedY=-1;
     }
 
     private int takeSpawnTileValue() {
@@ -120,11 +127,13 @@ public class Board {
         if (tile.value != 0) {
             int neighbourY = tile.getY() + yDirection;
             int neighbourX = tile.getX() + xDirection;
-            if (isCoordinatesInBound(neighbourY, neighbourX)) {
+            if (isCoordinatesInBound(neighbourY, neighbourX) && (neighbourX!=lastMergedX || neighbourY!=lastMergedX)) {
                 Tile neighbour = getTileByCoordinates(neighbourY, neighbourX);
                 if (neighbour.value == tile.value) {
                     neighbour.value *= 2;
                     tile.value = 0;
+                    lastMergedX=neighbourX;
+                    lastMergedY=neighbourY;
                     return true;
                 } else if (neighbour.value == 0) {
                     neighbour.value = tile.value;

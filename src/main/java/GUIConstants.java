@@ -17,6 +17,7 @@ public class GUIConstants {
     public static final int START_WINDOW_WIDTH = 1000;
     public static final Font STR_FONT = new Font(Font.SERIF, Font.BOLD, 22);
     public static final Dimension START_BUTTON_DIMENSION = new Dimension(150, 150);
+    public static final Border LABEL_BOARDER = BorderFactory.createLineBorder(GUIConstants.LABEL_BOARDER_COLOR,5, false);
     public static final Color BG_COLOR = new Color(0xbbada0);
     public static final Color BORDER_COLOR = new Color(000);
     public static final Color LABEL_BOARDER_COLOR = new Color(0xbbada0);
