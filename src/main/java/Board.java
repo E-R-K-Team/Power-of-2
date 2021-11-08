@@ -60,16 +60,6 @@ public class Board {
         return new ArrayList<>(tilesList);
     }
 
-    public void slideUp() {
-        for (int y = 1; y < sideLength; y++) {
-            for (int x = 0; x < sideLength; x++) {
-                if (trySlide(getTileByCoordinates(y, x), -1, 0)) {
-                    wasMoved = true;
-                }
-            }
-        }
-    }
-
     private int getHighestTileValue() {
         return board.stream().mapToInt(tile -> tile.value).max().getAsInt();
     }
@@ -88,9 +78,19 @@ public class Board {
         return currentState;
     }
 
+    public void slideUp() {
+        for (int x = 0; x < sideLength; x++) {
+            for (int y = 1; y < sideLength; y++) {
+                if (trySlide(getTileByCoordinates(y, x), -1, 0)) {
+                    wasMoved = true;
+                }
+            }
+        }
+    }
+
     public void slideDown() {
-        for (int y = sideLength - 2; y >= 0; y--) {
-            for (int x = 0; x < sideLength; x++) {
+        for (int x = 0; x < sideLength; x++) {
+            for (int y = sideLength - 2; y >= 0; y--) {
                 if (trySlide(getTileByCoordinates(y, x), 1, 0)) {
                     wasMoved = true;
                 }
@@ -123,7 +123,7 @@ public class Board {
         if (tile.value != 0) {
             int neighbourY = tile.getY() + yDirection;
             int neighbourX = tile.getX() + xDirection;
-            if (isCoordinatesInBound(neighbourY, neighbourX) && (neighbourX!=lastMergedX || neighbourY!=lastMergedX)) {
+            if (isCoordinatesInBound(neighbourY, neighbourX) && (neighbourX!=lastMergedX || neighbourY!=lastMergedY)) {
                 Tile neighbour = getTileByCoordinates(neighbourY, neighbourX);
                 if (neighbour.value == tile.value) {
                     neighbour.value *= 2;
