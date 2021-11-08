@@ -18,7 +18,7 @@ public class BoardTest {
         assertEquals(1, board.tiles.stream().filter(t -> t.value != 0).count());
     }
 
-    @Test
+   /* @Test
     @Disabled
     public void testSlideLeft() {
         int[] inputTileValues = new int[]{2, 2, 4, 4, 0, 0, 2, 2, 2, 2, 0, 0, 4, 2, 2, 0, 0, 0, 2, 2, 4, 4, 8, 8, 4, 0, 4, 8, 8, 0, 2, 2, 4, 8, 8, 0};
@@ -66,9 +66,6 @@ public class BoardTest {
         assertTrue(checkValues(expectedTileValues, board));
     }
 
-
-
-
     private void setValuesToTiles(int[] inputValues, Board board) {
         for (int i = 0; i < inputValues.length; i++) {
             board.tiles.get(i).setValue(inputValues[i]);
@@ -83,4 +80,6 @@ public class BoardTest {
         }
         return true;
     }
+
+   */
 }
