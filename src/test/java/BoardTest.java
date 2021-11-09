@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -53,20 +52,8 @@ class BoardTest {
 
     @Test
     void testSlideDown() {
-        int[] inputTileValues = new int[]{
-                512, 8, 4, 4, 0, 128,
-                0, 8, 128, 4, 0, 128,
-                0, 4, 128, 4, 4, 0,
-                0, 2, 0, 2, 4, 4,
-                0, 0, 512, 2, 2, 0,
-                512, 2, 1024, 4, 2, 4};
-        int[] expectedTileValues = new int[]{
-                0, 0, 0, 0, 0, 0,
-                0, 0, 0, 0, 0, 0,
-                0, 0, 4, 4, 0, 0,
-                0, 16, 256, 8, 0, 0,
-                0, 4, 512, 4, 8, 256,
-                1024, 4, 1024, 4, 4, 8};
+        int[] inputTileValues = new int[]{512, 8, 4, 4, 0, 128, 0, 8, 128, 4, 0, 128, 0, 4, 128, 4, 4, 0, 0, 2, 0, 2, 4, 4, 0, 0, 512, 2, 2, 0, 512, 2, 1024, 4, 2, 4};
+        int[] expectedTileValues = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 0, 0, 0, 16, 256, 8, 0, 0, 0, 4, 512, 4, 8, 256, 1024, 4, 1024, 4, 4, 8};
         Board board = new Board(6);
         setValuesToTiles(inputTileValues, board);
         board.slideDown();
