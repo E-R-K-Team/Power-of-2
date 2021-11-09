@@ -8,9 +8,10 @@ import java.util.List;
  */
 public class Board {
     private final int sideLength;
-    public ArrayList<Tile> tiles;
+    private List<Tile> tiles;
     private boolean wasMoved = false;
-    private int lastMergedX,lastMergedY;
+    private int lastMergedX;
+    private int lastMergedY;
     private GameState currentState;
     private final SecureRandom random = new SecureRandom();
 
@@ -20,11 +21,19 @@ public class Board {
         spawnTile();
     }
 
+    public List<Tile> getTiles() {
+        return tiles;
+    }
+
+    public void setTiles(List<Tile> tiles) {
+        this.tiles = tiles;
+    }
+
     private void initializeBoard(int sideLength) {
-        tiles = new ArrayList<>();
+        setTiles(new ArrayList<>());
         for (int y = 0; y < sideLength; y++) {
             for (int x = 0; x < sideLength; x++) {
-                tiles.add(new Tile(y, x));
+                getTiles().add(new Tile(y, x));
             }
         }
     }
@@ -56,13 +65,13 @@ public class Board {
     }
 
     private int getHighestTileValue() {
-        return tiles.stream().mapToInt(Tile::getValue).max().getAsInt();
+        return getTiles().stream().mapToInt(Tile::getValue).max().getAsInt();
     }
 
     private void checkGameState() {
         if (getHighestTileValue() == GameConstants.WIN_TILE_VALUE) {
             currentState = GameState.WIN;
-        } else if (tiles.stream().noneMatch(tile -> tile.getValue() == 0)) {
+        } else if (getTiles().stream().noneMatch(tile -> tile.getValue() == 0)) {
             currentState = GameState.LOSE;
         } else {
             currentState = GameState.IN_PROGRESS;
@@ -146,7 +155,7 @@ public class Board {
     }
 
     private Tile getTileByCoordinates(int y, int x) {
-        return tiles.get(coordinatesToIndex(y, x));
+        return getTiles().get(coordinatesToIndex(y, x));
     }
 
     public boolean wasMoved() {
