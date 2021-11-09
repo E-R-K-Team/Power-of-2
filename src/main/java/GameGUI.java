@@ -5,13 +5,14 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Displays, updates tiles and read input
  * @author Kirill + Egor + Roman
  */
 public class GameGUI extends JFrame implements KeyListener, ActionListener {
-    private ArrayList<TileUI> uiTiles;
+    private List<TileUI> uiTiles;
     private Board board;
 
 
@@ -19,15 +20,15 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
         setFocusable(true);
         addKeyListener(this);
         this.board = board;
-        initializeUITiles(board.board, boardSize);
+        initializeUITiles(board.getTiles(), boardSize);
     }
 
 
     public void updateLabels() {
-        uiTiles.forEach(tile -> tile.update());
+        uiTiles.forEach(TileUI::update);
     }
 
-    private void initializeUITiles(ArrayList<Tile> tiles, int boardSize) {
+    private void initializeUITiles(List<Tile> tiles, int boardSize) {
         uiTiles = new ArrayList<>();
         for (int y = 0; y < boardSize; y++) {
             for (int x = 0; x < boardSize; x++) {
@@ -79,13 +80,11 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
 
         if (GameState.WIN.equals(board.getGameState())) {
             //TODO: add logic for win case
-            System.out.println("win");
         } else if (board.wasMoved()) {
             board.spawnTile();
             updateLabels();
             if (GameState.LOSE.equals(board.getGameState())) {
                 //TODO: add logic for lose case
-                System.out.println("loh");
             }
         }
     }
