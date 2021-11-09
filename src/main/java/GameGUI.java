@@ -6,6 +6,10 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
+/**
+ * Displays, updates tiles and read input
+ * @author Kirill + Egor + Roman
+ */
 public class GameGUI extends  JFrame  implements KeyListener, ActionListener {
     private ArrayList<TileUI> uiTiles;
     private Board board;

@@ -2,6 +2,10 @@ import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Game field and operations with it
+ * @author Kirill
+ */
 public class Board {
     private final int sideLength;
     public ArrayList<Tile> board;
@@ -35,20 +39,11 @@ public class Board {
         lastMergedY=-1;
     }
 
+    /**
+     * @return value , that should be spawned to empty tile ( 2 or 4 )
+     */
     private int takeSpawnTileValue() {
         return random.nextDouble() < GameConstants.CHANCE_TO_SPAWN_FOUR ? 4 : 2;
-    }
-
-    @Override
-    public String toString() {
-        String result = "";
-        for (int y = 0; y < sideLength; y++) {
-            for (int x = 0; x < sideLength; x++) {
-                result += board.get(coordinatesToIndex(y, x)).value + " ";
-            }
-            result += "\n";
-        }
-        return result;
     }
 
     private int coordinatesToIndex(int y, int x) {
@@ -118,7 +113,11 @@ public class Board {
         }
     }
 
-
+    /**
+     *
+     * @param tile current tile, that might be merged with with another tile
+     * @return true, if tile was merged with another tile, otherwise false
+     */
     private boolean trySlide(Tile tile, int yDirection, int xDirection) {
         if (tile.value != 0) {
             int neighbourY = tile.getY() + yDirection;

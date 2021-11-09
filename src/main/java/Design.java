@@ -1,5 +1,9 @@
 import java.awt.*;
 
+/**
+ * Colors for tiles
+ * @autho Egor
+ */
 public enum Design {
     _0   (0,    0xcdc0b4, 0x776e65),
     _2   (2,    0x776E65, 0xEEE4DA),
@@ -26,6 +30,10 @@ public enum Design {
         fontColor = new Color(f);
     }
 
+    /**
+     * @param num value of tile
+     * @return font and background color of tile by its value
+     */
     static Design of(int num) {
         return Design.valueOf("_" + num);
     }

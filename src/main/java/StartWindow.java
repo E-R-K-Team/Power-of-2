@@ -4,6 +4,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Creates start UI ( start button, rules button, choice of difficulty level and etc.)
+ * @author Egor
+ */
 public class StartWindow extends JFrame{
     private JButton startButton = new JButton("Start Game");
     private JButton creators = new JButton("Developers");
@@ -87,6 +91,9 @@ public class StartWindow extends JFrame{
 
     }
 
+    /**
+     * Starts game
+     */
     class StartButtonListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
             board = new Board(size);

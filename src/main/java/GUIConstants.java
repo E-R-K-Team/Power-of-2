@@ -4,15 +4,12 @@ import java.awt.*;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Class that contains constants for size, position etc. of UI elements
+ * @author Roman
+ */
 public class GUIConstants {
     private GUIConstants(){}
-
-    public static final int MIN_BOARD_SIZE = 4;
-    public static final int MAX_BOARD_SIZE = 6;
-    public static final float CHANCE_TO_SPAWN_FOUR = 0.1f;
-
-    public static final int WIN_TILE_VALUE = 2048;
-
     public static final int NORM_LEVEL_WINDOW_WIDTH = 400;
     public static final int NORM_LEVEL_WINDOW_HEIGHT = 425;
     public static final int EASY_LEVEL_WINDOW_WIDTH = 700;

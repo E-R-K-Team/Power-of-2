@@ -1,3 +1,7 @@
+/**
+ * Game field cell with its coordinates and value
+ * @author Roman
+ */
 public class Tile {
     private final int y;
     private final int x;
