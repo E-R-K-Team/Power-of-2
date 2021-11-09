@@ -79,13 +79,11 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
 
         if (GameState.WIN.equals(board.getGameState())) {
             //TODO: add logic for win case
-            System.out.println("win");
         } else if (board.wasMoved()) {
             board.spawnTile();
             updateLabels();
             if (GameState.LOSE.equals(board.getGameState())) {
                 //TODO: add logic for lose case
-                System.out.println("loh");
             }
         }
     }

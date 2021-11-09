@@ -15,7 +15,7 @@ public class BoardTest {
         int N = 4;
         Board board = new Board(N);
         assertEquals(N*N, board.tiles.size());
-        assertEquals(1, board.tiles.stream().filter(t -> t.value != 0).count());
+        assertEquals(1, board.tiles.stream().filter(t -> t.getValue() != 0).count());
     }
 
     @Test
