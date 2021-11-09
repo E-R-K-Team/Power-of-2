@@ -5,7 +5,7 @@
 public class Tile {
     private final int y;
     private final int x;
-    public int value = 0;
+    private int value = 0;
 
     public Tile(int y , int x){
         this.y = y;
@@ -21,4 +21,11 @@ public class Tile {
         return x;
     }
 
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
 }

@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 
 /**
  * Tile representation in UI
@@ -19,12 +18,13 @@ public class TileUI {
      * Updates tiles text according to value
      */
     public void update(){
-        if(tile.value != 0)
-            label.setText(tile.value+"");
-        else
+        if(tile.getValue() != 0) {
+            label.setText(String.valueOf(tile.getValue()));
+        } else {
             label.setText(" ");
+        }
         label.setOpaque(true);
-        label.setBackground(Design.of(tile.value).color());
-        label.setForeground(Design.of(tile.value).fontColor());
+        label.setBackground(Design.of(tile.getValue()).color());
+        label.setForeground(Design.of(tile.getValue()).fontColor());
     }
 }

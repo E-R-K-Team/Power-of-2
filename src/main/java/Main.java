@@ -1,5 +1,3 @@
-import javax.swing.*;
-
 public class Main  {
     private static Board board;
     private static GameGUI gameGUI;
@@ -7,8 +5,5 @@ public class Main  {
     public static void main(String[] args) {
         StartWindow start = new StartWindow();
         start.setVisible(true);
-
     }
-
-
 }

@@ -32,7 +32,7 @@ public class Board {
     public void spawnTile() {
         ArrayList<Tile> emptyTiles = findEmptyTiles();
         int index = random.nextInt(emptyTiles.size());
-        emptyTiles.get(index).value = takeSpawnTileValue();
+        emptyTiles.get(index).setValue(takeSpawnTileValue());
         wasMoved = false;
         checkGameState();
         lastMergedX=-1;
@@ -51,18 +51,18 @@ public class Board {
     }
 
     private ArrayList<Tile> findEmptyTiles() {
-        List<Tile> tilesList = board.stream().filter(tile -> tile.value == 0).toList();
+        List<Tile> tilesList = board.stream().filter(tile -> tile.getValue() == 0).toList();
         return new ArrayList<>(tilesList);
     }
 
     private int getHighestTileValue() {
-        return board.stream().mapToInt(tile -> tile.value).max().getAsInt();
+        return board.stream().mapToInt(Tile::getValue).max().getAsInt();
     }
 
     private void checkGameState() {
         if (getHighestTileValue() == GameConstants.WIN_TILE_VALUE) {
             currentState = GameState.WIN;
-        } else if (board.stream().noneMatch(tile -> tile.value == 0)) {
+        } else if (board.stream().noneMatch(tile -> tile.getValue() == 0)) {
             currentState = GameState.LOSE;
         } else {
             currentState = GameState.IN_PROGRESS;
@@ -119,20 +119,20 @@ public class Board {
      * @return true, if tile was merged with another tile, otherwise false
      */
     private boolean trySlide(Tile tile, int yDirection, int xDirection) {
-        if (tile.value != 0) {
+        if (tile.getValue() != 0) {
             int neighbourY = tile.getY() + yDirection;
             int neighbourX = tile.getX() + xDirection;
             if (isCoordinatesInBound(neighbourY, neighbourX) && (neighbourX!=lastMergedX || neighbourY!=lastMergedY)) {
                 Tile neighbour = getTileByCoordinates(neighbourY, neighbourX);
-                if (neighbour.value == tile.value) {
-                    neighbour.value *= 2;
-                    tile.value = 0;
+                if (neighbour.getValue() == tile.getValue()) {
+                    neighbour.setValue(neighbour.getValue()*2);
+                    tile.setValue(0);
                     lastMergedX=neighbourX;
                     lastMergedY=neighbourY;
                     return true;
-                } else if (neighbour.value == 0) {
-                    neighbour.value = tile.value;
-                    tile.value = 0;
+                } else if (neighbour.getValue() == 0) {
+                    neighbour.setValue(tile.getValue());
+                    tile.setValue(0);
                     trySlide(neighbour, yDirection, xDirection);
                     return true;
                 }
