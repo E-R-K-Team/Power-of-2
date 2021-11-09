@@ -11,7 +11,7 @@ public class Board {
     public ArrayList<Tile> board;
     private boolean wasMoved = false;
     private int lastMergedX,lastMergedY;
-    private GameStates currentState;
+    private GameState currentState;
     private final SecureRandom random = new SecureRandom();
 
     public Board(int sideLength) {
@@ -61,15 +61,15 @@ public class Board {
 
     private void checkGameState() {
         if (getHighestTileValue() == GameConstants.WIN_TILE_VALUE) {
-            currentState = GameStates.Win;
+            currentState = GameState.WIN;
         } else if (board.stream().noneMatch(tile -> tile.value == 0)) {
-            currentState = GameStates.Lose;
+            currentState = GameState.LOSE;
         } else {
-            currentState = GameStates.Unfinished;
+            currentState = GameState.IN_PROGRESS;
         }
     }
 
-    public GameStates getGameState() {
+    public GameState getGameState() {
         return currentState;
     }
 
