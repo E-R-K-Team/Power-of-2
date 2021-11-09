@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6abe252-44a1-4d5a-965d-b5cc1fbcbe89" name="Changes" comment="StartWindow added, constants to it, without customising. Main changed to call StartWindow.">
+    <list default="true" id="f6abe252-44a1-4d5a-965d-b5cc1fbcbe89" name="Changes" comment="difficulty levels, buttons in start window">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUIConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUIConstants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/StartWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StartWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +97,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636139193212</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="difficulty levels, buttons in start window">
+      <created>1636394874011</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1636394874011</updated>
+    </task>
+    <task id="LOCAL-00006" summary="difficulty levels, buttons in start window">
+      <created>1636455171719</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1636455171719</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -136,7 +151,8 @@
     <MESSAGE value="Damned Constant and bullshit" />
     <MESSAGE value="add Graphic Interface (class Design)" />
     <MESSAGE value="StartWindow added, constants to it, without customising. Main changed to call StartWindow." />
-    <option name="LAST_COMMIT_MESSAGE" value="StartWindow added, constants to it, without customising. Main changed to call StartWindow." />
+    <MESSAGE value="difficulty levels, buttons in start window" />
+    <option name="LAST_COMMIT_MESSAGE" value="difficulty levels, buttons in start window" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Board_java$BoardTest_testSlideLeft.ic" NAME="BoardTest.testSlideLeft Coverage Results" MODIFIED="1636016247577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
