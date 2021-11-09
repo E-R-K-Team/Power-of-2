@@ -6,14 +6,18 @@ import java.awt.event.ActionListener;
 
 public class StartWindow extends JFrame{
     private JButton startButton = new JButton("Start Game");
+    private JButton creators = new JButton("Developers");
     private JButton gameRulesButton = new JButton("The Game Rules");
     private JPanel panel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+    private JPanel logoPanel = new JPanel();
     private JMenu difficultyLevel = new JMenu("Difficulty Level");
     private JMenuBar menuBar = new JMenuBar();
     private ButtonGroup difficultyLevelGroup = new ButtonGroup();
     private JRadioButtonMenuItem easy = new JRadioButtonMenuItem("Easy");
     private JRadioButtonMenuItem norm = new JRadioButtonMenuItem("Norm");
     private JRadioButtonMenuItem hard = new JRadioButtonMenuItem("Hard");
+    private JLabel logoFirst = new JLabel();
+    private JLabel logoLast = new JLabel();
     private static Board board;
     private static GameGUI gameGUI;
     private int size = GUIConstants.NORM_LEVEL_SIZE;
@@ -23,7 +27,9 @@ public class StartWindow extends JFrame{
     public static final Border START_BUTTON_BOARDER = BorderFactory.createLineBorder(GUIConstants.BORDER_COLOR,4, true);
     public StartWindow() {
         this.setBounds(GUIConstants.SET_WINDOW_LOCATION_X, GUIConstants.SET_WINDOW_LOCATION_Y, GUIConstants.START_WINDOW_WIDTH, GUIConstants.START_WINDOW_HEIGHT);
+        this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setResizable(false);
 
         Container container = getContentPane();
 
@@ -35,8 +41,14 @@ public class StartWindow extends JFrame{
         gameRulesButton.setBorder(START_BUTTON_BOARDER);
         gameRulesButton.setPreferredSize(GUIConstants.GAME_RULES_DIMENSION);
 
+        creators.setPreferredSize(GUIConstants.GAME_RULES_DIMENSION);
+        creators.setBorder(START_BUTTON_BOARDER);
+        creators.addActionListener(new CreatorsButtonListener());
+
+
         panel.add(gameRulesButton);
         panel.add(startButton);
+        panel.add(creators);
 
         difficultyLevelGroup.add(easy);
         difficultyLevelGroup.add(norm);
@@ -51,16 +63,28 @@ public class StartWindow extends JFrame{
         difficultyLevel.add(easy);
         difficultyLevel.add(norm);
         difficultyLevel.add(hard);
-        difficultyLevel.setBorder(START_BUTTON_BOARDER);
         difficultyLevel.setPreferredSize(GUIConstants.DIFFICULTY_LEVEL_DIMENSION);
 
         //paint StartWindow
-        container.setBackground(GUIConstants.BG_COLOR);
-        panel.setBackground(new Color(244, 164, 96));
+        logoPanel.setBackground(GUIConstants.BG_COLOR);
+        panel.setBackground(GUIConstants.PANEL_COLOR);
+        logoFirst.setFont(GUIConstants.LOGO_FONT);
+        logoFirst.setForeground(GUIConstants.LOGO_COLOR);
+        logoFirst.setText("POWER OF");
+
+        logoLast.setFont(GUIConstants.LOGO_FONT);
+        logoLast.setForeground(GUIConstants.LOGO_COLOR);
+        logoLast.setText("TWO");
 
         menuBar.add(difficultyLevel);
+        menuBar.setBackground(GUIConstants.PANEL_COLOR);
+
         panel.add(menuBar);
-        container.add(panel, BorderLayout.NORTH);
+        logoPanel.add(logoFirst);
+        logoPanel.add(logoLast);
+        container.add(logoPanel, BorderLayout.CENTER);
+        container.add(panel, BorderLayout.SOUTH);
+
     }
 
     class StartButtonListener implements ActionListener{
@@ -68,6 +92,7 @@ public class StartWindow extends JFrame{
             board = new Board(size);
             gameGUI = new GameGUI(board, size);
             gameGUI.setVisible(true);
+            gameGUI.setResizable(false);
             gameGUI.setSize(windowWidth, windowHeight);
             gameGUI.setFocusable(true);
             gameGUI.setLocation(GUIConstants.SET_WINDOW_LOCATION_X, GUIConstants.SET_WINDOW_LOCATION_Y);
@@ -76,7 +101,14 @@ public class StartWindow extends JFrame{
     }
     class InfoButtonListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
-            String rules = "Through some days it will be here!";
+            String rules = "Power Of Two rules\n";
+            rules += "Power Of Two is played on a plain 4×4 (3×3, 7×7) grid, with numbered tiles that slide when a player moves them using the four arrow keys.";
+            rules += "W -> UP, A -> LEFT, S -> DOWN, D -> RIGHT.\n";
+            rules += "Every turn, a new tile randomly appears in an empty spot on the board with a value of either 2 or 4.\n";
+            rules += "Tiles slide as far as possible in the chosen direction until they are stopped by either another tile or the edge of the grid.\n";
+            rules += "If two tiles of the same number collide while moving, they will merge into a tile with the total value of the two tiles that collided.\n";
+            rules += "The game is won when a tile with a value of 2048 appears on the board.\n";
+            rules += "When the player has no legal moves (there are no empty spaces and no adjacent tiles with the same value), the game ends.";
             JOptionPane.showMessageDialog(null, rules, "GameRules", JOptionPane.PLAIN_MESSAGE);
 
         }
@@ -93,6 +125,7 @@ public class StartWindow extends JFrame{
             size = GUIConstants.NORM_LEVEL_SIZE;
             windowWidth = GUIConstants.NORM_LEVEL_WINDOW_WIDTH;
             windowHeight = GUIConstants.NORM_LEVEL_WINDOW_HEIGHT;
+            gameGUI.setLocationRelativeTo(logoLast);
         }
     }
     class HardLevelActionListener implements ActionListener {
@@ -100,6 +133,16 @@ public class StartWindow extends JFrame{
             size = GUIConstants.HARD_LEVEL_SIZE;
             windowWidth = GUIConstants.HARD_LEVEL_WINDOW_WIDTH;
             windowHeight = GUIConstants.HARD_LEVEL_WINDOW_HEIGHT;
+            gameGUI.setLocationRelativeTo(logoFirst);
+        }
+    }
+    class CreatorsButtonListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            String text = "The best ERK developers killed more than 100 hours to give you this game.\n";
+            text += "Respect their work and appreciate the quality of product.\n";
+            text += "Names of this genius:\n";
+            text += "Yegor Rusakovich\t\tKirill Eremeichik\t\tRoman Redkovski";
+            JOptionPane.showMessageDialog(null, text, "Developers", JOptionPane.PLAIN_MESSAGE);
         }
     }
 
