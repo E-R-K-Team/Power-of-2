@@ -18,8 +18,7 @@ public class BoardTest {
         assertEquals(1, board.tiles.stream().filter(t -> t.value != 0).count());
     }
 
-   /* @Test
-    @Disabled
+    @Test
     public void testSlideLeft() {
         int[] inputTileValues = new int[]{2, 2, 4, 4, 0, 0, 2, 2, 2, 2, 0, 0, 4, 2, 2, 0, 0, 0, 2, 2, 4, 4, 8, 8, 4, 0, 4, 8, 8, 0, 2, 2, 4, 8, 8, 0};
         int[] expectedTileValues = new int[]{4, 8, 0, 0, 0, 0, 4, 4, 0, 0, 0, 0, 4, 4, 0, 0, 0, 0, 4, 8, 16, 0, 0, 0, 8, 16, 0, 0, 0, 0, 4, 4, 16, 0, 0, 0};
@@ -31,7 +30,6 @@ public class BoardTest {
     }
 
     @Test
-    @Disabled
     public void testSlideRight() {
         int[] inputTileValues = new int[]{2, 2, 4, 4, 0, 0, 2, 2, 2, 2, 0, 0, 4, 4, 0, 2, 2, 0, 8, 8, 4, 4, 2, 2, 8, 0, 8, 4, 4, 0, 8, 8, 4, 2, 2, 0};
         int[] expectedTileValues = new int[]{0, 0, 0, 0, 4, 8, 0, 0, 0, 0, 4, 4 , 0, 0, 0, 0, 8, 4, 0, 0, 0, 16, 8, 4, 0, 0, 0, 0, 16, 8, 0, 0, 0, 16, 4, 4};
@@ -43,7 +41,6 @@ public class BoardTest {
     }
 
     @Test
-    @Disabled
     public void testSlideUp() {
         int[] inputTileValues = new int[]{8, 2, 4, 4, 0, 0, 8, 2, 2, 2, 0, 2, 8, 4, 0, 2, 2, 0, 4, 8, 4, 4, 2, 2, 4, 0, 8, 4, 4, 8, 2, 8, 4, 2, 4, 8};
         int[] expectedTileValues = new int[]{16, 4, 4, 4, 4, 4, 8, 4, 2, 4, 8, 16, 8, 16, 4, 8, 0, 0, 2, 0, 8, 2, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -55,10 +52,21 @@ public class BoardTest {
     }
 
     @Test
-    @Disabled
     public void testSlideDown() {
-        int[] inputTileValues = new int[]{512, 8, 4, 4, 0, 128, 0, 8, 128, 4, 0, 128, 0, 4, 128, 4, 4, 0, 0, 2, 0, 2, 4, 4, 0, 0, 512, 2, 2, 0, 512, 2, 1024, 4, 2, 4};
-        int[] expectedTileValues = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 0, 0, 0, 16, 256, 8, 0, 0, 0, 4, 512, 4, 8, 256, 1024, 4, 1024, 4, 4, 8};
+        int[] inputTileValues = new int[]{
+                512, 8, 4, 4, 0, 128,
+                0, 8, 128, 4, 0, 128,
+                0, 4, 128, 4, 4, 0,
+                0, 2, 0, 2, 4, 4,
+                0, 0, 512, 2, 2, 0,
+                512, 2, 1024, 4, 2, 4};
+        int[] expectedTileValues = new int[]{
+                0, 0, 0, 0, 0, 0,
+                0, 0, 0, 0, 0, 0,
+                0, 0, 4, 4, 0, 0,
+                0, 16, 256, 8, 0, 0,
+                0, 4, 512, 4, 8, 256,
+                1024, 4, 1024, 4, 4, 8};
         Board board = new Board(6);
         setValuesToTiles(inputTileValues, board);
         board.slideDown();
@@ -80,6 +88,4 @@ public class BoardTest {
         }
         return true;
     }
-
-   */
 }
