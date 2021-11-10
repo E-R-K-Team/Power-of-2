@@ -1,7 +1,9 @@
+package power;
+
 import javax.swing.*;
 
 /**
- * Tile representation in UI
+ * PowerOfTwo.Tile representation in UI
  * @see Tile
  * @author Kirill
  */

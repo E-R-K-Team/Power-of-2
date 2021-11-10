@@ -1,3 +1,5 @@
+package power;
+
 /**
  * Game field cell with its coordinates and value
  * @author Roman

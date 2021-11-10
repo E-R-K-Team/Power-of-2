@@ -1,3 +1,5 @@
+package power;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -66,7 +68,7 @@ public class StartWindow extends JFrame{
         difficultyLevel.add(hard);
         difficultyLevel.setPreferredSize(GUIConstants.DIFFICULTY_LEVEL_DIMENSION);
 
-        //paint StartWindow
+        //paint PowerOfTwo.StartWindow
         logoPanel.setBackground(GUIConstants.BG_COLOR);
         panel.setBackground(GUIConstants.PANEL_COLOR);
         logoFirst.setFont(GUIConstants.LOGO_FONT);

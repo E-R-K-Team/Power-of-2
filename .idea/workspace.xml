@@ -8,12 +8,76 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dcecbc32-d30d-4696-bbe4-cfa24b49dd8a" name="Changes" comment="Documentation added + 2 smells fixed">
+    <list default="true" id="dcecbc32-d30d-4696-bbe4-cfa24b49dd8a" name="Changes" comment="Package code smells">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Design.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Design.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUIConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUIConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GameGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GameGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StartWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StartWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/Board.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/Board.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/BoardTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/BoardTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/GUIConstants.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/GUIConstants.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/GameConstants.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/GameConstants.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/GameGUI.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/GameGUI.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/GameState.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/GameState.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/LoseWindow.QuitButtonListener.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/LoseWindow.QuitButtonListener.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/LoseWindow.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/LoseWindow.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/Main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/StartWindow.CreatorsButtonListener.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/StartWindow.CreatorsButtonListener.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/StartWindow.EasyLevelActionListener.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/StartWindow.EasyLevelActionListener.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/StartWindow.HardLevelActionListener.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/StartWindow.HardLevelActionListener.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/StartWindow.InfoButtonListener.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/StartWindow.InfoButtonListener.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/StartWindow.NormLevelActionListener.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/StartWindow.NormLevelActionListener.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/StartWindow.StartButtonListener.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/StartWindow.StartButtonListener.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/StartWindow.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/StartWindow.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/Tile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/Tile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/TileUI.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/TileUI.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/WinWindow.QuitButtonListener.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/WinWindow.QuitButtonListener.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/WinWindow.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/WinWindow.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/allclasses-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/constant-values.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/index-files/index-1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/index-files/index-10.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/index-files/index-11.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/index-files/index-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/index-files/index-12.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/index-files/index-13.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/index-files/index-13.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/index-files/index-15.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/index-files/index-15.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/index-files/index-16.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/index-files/index-16.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/index-files/index-17.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/index-files/index-17.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/index-files/index-18.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/index-files/index-18.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/index-files/index-19.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/index-files/index-19.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/index-files/index-2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/index-files/index-20.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/index-files/index-20.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/index-files/index-21.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/index-files/index-21.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/index-files/index-22.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/index-files/index-22.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/index-files/index-23.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/index-files/index-23.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/index-files/index-24.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/index-files/index-24.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/index-files/index-3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/index-files/index-4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/index-files/index-5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/index-files/index-7.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/index-files/index-8.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/index-files/index-9.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/overview-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/documentation/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/documentation/serialized-form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poweroftwo/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Design.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poweroftwo/Design.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUIConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poweroftwo/GUIConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poweroftwo/GameConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poweroftwo/GameGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poweroftwo/GameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LoseWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poweroftwo/LoseWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poweroftwo/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/StartWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poweroftwo/StartWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poweroftwo/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TileUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poweroftwo/TileUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WinWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/poweroftwo/WinWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/poweroftwo/BoardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Board.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GameConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GameGUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Tile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TileUI.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,14 +101,14 @@
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/GameConstants.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Main.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/test/java/BoardTest.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Design.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Board.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/TileUI.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/StartWindow.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/Tile.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/poweroftwo/GameConstants.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/poweroftwo/Main.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/test/java/poweroftwo/BoardTest.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/poweroftwo/Design.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/poweroftwo/Board.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/poweroftwo/TileUI.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/poweroftwo/StartWindow.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/poweroftwo/Tile.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="20iGKyxwUc1GtbS68oexrRCYKlg" />
   <component name="ProjectViewState">
@@ -53,16 +117,22 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/PowerOfTwo" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="PowerOfTwo" />
       <recent name="" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="MAIN_CLASS_NAME" value="poweroftwo.Main" />
       <module name="PowerOf2" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -70,8 +140,8 @@
     </configuration>
     <configuration name="BoardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PowerOf2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="BoardTest" />
+      <option name="PACKAGE_NAME" value="poweroftwo" />
+      <option name="MAIN_CLASS_NAME" value="poweroftwo.BoardTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -108,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636564137262</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Code smells, mostly Design">
+      <created>1636569592987</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1636569592987</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -153,7 +230,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Win/Lose Windows" />
     <MESSAGE value="Documentation added + 2 smells fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Documentation added + 2 smells fixed" />
+    <MESSAGE value="Code smells, mostly Design" />
+    <MESSAGE value="Package code smells" />
+    <option name="LAST_COMMIT_MESSAGE" value="Package code smells" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Board_java$BoardTest.ic" NAME="BoardTest Coverage Results" MODIFIED="1636462349754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

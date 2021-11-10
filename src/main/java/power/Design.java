@@ -1,3 +1,5 @@
+package power;
+
 import java.awt.*;
 
 /**
