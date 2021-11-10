@@ -27,10 +27,6 @@ public class Board {
         spawnTile();
     }
 
-    public GameState getCurrentState() {
-        return currentState;
-    }
-
     public GameState getGameState() {
         return currentState;
     }
