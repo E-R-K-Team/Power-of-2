@@ -1,3 +1,4 @@
+package power;
 
 /**
  * Class that contains constants, that necessary for gameplay
