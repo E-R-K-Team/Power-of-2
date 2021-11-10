@@ -32,8 +32,8 @@ class BoardTest {
 
     @Test
     void testSlideRight() {
-        int[] inputTileValues = new int[]{2, 2, 4, 4, 0, 0, 2, 2, 2, 2, 0, 0, 4, 4, 0, 2, 2, 0, 8, 8, 4, 4, 2, 2, 8, 0, 8, 4, 4, 0, 8, 8, 4, 2, 2, 0};
-        int[] expectedTileValues = new int[]{0, 0, 0, 0, 4, 8, 0, 0, 0, 0, 4, 4 , 0, 0, 0, 0, 8, 4, 0, 0, 0, 16, 8, 4, 0, 0, 0, 0, 16, 8, 0, 0, 0, 16, 4, 4};
+        int[] inputTileValues = new int[]{0, 0, 4, 4, 0, 0, 2, 2, 2, 2, 0, 0, 4, 4, 0, 2, 2, 0, 8, 8, 4, 4, 2, 2, 8, 0, 8, 4, 4, 0, 8, 8, 4, 2, 2, 0};
+        int[] expectedTileValues = new int[]{0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 4, 4 , 0, 0, 0, 0, 8, 4, 0, 0, 0, 16, 8, 4, 0, 0, 0, 0, 16, 8, 0, 0, 0, 16, 4, 4};
         Board board = new Board(6);
         setValuesToTiles(inputTileValues, board);
         board.slideRight();
