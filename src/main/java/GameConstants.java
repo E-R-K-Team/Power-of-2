@@ -1,8 +1,4 @@
-import javax.swing.*;
-import javax.swing.border.Border;
-import java.awt.*;
-import java.util.Arrays;
-import java.util.List;
+
 /**
  * Class that contains constants, that necessary for gameplay
  * @author Kirill
