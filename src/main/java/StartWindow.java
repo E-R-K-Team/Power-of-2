@@ -21,8 +21,8 @@ public class StartWindow extends JFrame{
     private JRadioButtonMenuItem hard = new JRadioButtonMenuItem("Hard");
     private JLabel logoFirst = new JLabel();
     private JLabel logoLast = new JLabel();
-    private static Board board;
-    private static GameGUI gameGUI;
+    private  Board board;
+    private  GameGUI gameGUI;
     private int size = GUIConstants.NORM_LEVEL_SIZE;
     private int windowWidth = GUIConstants.NORM_LEVEL_WINDOW_WIDTH;
     private int windowHeight = GUIConstants.NORM_LEVEL_WINDOW_HEIGHT;
