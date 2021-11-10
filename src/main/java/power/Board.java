@@ -6,6 +6,7 @@ import java.util.List;
 
 /**
  * Game field and operations with it
+ *
  * @author Kirill
  */
 public class Board {
@@ -26,8 +27,20 @@ public class Board {
         spawnTile();
     }
 
+    public GameState getCurrentState() {
+        return currentState;
+    }
+
+    public GameState getGameState() {
+        return currentState;
+    }
+
     public List<Tile> getTiles() {
         return tiles;
+    }
+
+    public boolean wasMoved() {
+        return wasMoved;
     }
 
     public void setTiles(List<Tile> tiles) {
@@ -49,12 +62,13 @@ public class Board {
         emptyTiles.get(index).setValue(takeSpawnTileValue());
         wasMoved = false;
         updateGameState();
-        lastMergedX=-1;
-        lastMergedY=-1;
+        lastMergedX = -1;
+        lastMergedY = -1;
     }
 
     /**
      * randomly chooses 2 or 4
+     *
      * @return value , that should be spawned to empty tile
      */
     private int takeSpawnTileValue() {
@@ -74,22 +88,18 @@ public class Board {
     }
 
     private int getHighestTileValue() {
-        return getTiles().stream().mapToInt(Tile::getValue).max().getAsInt();
+        return getTiles().stream().mapToInt(Tile::getValue).max().orElse(0);
     }
 
 
     private void updateGameState() {
         if (getHighestTileValue() == GameConstants.WIN_TILE_VALUE) {
             currentState = GameState.WIN;
-        } else if (getTiles().stream().noneMatch(tile -> tile.getValue() == 0)) {
+        } else if (getTiles().stream().noneMatch(tile -> tile.getValue() == 0) && !canSlide()) {
             currentState = GameState.LOSE;
         } else {
             currentState = GameState.IN_PROGRESS;
         }
-    }
-
-    public GameState getGameState() {
-        return currentState;
     }
 
     /**
@@ -150,6 +160,7 @@ public class Board {
 
     /**
      * slides tiles through neighbour tiles with 0 value or merges with tile with the same value
+     *
      * @param tile current tile, that might be merged with  another tile
      * @return true, if tile was merged with another tile, otherwise false
      */
@@ -157,13 +168,13 @@ public class Board {
         if (tile.getValue() != 0) {
             int neighbourY = tile.getY() + yDirection;
             int neighbourX = tile.getX() + xDirection;
-            if (isCoordinatesInBound(neighbourY, neighbourX) && (neighbourX!=lastMergedX || neighbourY!=lastMergedY)) {
+            if (isCoordinatesInBound(neighbourY, neighbourX) && (neighbourX != lastMergedX || neighbourY != lastMergedY)) {
                 Tile neighbour = getTileByCoordinates(neighbourY, neighbourX);
                 if (neighbour.getValue() == tile.getValue()) {
-                    neighbour.setValue(neighbour.getValue()*2);
+                    neighbour.setValue(neighbour.getValue() * 2);
                     tile.setValue(0);
-                    lastMergedX=neighbourX;
-                    lastMergedY=neighbourY;
+                    lastMergedX = neighbourX;
+                    lastMergedY = neighbourY;
                     return true;
                 } else if (neighbour.getValue() == 0) {
                     neighbour.setValue(tile.getValue());
@@ -176,16 +187,37 @@ public class Board {
         return false;
     }
 
+    public List<Integer> getNeighbours(int y, int x) {
+        List<Integer> neighbours = new ArrayList<>();
+        //left neighbour
+        if (y > 0) {
+            neighbours.add(tiles.get(x * sideLength + y - 1).getValue());
+        }
+        //right neighbour
+        if (y < sideLength - 1) {
+            neighbours.add(tiles.get(x * sideLength + y + 1).getValue());
+        }
+        //down neighbour
+        if (x < sideLength - 1) {
+            neighbours.add(tiles.get((x + 1) * sideLength + y).getValue());
+        }
+        //up neighbour
+        if (x > 0) {
+            neighbours.add(tiles.get((x - 1) * sideLength + y).getValue());
+        }
+        return neighbours;
+    }
+
+    private boolean canSlide() {
+        return tiles.stream().anyMatch(t -> getNeighbours(t.getX(), t.getY()).contains(t.getValue()));
+    }
+
     private boolean isCoordinatesInBound(int y, int x) {
         return y >= 0 && y < sideLength && x >= 0 && x < sideLength;
     }
 
     private Tile getTileByCoordinates(int y, int x) {
         return getTiles().get(coordinatesToIndex(y, x));
-    }
-
-    public boolean wasMoved() {
-        return wasMoved;
     }
 
 }
