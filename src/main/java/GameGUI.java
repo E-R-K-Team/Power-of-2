@@ -14,12 +14,15 @@ import java.util.List;
 public class GameGUI extends JFrame implements KeyListener, ActionListener {
     private List<TileUI> uiTiles;
     private Board board;
+    private  LoseWindow lose = new LoseWindow();
+    private WinWindow win = new WinWindow();
 
 
     public GameGUI(Board board, int boardSize) {
         setFocusable(true);
         addKeyListener(this);
         this.board = board;
+
         initializeUITiles(board.getTiles(), boardSize);
     }
 
@@ -79,12 +82,16 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
         }
 
         if (GameState.WIN.equals(board.getGameState())) {
-            //TODO: add logic for win case
+            win.setBounds(GUIConstants.SET_RESULT_WINDOW_LOCATION_X, GUIConstants.SET_RESULT_WINDOW_LOCATION_Y, GUIConstants.RESULT_WINDOW_WIDTH, GUIConstants.RESULT_WINDOW_HEIGHT);
+            win.setResizable(false);
+            win.setVisible(true);
         } else if (board.wasMoved()) {
             board.spawnTile();
             updateLabels();
             if (GameState.LOSE.equals(board.getGameState())) {
-                //TODO: add logic for lose case
+                lose.setBounds(GUIConstants.SET_RESULT_WINDOW_LOCATION_X, GUIConstants.SET_RESULT_WINDOW_LOCATION_Y, GUIConstants.RESULT_WINDOW_WIDTH, GUIConstants.RESULT_WINDOW_HEIGHT);
+                lose.setResizable(false);
+                lose.setVisible(true);
             }
         }
     }

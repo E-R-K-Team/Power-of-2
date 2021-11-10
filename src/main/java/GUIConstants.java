@@ -29,13 +29,20 @@ public class GUIConstants {
     public static final Color BORDER_COLOR = Color.BLACK;
     public static final Color LABEL_BOARDER_COLOR = new Color(0xbbada0);
     public static final Dimension START_BUTTON_DIMENSION = new Dimension(100, 50);
+    public static final Dimension QUIT_BUTTON_DIMENSION = new Dimension(100, 50);
     public static final Dimension GAME_RULES_DIMENSION= new Dimension(150, 50);
     public static final Dimension DIFFICULTY_LEVEL_DIMENSION= new Dimension(150, 50);
+    public static final Border START_BUTTON_BOARDER = BorderFactory.createLineBorder(BORDER_COLOR,4, true);
     public static final Border LABEL_BOARDER = BorderFactory.createLineBorder(LABEL_BOARDER_COLOR,5, false);
     public static final Font LOGO_FONT = new Font(Font.SANS_SERIF, Font.BOLD, 150);
     public static final Color LOGO_COLOR = new Color(255, 218, 185);
     public static final Color PANEL_COLOR = new Color(255, 160, 122);
-
+    public static final int SET_RESULT_WINDOW_LOCATION_X = 550;
+    public static final int SET_RESULT_WINDOW_LOCATION_Y = 250;
+    public static final int RESULT_WINDOW_HEIGHT = 125;
+    public static final int RESULT_WINDOW_WIDTH = 300;
+    public static final Font RESULT_FONT = new Font(Font.SANS_SERIF, Font.BOLD, 25);
+    public static final Color WIN_COLOR = new Color(65,105,225);
     public static final int EASY_LEVEL_SIZE = 7;
     public static final int NORM_LEVEL_SIZE = 4;
     public static final int HARD_LEVEL_SIZE = 3;

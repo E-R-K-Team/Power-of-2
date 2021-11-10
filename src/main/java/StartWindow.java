@@ -1,5 +1,4 @@
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,7 +14,7 @@ public class StartWindow extends JFrame{
     private JPanel panel = new JPanel(new FlowLayout(FlowLayout.CENTER));
     private JPanel logoPanel = new JPanel();
     private JMenu difficultyLevel = new JMenu("Difficulty Level");
-    private JMenuBar menuBar = new JMenuBar();
+    private JMenuBar stuff = new JMenuBar();
     private ButtonGroup difficultyLevelGroup = new ButtonGroup();
     private JRadioButtonMenuItem easy = new JRadioButtonMenuItem("Easy");
     private JRadioButtonMenuItem norm = new JRadioButtonMenuItem("Norm");
@@ -27,8 +26,6 @@ public class StartWindow extends JFrame{
     private int size = GUIConstants.NORM_LEVEL_SIZE;
     private int windowWidth = GUIConstants.NORM_LEVEL_WINDOW_WIDTH;
     private int windowHeight = GUIConstants.NORM_LEVEL_WINDOW_HEIGHT;
-
-    public static final Border START_BUTTON_BOARDER = BorderFactory.createLineBorder(GUIConstants.BORDER_COLOR,4, true);
     public StartWindow() {
         this.setBounds(GUIConstants.SET_WINDOW_LOCATION_X, GUIConstants.SET_WINDOW_LOCATION_Y, GUIConstants.START_WINDOW_WIDTH, GUIConstants.START_WINDOW_HEIGHT);
         this.setLocationRelativeTo(null);
@@ -39,14 +36,14 @@ public class StartWindow extends JFrame{
 
         startButton.setPreferredSize(GUIConstants.START_BUTTON_DIMENSION);
         startButton.addActionListener(new StartButtonListener());
-        startButton.setBorder(START_BUTTON_BOARDER);
+        startButton.setBorder(GUIConstants.START_BUTTON_BOARDER);
 
         gameRulesButton.addActionListener(new InfoButtonListener());
-        gameRulesButton.setBorder(START_BUTTON_BOARDER);
+        gameRulesButton.setBorder(GUIConstants.START_BUTTON_BOARDER);
         gameRulesButton.setPreferredSize(GUIConstants.GAME_RULES_DIMENSION);
 
         creators.setPreferredSize(GUIConstants.GAME_RULES_DIMENSION);
-        creators.setBorder(START_BUTTON_BOARDER);
+        creators.setBorder(GUIConstants.START_BUTTON_BOARDER);
         creators.addActionListener(new CreatorsButtonListener());
 
 
@@ -80,10 +77,10 @@ public class StartWindow extends JFrame{
         logoLast.setForeground(GUIConstants.LOGO_COLOR);
         logoLast.setText("TWO");
 
-        menuBar.add(difficultyLevel);
-        menuBar.setBackground(GUIConstants.PANEL_COLOR);
+        stuff.add(difficultyLevel);
+        stuff.setBackground(GUIConstants.PANEL_COLOR);
 
-        panel.add(menuBar);
+        panel.add(stuff);
         logoPanel.add(logoFirst);
         logoPanel.add(logoLast);
         container.add(logoPanel, BorderLayout.CENTER);
@@ -145,7 +142,7 @@ public class StartWindow extends JFrame{
     }
     class CreatorsButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            String text = "The best ERK developers killed more than 100 hours to give you this game.\n";
+            String text = "The best ERK developers killed more than 120 hours to give you this game.\n";
             text += "Respect their work and appreciate the quality of product.\n";
             text += "Names of this genius:\n";
             text += "Yegor Rusakovich\t\tKirill Eremeichik\t\tRoman Redkovski";
