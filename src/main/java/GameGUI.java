@@ -64,12 +64,12 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
-
+        // this method is empty, because it is unused
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-
+        // this method is empty, because it is unused
     }
 
     @Override
