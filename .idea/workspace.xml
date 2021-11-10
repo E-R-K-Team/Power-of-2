@@ -132,7 +132,7 @@
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="poweroftwo.Main" />
+      <option name="MAIN_CLASS_NAME" value="power.Main" />
       <module name="PowerOf2" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -140,8 +140,8 @@
     </configuration>
     <configuration name="BoardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PowerOf2" />
-      <option name="PACKAGE_NAME" value="poweroftwo" />
-      <option name="MAIN_CLASS_NAME" value="poweroftwo.BoardTest" />
+      <option name="PACKAGE_NAME" value="power" />
+      <option name="MAIN_CLASS_NAME" value="power.BoardTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />

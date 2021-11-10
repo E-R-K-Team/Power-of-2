@@ -1,3 +1,5 @@
+package power;
+
 public enum GameState {
     WIN,
     LOSE,
