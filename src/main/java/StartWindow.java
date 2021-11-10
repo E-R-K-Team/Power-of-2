@@ -88,9 +88,6 @@ public class StartWindow extends JFrame{
 
     }
 
-    /**
-     * Starts game
-     */
     class StartButtonListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
             board = new Board(size);

@@ -15,7 +15,7 @@ public class TileUI {
     }
 
     /**
-     * Updates tiles text according to value
+     * Updates tiles text and color according to value
      */
     public void update(){
         if(tile.getValue() != 0) {

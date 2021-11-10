@@ -12,8 +12,8 @@ import java.util.List;
  * @author Kirill + Egor + Roman
  */
 public class GameGUI extends JFrame implements KeyListener, ActionListener {
-    private List<TileUI> uiTiles;
-    private Board board;
+    private transient List<TileUI> uiTiles;
+    private transient Board board;
     private  LoseWindow lose = new LoseWindow();
     private WinWindow win = new WinWindow();
 
@@ -26,7 +26,10 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
         initializeUITiles(board.getTiles(), boardSize);
     }
 
-
+    /**
+     * calls update method for every ui tile
+     * @see TileUI#update()
+     */
     public void updateLabels() {
         uiTiles.forEach(TileUI::update);
     }

@@ -2,7 +2,7 @@ import java.awt.*;
 
 /**
  * Colors for tiles
- * @autho Egor
+ * @author Egor
  */
 public enum Design {
     _0   (0,    0xcdc0b4, 0x776e65),
@@ -23,7 +23,6 @@ public enum Design {
 
 
 
-    // constructor
     Design(int n, int f, int c) {
         value = n;
         color = new Color(c);

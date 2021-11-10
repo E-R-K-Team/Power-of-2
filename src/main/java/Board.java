@@ -9,6 +9,9 @@ import java.util.List;
 public class Board {
     private final int sideLength;
     private List<Tile> tiles;
+    /**
+     * true if any tile was moved after last spawn , otherwise false
+     */
     private boolean wasMoved = false;
     private int lastMergedX;
     private int lastMergedY;
@@ -43,13 +46,14 @@ public class Board {
         int index = random.nextInt(emptyTiles.size());
         emptyTiles.get(index).setValue(takeSpawnTileValue());
         wasMoved = false;
-        checkGameState();
+        updateGameState();
         lastMergedX=-1;
         lastMergedY=-1;
     }
 
     /**
-     * @return value , that should be spawned to empty tile ( 2 or 4 )
+     * randomly chooses 2 or 4
+     * @return value , that should be spawned to empty tile
      */
     private int takeSpawnTileValue() {
         return random.nextDouble() < GameConstants.CHANCE_TO_SPAWN_FOUR ? 4 : 2;
@@ -59,6 +63,9 @@ public class Board {
         return y * sideLength + x;
     }
 
+    /**
+     * @return all tiles with 0 value
+     */
     private ArrayList<Tile> findEmptyTiles() {
         List<Tile> tilesList = tiles.stream().filter(tile -> tile.getValue() == 0).toList();
         return new ArrayList<>(tilesList);
@@ -68,7 +75,8 @@ public class Board {
         return getTiles().stream().mapToInt(Tile::getValue).max().getAsInt();
     }
 
-    private void checkGameState() {
+
+    private void updateGameState() {
         if (getHighestTileValue() == GameConstants.WIN_TILE_VALUE) {
             currentState = GameState.WIN;
         } else if (getTiles().stream().noneMatch(tile -> tile.getValue() == 0)) {
@@ -82,6 +90,10 @@ public class Board {
         return currentState;
     }
 
+    /**
+     * @see #trySlide
+     * calls trySlide for all tiles that can be moved up
+     */
     public void slideUp() {
         for (int x = 0; x < sideLength; x++) {
             for (int y = 1; y < sideLength; y++) {
@@ -92,6 +104,10 @@ public class Board {
         }
     }
 
+    /**
+     * @see #trySlide
+     * calls trySlide for all tiles that can be moved down
+     */
     public void slideDown() {
         for (int x = 0; x < sideLength; x++) {
             for (int y = sideLength - 2; y >= 0; y--) {
@@ -102,6 +118,10 @@ public class Board {
         }
     }
 
+    /**
+     * @see #trySlide
+     * calls trySlide for all tiles that can be moved right
+     */
     public void slideRight() {
         for (int y = 0; y < sideLength; y++) {
             for (int x = sideLength - 2; x >= 0; x--) {
@@ -112,6 +132,10 @@ public class Board {
         }
     }
 
+    /**
+     * @see #trySlide
+     * calls trySlide for all tiles that can be moved left
+     */
     public void slideLeft() {
         for (int y = 0; y < sideLength; y++) {
             for (int x = 1; x < sideLength; x++) {
@@ -123,8 +147,8 @@ public class Board {
     }
 
     /**
-     *
-     * @param tile current tile, that might be merged with with another tile
+     * slides tiles through neighbour tiles with 0 value or merges with tile with the same value
+     * @param tile current tile, that might be merged with  another tile
      * @return true, if tile was merged with another tile, otherwise false
      */
     private boolean trySlide(Tile tile, int yDirection, int xDirection) {
