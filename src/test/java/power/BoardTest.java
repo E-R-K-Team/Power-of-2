@@ -2,6 +2,8 @@ package power;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -95,5 +97,30 @@ class BoardTest {
         board.spawnTile();
         board.updateGameState();
         assertEquals(GameState.LOSE, board.getGameState());
+    }
+
+    @Test
+    void findEmptyTiles(){
+        Board board = new Board(2);
+        List<Tile> emptyTiles = board.findEmptyTiles();
+
+        assertEquals(3,emptyTiles.size());
+    }
+
+    @Test
+    void trySlide(){
+        Board board = new Board(2);
+        boolean expected = false;
+        boolean actual = board.trySlide(new Tile(0,0),-1,0);
+
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    void getNeighbour(){
+        Board board = new Board(2);
+        List<Integer> tiles = board.getNeighbours(0,0);
+
+        assertEquals(2,tiles.size());
     }
 }

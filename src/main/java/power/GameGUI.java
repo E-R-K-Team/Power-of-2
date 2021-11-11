@@ -36,7 +36,7 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
         uiTiles.forEach(TileUI::update);
     }
 
-    private void initializeUITiles(List<Tile> tiles, int boardSize) {
+    public void initializeUITiles(List<Tile> tiles, int boardSize) {
         uiTiles = new ArrayList<>();
         for (int y = 0; y < boardSize; y++) {
             for (int x = 0; x < boardSize; x++) {
@@ -56,6 +56,9 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
             }
         }
         this.add(new JLabel());
+    }
+    public List<TileUI> getUiTiles(){
+        return uiTiles;
     }
 
 
@@ -99,5 +102,9 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
                 lose.setVisible(true);
             }
         }
+    }
+
+    public List<TileUI> getUITiles(){
+        return uiTiles;
     }
 }

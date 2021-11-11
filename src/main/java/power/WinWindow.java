@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class WinWindow extends JFrame {
-    private JLabel winText = new JLabel();
+    public JLabel winText = new JLabel();
     private JButton quit = new JButton("Quit");
     private JPanel resultPanel = new JPanel();
     public WinWindow(){

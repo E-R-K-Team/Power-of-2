@@ -78,7 +78,7 @@ public class Board {
     /**
      * @return all tiles with 0 value
      */
-    private ArrayList<Tile> findEmptyTiles() {
+    public ArrayList<Tile> findEmptyTiles() {
         List<Tile> tilesList = tiles.stream().filter(tile -> tile.getValue() == 0).toList();
         return new ArrayList<>(tilesList);
     }
@@ -160,7 +160,7 @@ public class Board {
      * @param tile current tile, that might be merged with  another tile
      * @return true, if tile was merged with another tile, otherwise false
      */
-    private boolean trySlide(Tile tile, int yDirection, int xDirection) {
+    public boolean trySlide(Tile tile, int yDirection, int xDirection) {
         if (tile.getValue() != 0) {
             int neighbourY = tile.getY() + yDirection;
             int neighbourX = tile.getX() + xDirection;
