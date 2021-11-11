@@ -88,7 +88,7 @@ public class Board {
     }
 
 
-    private void updateGameState() {
+    public void updateGameState() {
         if (getHighestTileValue() == GameConstants.WIN_TILE_VALUE) {
             currentState = GameState.WIN;
         } else if (getTiles().stream().noneMatch(tile -> tile.getValue() == 0) && !canSlide()) {
