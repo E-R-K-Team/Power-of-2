@@ -92,8 +92,11 @@ public class StartWindow extends JFrame{
 
     class StartButtonListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
-            board = new Board(size);
-            gameGUI = new GameGUI(board, size);
+            board = SaveLoad.TryLoadBoard();
+            if(board == null){
+                board = new Board(size);
+            }
+            gameGUI = new GameGUI(board, board.sideLength);
             gameGUI.setVisible(true);
             gameGUI.setResizable(false);
             gameGUI.setSize(windowWidth, windowHeight);

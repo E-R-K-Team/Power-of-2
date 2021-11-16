@@ -1,10 +1,12 @@
 package power;
 
+import java.io.Serializable;
+
 /**
  * Game field cell with its coordinates and value
  * @author Roman
  */
-public class Tile {
+public class Tile implements Serializable {
     private final int y;
     private final int x;
     private int value;

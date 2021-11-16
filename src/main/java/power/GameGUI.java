@@ -2,10 +2,7 @@ package power;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +21,7 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
         setFocusable(true);
         addKeyListener(this);
         this.board = board;
-
+        addWindowListener(new CustomWindowAdapter(this));
         initializeUITiles(board.getTiles(), boardSize);
     }
 
@@ -106,5 +103,24 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
 
     public List<TileUI> getUITiles(){
         return uiTiles;
+    }
+
+
+    class CustomWindowAdapter extends WindowAdapter {
+
+        GameGUI window = null;
+
+        CustomWindowAdapter(GameGUI window) {
+            this.window = window;
+        }
+
+        // implement windowClosing method
+        public void windowClosing(WindowEvent e) {
+            if(board.getGameState()==GameState.IN_PROGRESS) {
+                SaveLoad.SaveBoardToFile(board);
+            } else{
+                SaveLoad.ClearSaveFile();
+            }
+        }
     }
 }

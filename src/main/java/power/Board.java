@@ -1,5 +1,6 @@
 package power;
 
+import java.io.Serializable;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,8 +10,8 @@ import java.util.List;
  *
  * @author Kirill
  */
-public class Board {
-    private final int sideLength;
+public class Board implements Serializable {
+    public final int sideLength;
     private List<Tile> tiles;
     /**
      * true if any tile was moved after last spawn , otherwise false
