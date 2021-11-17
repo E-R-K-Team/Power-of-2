@@ -92,9 +92,15 @@ public class StartWindow extends JFrame{
 
     class StartButtonListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
-            board = SaveLoad.TryLoadBoard();
+            board = SaveLoad.LoadBoard();
             if(board == null){
-                board = new Board(size);
+                PlayerPreferences preferences = SaveLoad.LoadPreferences();
+                if(preferences==null) {
+                    board = new Board(size);
+                }
+                else{
+                    board = new Board(size,preferences);
+                }
             }
             gameGUI = new GameGUI(board, board.sideLength);
             gameGUI.setVisible(true);

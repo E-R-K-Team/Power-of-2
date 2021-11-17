@@ -15,14 +15,19 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
     private transient Board board;
     private  LoseWindow lose = new LoseWindow();
     private WinWindow win = new WinWindow();
+    private Statistic statistic ;
 
 
     public GameGUI(Board board, int boardSize) {
         setFocusable(true);
         addKeyListener(this);
         this.board = board;
-        addWindowListener(new CustomWindowAdapter(this));
         initializeUITiles(board.getTiles(), boardSize);
+        statistic = SaveLoad.LoadStatistic();
+        if(statistic==null){
+            statistic = new Statistic();
+        }
+        addWindowListener(new CustomWindowAdapter(this));
     }
 
     /**
@@ -85,15 +90,15 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
         } else if (e.getKeyCode() == KeyEvent.VK_S) {
             board.slideDown();
         }
-
-        if (GameState.WIN.equals(board.getGameState())) {
-            win.setBounds(GUIConstants.SET_RESULT_WINDOW_LOCATION_X, GUIConstants.SET_RESULT_WINDOW_LOCATION_Y, GUIConstants.RESULT_WINDOW_WIDTH, GUIConstants.RESULT_WINDOW_HEIGHT);
-            win.setResizable(false);
-            win.setVisible(true);
-        } else if (board.wasMoved()) {
+        if (board.wasMoved()) {
             board.spawnTile();
             updateLabels();
-            if (GameState.LOSE.equals(board.getGameState())) {
+            if (GameState.WIN.equals(board.getGameState())) {
+                win.setBounds(GUIConstants.SET_RESULT_WINDOW_LOCATION_X, GUIConstants.SET_RESULT_WINDOW_LOCATION_Y, GUIConstants.RESULT_WINDOW_WIDTH, GUIConstants.RESULT_WINDOW_HEIGHT);
+                win.setResizable(false);
+                win.setVisible(true);
+            }
+            else if (GameState.LOSE.equals(board.getGameState())) {
                 lose.setBounds(GUIConstants.SET_RESULT_WINDOW_LOCATION_X, GUIConstants.SET_RESULT_WINDOW_LOCATION_Y, GUIConstants.RESULT_WINDOW_WIDTH, GUIConstants.RESULT_WINDOW_HEIGHT);
                 lose.setResizable(false);
                 lose.setVisible(true);
@@ -116,11 +121,22 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
 
         // implement windowClosing method
         public void windowClosing(WindowEvent e) {
+            statistic.sessionsCount++;
             if(board.getGameState()==GameState.IN_PROGRESS) {
                 SaveLoad.SaveBoardToFile(board);
             } else{
+                if(board.getGameState()==GameState.WIN){
+                    statistic.wins++;
+                }
+                else{
+                    statistic.losses++;
+                }
                 SaveLoad.ClearSaveFile();
             }
+            if(statistic.highestScore < board.getHighestTileValue()){
+                statistic.highestScore = board.getHighestTileValue();
+            }
+            SaveLoad.SaveStatistic(statistic);
         }
     }
 }

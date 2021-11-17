@@ -1,35 +1,61 @@
 package power;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SaveLoad {
-    private static String saveFilePath = "C:\\Users\\User\\Desktop\\OpiProject\\Power-of-2\\src\\main\\SaveFile.txt";
+
 
     public static void SaveBoardToFile(Board board){
+        SaveObjectToFile(FilePaths.saveFilePath,board);
+    }
+
+    public static void SavePreferences(PlayerPreferences preferences){
+        SaveObjectToFile(FilePaths.preferencesFilePath,preferences);
+    }
+
+    public static void SaveStatistic(Statistic statistic){
+        SaveObjectToFile(FilePaths.statisticFilePath,statistic);
+    }
+
+    public static Board LoadBoard() {
+        return LoadObjectFromFile(FilePaths.saveFilePath);
+    }
+
+    public static PlayerPreferences LoadPreferences(){
+        return LoadObjectFromFile(FilePaths.preferencesFilePath);
+    }
+
+    public static Statistic LoadStatistic(){
+        return LoadObjectFromFile(FilePaths.statisticFilePath);
+    }
+
+    private static <T> void SaveObjectToFile(String filePath, T obj){
         ObjectOutputStream objectOutputStream = null;
         try {
             objectOutputStream = new ObjectOutputStream(
-                    new FileOutputStream(saveFilePath));
-            objectOutputStream.writeObject(board);
+                    new FileOutputStream(filePath));
+            objectOutputStream.writeObject(obj);
             objectOutputStream.close();
         }catch (Exception exception){}
     }
 
-    public static Board TryLoadBoard() {
-        Board board = null;
+    private static <T>  T LoadObjectFromFile(String filePath){
+        T result = null;
         try{
             ObjectInputStream objectStream = new  ObjectInputStream(
-                    new FileInputStream(saveFilePath));
-            board = (Board) objectStream.readObject();
+                    new FileInputStream(filePath));
+            result = (T)objectStream.readObject();
             objectStream.close();
         } catch(Exception exception){
         }
-        return board;
+        return result;
     }
 
     public static void ClearSaveFile(){
         try {
-            PrintWriter writer = new PrintWriter(saveFilePath);
+            PrintWriter writer = new PrintWriter(FilePaths.saveFilePath);
             writer.print("");
             writer.close();
         }catch (Exception exception){}

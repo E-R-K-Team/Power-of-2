@@ -11,7 +11,7 @@ class GameGUITest {
 
     @Test
     void initializeUITiles() {
-        Board board = new Board(2);
+        Board board = new Board(2,new PlayerPreferences());
         GameGUI gui = new GameGUI(board,2);
         gui.initializeUITiles(board.getTiles(),2);
 
@@ -20,7 +20,7 @@ class GameGUITest {
 
     @Test
     void keyReleased(){
-        Board board = new Board(2);
+        Board board = new Board(2,new PlayerPreferences());
         GameGUI gui = new GameGUI(board,2);
 
         gui.keyReleased(new KeyEvent(new Button(),0,0,0,KeyEvent.VK_A));

@@ -11,7 +11,7 @@ import java.util.List;
  * @author Kirill
  */
 public class Board implements Serializable {
-    public final int sideLength;
+    public  int sideLength;
     private List<Tile> tiles;
     /**
      * true if any tile was moved after last spawn , otherwise false
@@ -20,13 +20,21 @@ public class Board implements Serializable {
     private int lastMergedX;
     private int lastMergedY;
     private GameState currentState;
+    private PlayerPreferences preferences;
     private final SecureRandom random = new SecureRandom();
 
-    public Board(int sideLength) {
+
+    public  Board(int sideLength){
+        this(sideLength,new PlayerPreferences());
+    }
+
+    public Board (int sideLength,PlayerPreferences preferences){
         this.sideLength = sideLength;
         initializeBoard(sideLength);
+        this.preferences = preferences;
         spawnTile();
     }
+
 
     public GameState getGameState() {
         return currentState;
@@ -63,13 +71,14 @@ public class Board implements Serializable {
         lastMergedY = -1;
     }
 
+
     /**
      * randomly chooses 2 or 4
      *
      * @return value , that should be spawned to empty tile
      */
     private int takeSpawnTileValue() {
-        return random.nextDouble() < GameConstants.CHANCE_TO_SPAWN_FOUR ? 4 : 2;
+        return random.nextDouble() < preferences.chanceToSpawnFour ? 4 : 2;
     }
 
     private int coordinatesToIndex(int y, int x) {
@@ -84,13 +93,13 @@ public class Board implements Serializable {
         return new ArrayList<>(tilesList);
     }
 
-    private int getHighestTileValue() {
+    public int getHighestTileValue() {
         return getTiles().stream().mapToInt(Tile::getValue).max().orElse(0);
     }
 
 
     public void updateGameState() {
-        if (getHighestTileValue() == GameConstants.WIN_TILE_VALUE) {
+        if (getHighestTileValue() == preferences.maxTileValue) {
             currentState = GameState.WIN;
         } else if (getTiles().stream().noneMatch(tile -> tile.getValue() == 0) && !canSlide()) {
             currentState = GameState.LOSE;
