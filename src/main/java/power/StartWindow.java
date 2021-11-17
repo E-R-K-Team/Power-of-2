@@ -117,8 +117,13 @@ public class StartWindow extends JFrame{
 
     class StartButtonListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
-            board = SaveLoad.LoadBoard();
-            board = new Board(size);
+            PlayerPreferences preferences = SaveLoad.LoadPreferences();
+            if(preferences==null) {
+                board = new Board(size);
+            }
+            else{
+                board = new Board(size,preferences);
+            }
             gameGUI = new GameGUI(board, board.sideLength);
             gameGUI.setVisible(true);
             gameGUI.setResizable(false);
@@ -178,22 +183,16 @@ public class StartWindow extends JFrame{
     class ResumeButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             board = SaveLoad.LoadBoard();
-            if(board == null){
-                PlayerPreferences preferences = SaveLoad.LoadPreferences();
-                if(preferences==null) {
-                    board = new Board(size);
-                }
-                else{
-                    board = new Board(size,preferences);
-                }
+            if(board != null){
+                gameGUI = new GameGUI(board, board.sideLength);
+                gameGUI.setVisible(true);
+                gameGUI.setResizable(false);
+                gameGUI.setSize(windowWidth, windowHeight);
+                gameGUI.setFocusable(true);
+                gameGUI.setLocation(GUIConstants.SET_WINDOW_LOCATION_X, GUIConstants.SET_WINDOW_LOCATION_Y);
+                gameGUI.updateLabels();
             }
-            gameGUI = new GameGUI(board, board.sideLength);
-            gameGUI.setVisible(true);
-            gameGUI.setResizable(false);
-            gameGUI.setSize(windowWidth, windowHeight);
-            gameGUI.setFocusable(true);
-            gameGUI.setLocation(GUIConstants.SET_WINDOW_LOCATION_X, GUIConstants.SET_WINDOW_LOCATION_Y);
-            gameGUI.updateLabels();
+
         }
     }
 
@@ -207,7 +206,9 @@ public class StartWindow extends JFrame{
 
     class StatsButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            String text = "stats";
+            Statistic statistic = SaveLoad.LoadStatistic();
+            statistic = statistic==null ? new Statistic(): statistic;
+            String text = statistic.toString();
             JOptionPane.showMessageDialog(null, text, "Stats", JOptionPane.PLAIN_MESSAGE);
         }
     }

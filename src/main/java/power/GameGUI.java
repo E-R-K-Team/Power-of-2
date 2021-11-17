@@ -139,8 +139,11 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
                 }
                 SaveLoad.ClearSaveFile();
             }
-            if(statistic.highestScore < board.getHighestTileValue()){
-                statistic.highestScore = board.getHighestTileValue();
+            if(statistic.highestTile < board.getHighestTileValue()){
+                statistic.highestTile = board.getHighestTileValue();
+            }
+            if(statistic.highestScore < board.getScore()){
+                statistic.highestScore = board.getScore();
             }
             SaveLoad.SaveStatistic(statistic);
         }
