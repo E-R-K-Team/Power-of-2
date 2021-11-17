@@ -10,10 +10,14 @@ import java.awt.event.ActionListener;
  * @author Egor
  */
 public class StartWindow extends JFrame{
-    private JButton startButton = new JButton("Start Game");
+    private JButton startButton = new JButton("New Game");
+    private JButton resume = new JButton("Resume");
     private JButton creators = new JButton("Developers");
     private JButton gameRulesButton = new JButton("The Game Rules");
     private JPanel panel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+    private JPanel topPanel = new JPanel();
+    private JButton settings = new JButton("Settings");
+    private JButton stats = new JButton("Stats");
     private JPanel logoPanel = new JPanel();
     private JMenu difficultyLevel = new JMenu("Difficulty Level");
     private JMenuBar stuff = new JMenuBar();
@@ -25,6 +29,7 @@ public class StartWindow extends JFrame{
     private JLabel logoLast = new JLabel();
     private  transient Board board;
     private  GameGUI gameGUI;
+    private SettingsWindow setWindow;
     private int size = GUIConstants.NORM_LEVEL_SIZE;
     private int windowWidth = GUIConstants.NORM_LEVEL_WINDOW_WIDTH;
     private int windowHeight = GUIConstants.NORM_LEVEL_WINDOW_HEIGHT;
@@ -41,17 +46,33 @@ public class StartWindow extends JFrame{
         startButton.setBorder(GUIConstants.START_BUTTON_BOARDER);
 
         gameRulesButton.addActionListener(new InfoButtonListener());
-        gameRulesButton.setBorder(GUIConstants.START_BUTTON_BOARDER);
+        gameRulesButton.setBorder(GUIConstants.TOP_ELEMENTS_BOARDER);
         gameRulesButton.setPreferredSize(GUIConstants.GAME_RULES_DIMENSION);
 
         creators.setPreferredSize(GUIConstants.GAME_RULES_DIMENSION);
-        creators.setBorder(GUIConstants.START_BUTTON_BOARDER);
+        creators.setBorder(GUIConstants.TOP_ELEMENTS_BOARDER);
         creators.addActionListener(new CreatorsButtonListener());
 
-
-        panel.add(gameRulesButton);
+        resume.setPreferredSize(GUIConstants.START_BUTTON_DIMENSION);
+        resume.setBorder(GUIConstants.START_BUTTON_BOARDER);
+        resume.addActionListener(new ResumeButtonListener());
         panel.add(startButton);
+        panel.add(resume);
         panel.add(creators);
+
+        settings.setPreferredSize(GUIConstants.SETTINGS_DIMENSION);
+        settings.setBorder(GUIConstants.TOP_ELEMENTS_BOARDER);
+        settings.addActionListener(new SettingsButtonListener());
+
+        stats.setPreferredSize(GUIConstants.STATS_DIMENSION);
+        stats.setBorder(GUIConstants.TOP_ELEMENTS_BOARDER);
+        stats.addActionListener(new StatsButtonListener());
+
+        topPanel.add(settings, BorderLayout.EAST);
+        topPanel.add(stats, BorderLayout.EAST);
+        topPanel.add(gameRulesButton);
+        topPanel.add(creators);
+        topPanel.setBackground(GUIConstants.PANEL_COLOR);
 
         difficultyLevelGroup.add(easy);
         difficultyLevelGroup.add(norm);
@@ -85,23 +106,19 @@ public class StartWindow extends JFrame{
         panel.add(stuff);
         logoPanel.add(logoFirst);
         logoPanel.add(logoLast);
+        container.add(topPanel,BorderLayout.NORTH);
         container.add(logoPanel, BorderLayout.CENTER);
         container.add(panel, BorderLayout.SOUTH);
 
+
+
     }
+
 
     class StartButtonListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
             board = SaveLoad.LoadBoard();
-            if(board == null){
-                PlayerPreferences preferences = SaveLoad.LoadPreferences();
-                if(preferences==null) {
-                    board = new Board(size);
-                }
-                else{
-                    board = new Board(size,preferences);
-                }
-            }
+            board = new Board(size);
             gameGUI = new GameGUI(board, board.sideLength);
             gameGUI.setVisible(true);
             gameGUI.setResizable(false);
@@ -157,5 +174,43 @@ public class StartWindow extends JFrame{
             JOptionPane.showMessageDialog(null, text, "Developers", JOptionPane.PLAIN_MESSAGE);
         }
     }
+
+    class ResumeButtonListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            board = SaveLoad.LoadBoard();
+            if(board == null){
+                PlayerPreferences preferences = SaveLoad.LoadPreferences();
+                if(preferences==null) {
+                    board = new Board(size);
+                }
+                else{
+                    board = new Board(size,preferences);
+                }
+            }
+            gameGUI = new GameGUI(board, board.sideLength);
+            gameGUI.setVisible(true);
+            gameGUI.setResizable(false);
+            gameGUI.setSize(windowWidth, windowHeight);
+            gameGUI.setFocusable(true);
+            gameGUI.setLocation(GUIConstants.SET_WINDOW_LOCATION_X, GUIConstants.SET_WINDOW_LOCATION_Y);
+            gameGUI.updateLabels();
+        }
+    }
+
+    class SettingsButtonListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            setWindow = new SettingsWindow();
+            setWindow.setVisible(true);
+            setWindow.setBounds(GUIConstants.SET_RESULT_WINDOW_LOCATION_X, GUIConstants.SET_RESULT_WINDOW_LOCATION_Y, GUIConstants.SETTING_WINDOW_WIDTH, GUIConstants.SETTINGS_WINDOW_HEIGHT);
+        }
+    }
+
+    class StatsButtonListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            String text = "stats";
+            JOptionPane.showMessageDialog(null, text, "Stats", JOptionPane.PLAIN_MESSAGE);
+        }
+    }
+
 
 }

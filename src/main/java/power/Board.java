@@ -22,6 +22,7 @@ public class Board implements Serializable {
     private GameState currentState;
     private PlayerPreferences preferences;
     private final SecureRandom random = new SecureRandom();
+    private int score;
 
 
     public  Board(int sideLength){
@@ -177,6 +178,7 @@ public class Board implements Serializable {
             if (isCoordinatesInBound(neighbourY, neighbourX) && (neighbourX != lastMergedX || neighbourY != lastMergedY)) {
                 Tile neighbour = getTileByCoordinates(neighbourY, neighbourX);
                 if (neighbour.getValue() == tile.getValue()) {
+                    score += neighbour.getValue() * 2;
                     neighbour.setValue(neighbour.getValue() * 2);
                     tile.setValue(0);
                     lastMergedX = neighbourX;
@@ -225,5 +227,6 @@ public class Board implements Serializable {
     private Tile getTileByCoordinates(int y, int x) {
         return getTiles().get(coordinatesToIndex(y, x));
     }
+    public int getScore(){return score;}
 
 }

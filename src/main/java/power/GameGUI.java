@@ -16,7 +16,7 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
     private  LoseWindow lose = new LoseWindow();
     private WinWindow win = new WinWindow();
     private Statistic statistic ;
-
+    private ScoreWindow score;
 
     public GameGUI(Board board, int boardSize) {
         setFocusable(true);
@@ -28,6 +28,9 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
             statistic = new Statistic();
         }
         addWindowListener(new CustomWindowAdapter(this));
+        score = new ScoreWindow();
+        score.setVisible(true);
+        score.scoreUpdate(board);
     }
 
     /**
@@ -93,6 +96,9 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
         if (board.wasMoved()) {
             board.spawnTile();
             updateLabels();
+            score.scoreUpdate(board);
+            //if(board. == 0)
+            //    score.setSize(0,0);
             if (GameState.WIN.equals(board.getGameState())) {
                 win.setBounds(GUIConstants.SET_RESULT_WINDOW_LOCATION_X, GUIConstants.SET_RESULT_WINDOW_LOCATION_Y, GUIConstants.RESULT_WINDOW_WIDTH, GUIConstants.RESULT_WINDOW_HEIGHT);
                 win.setResizable(false);

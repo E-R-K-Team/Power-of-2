@@ -8,16 +8,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dcecbc32-d30d-4696-bbe4-cfa24b49dd8a" name="Changes" comment="some code smells fixed">
-      <change afterPath="$PROJECT_DIR$/src/test/java/power/GameGUITest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/power/TileUITest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/power/WinWindowTest.java" afterDir="false" />
+    <list default="true" id="dcecbc32-d30d-4696-bbe4-cfa24b49dd8a" name="Changes" comment="Tests">
+      <change afterPath="$PROJECT_DIR$/src/main/java/power/ScoreWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/power/SettingsWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/power/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/power/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/power/GUIConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/power/GUIConstants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/power/GameGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/power/GameGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/power/TileUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/power/TileUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/power/WinWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/power/WinWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/power/BoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/power/BoardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/power/StartWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/power/StartWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -79,8 +77,9 @@
       <recent name="power" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BoardTest.getNeighbour">
-    <configuration name="BoardTest.findEmptyTiles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="power.Main" />
       <module name="PowerOf2" />
       <extension name="coverage">
         <pattern>
@@ -88,10 +87,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="power" />
-      <option name="MAIN_CLASS_NAME" value="power.BoardTest" />
-      <option name="METHOD_NAME" value="findEmptyTiles" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -162,11 +157,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.BoardTest.getNeighbour" />
         <item itemvalue="JUnit.WinWindowTest.constructorTest" />
         <item itemvalue="JUnit.GameGUITest.keyReleased" />
         <item itemvalue="JUnit.BoardTest.trySlide" />
-        <item itemvalue="JUnit.BoardTest.findEmptyTiles" />
       </list>
     </recent_temporary>
   </component>
@@ -267,7 +262,7 @@
     <SUITE FILE_PATH="coverage/Power_of_2$WinWindowTest_constructorTest.ic" NAME="WinWindowTest.constructorTest Coverage Results" MODIFIED="1636626320685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>power.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Power_of_2$BoardTest_getNeighbour.ic" NAME="BoardTest.getNeighbour Coverage Results" MODIFIED="1636626795320" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Power_of_2$BoardTest_getNeighbour.ic" NAME="BoardTest.getNeighbour Coverage Results" MODIFIED="1636693831439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>power.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Board_java$BoardTest.ic" NAME="BoardTest Coverage Results" MODIFIED="1636462349754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

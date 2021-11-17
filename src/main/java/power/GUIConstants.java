@@ -30,7 +30,7 @@ public class GUIConstants {
     public static final Color LABEL_BOARDER_COLOR = new Color(0xbbada0);
     public static final Dimension START_BUTTON_DIMENSION = new Dimension(100, 50);
     public static final Dimension QUIT_BUTTON_DIMENSION = new Dimension(100, 50);
-    public static final Dimension GAME_RULES_DIMENSION= new Dimension(150, 50);
+    public static final Dimension GAME_RULES_DIMENSION= new Dimension(150, 20);
     public static final Dimension DIFFICULTY_LEVEL_DIMENSION= new Dimension(150, 50);
     public static final Border START_BUTTON_BOARDER = BorderFactory.createLineBorder(BORDER_COLOR,4, true);
     public static final Border LABEL_BOARDER = BorderFactory.createLineBorder(LABEL_BOARDER_COLOR,5, false);
@@ -46,4 +46,13 @@ public class GUIConstants {
     public static final int EASY_LEVEL_SIZE = 7;
     public static final int NORM_LEVEL_SIZE = 4;
     public static final int HARD_LEVEL_SIZE = 3;
+    public static final int SCORE_WINDOW_HEIGHT = 75;
+    public static final int SCORE_WINDOW_WIDTH = 400;
+    public static final Color SCORE_WINDOW_COLOR = new Color(214,192,125);
+    public static final Color SCORE_COLOR = new Color(110,98,64);
+    public static final Dimension SETTINGS_DIMENSION= new Dimension(70, 20);
+    public static final Dimension STATS_DIMENSION = new Dimension(70, 20);
+    public static final Border TOP_ELEMENTS_BOARDER = BorderFactory.createLineBorder(BORDER_COLOR,1, true);
+    public static final int SETTINGS_WINDOW_HEIGHT = 175;
+    public static final int SETTING_WINDOW_WIDTH = 300;
 }

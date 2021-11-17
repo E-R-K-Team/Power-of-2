@@ -18,7 +18,9 @@ public enum Design {
     E_256   (256,  0xF9F6F2, 0xEDCC61),
     E_512   (512,  0xF9F6F2, 0xEDC850),
     E_1024  (1024, 0xF9F6F2, 0xEDC53F),
-    E_2048  (2048, 0xF9F6F2, 0xEDC22E);
+    E_2048  (2048, 0xF9F6F2, 0xEDC22E),
+    E_4096  (4096, 0xF9F6F2, 0x0FAB87),
+    E_8192  (8192, 0xF9F6F2, 0x4334A7);
     private final int value;
     private final Color color;
     private final Color fontColor;
