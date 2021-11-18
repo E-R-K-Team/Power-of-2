@@ -32,32 +32,25 @@ public class SaveLoad {
     }
 
     private static <T> void SaveObjectToFile(String filePath, T obj){
-        ObjectOutputStream objectOutputStream = null;
-        try {
-            objectOutputStream = new ObjectOutputStream(
-                    new FileOutputStream(filePath));
+        try(ObjectOutputStream objectOutputStream = new ObjectOutputStream(
+                new FileOutputStream(filePath)) ) {
             objectOutputStream.writeObject(obj);
-            objectOutputStream.close();
         }catch (Exception exception){}
     }
 
     private static <T>  T LoadObjectFromFile(String filePath){
         T result = null;
-        try{
-            ObjectInputStream objectStream = new  ObjectInputStream(
-                    new FileInputStream(filePath));
+        try(ObjectInputStream objectStream = new  ObjectInputStream(
+                new FileInputStream(filePath))){
             result = (T)objectStream.readObject();
-            objectStream.close();
         } catch(Exception exception){
         }
         return result;
     }
 
     public static void ClearSaveFile(){
-        try {
-            PrintWriter writer = new PrintWriter(FilePaths.saveFilePath);
+        try(PrintWriter writer = new PrintWriter(FilePaths.saveFilePath)) {
             writer.print("");
-            writer.close();
         }catch (Exception exception){}
     }
 }
