@@ -90,8 +90,7 @@ public class Board implements Serializable {
      * @return all tiles with 0 value
      */
     public List<Tile> findEmptyTiles() {
-        List<Tile> tilesList = tiles.stream().filter(tile -> tile.getValue() == 0).toList();
-        return new ArrayList<>(tilesList);
+        return tiles.stream().filter(tile -> tile.getValue() == 0).toList();
     }
 
     public int getHighestTileValue() {
