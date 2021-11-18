@@ -27,11 +27,7 @@ public class SettingsWindow extends JFrame {
         chanceSlider.setMaximum(100);
         chanceSlider.setMinimum(0);
         chanceSlider.setValue((int)(preferences.chanceToSpawnFour*100));
-        chanceSlider.addChangeListener(new ChangeListener() {
-            public void stateChanged(ChangeEvent e) {
-                chance.setText(String.valueOf(chanceSlider.getValue()));
-            }
-        });
+        chanceSlider.addChangeListener( e -> chance.setText(String.valueOf(chanceSlider.getValue())));
         chance.setText(String.valueOf(chanceSlider.getValue()));
 
         panel.add(tile, BorderLayout.NORTH);
