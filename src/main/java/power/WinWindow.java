@@ -11,7 +11,7 @@ public class WinWindow extends JFrame {
     private JPanel resultPanel = new JPanel();
     public WinWindow(){
 
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(HIDE_ON_CLOSE);
 
         winText.setForeground(GUIConstants.WIN_COLOR);
         winText.setFont(GUIConstants.RESULT_FONT);

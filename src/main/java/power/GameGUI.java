@@ -94,8 +94,6 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
             board.spawnTile();
             updateLabels();
             score.scoreUpdate(board);
-            //if(board. == 0)
-            //    score.setSize(0,0);
             if (GameState.WIN.equals(board.getGameState())) {
                 win.setBounds(GUIConstants.SET_RESULT_WINDOW_LOCATION_X, GUIConstants.SET_RESULT_WINDOW_LOCATION_Y, GUIConstants.RESULT_WINDOW_WIDTH, GUIConstants.RESULT_WINDOW_HEIGHT);
                 win.setResizable(false);
@@ -142,6 +140,7 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
             if(statistic.highestScore < board.getScore()){
                 statistic.highestScore = board.getScore();
             }
+            score.dispose();
             SaveLoad.SaveStatistic(statistic);
         }
     }
