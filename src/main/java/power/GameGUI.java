@@ -62,9 +62,6 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
         }
         this.add(new JLabel());
     }
-    public List<TileUI> getUiTiles(){
-        return uiTiles;
-    }
 
 
     @Override
