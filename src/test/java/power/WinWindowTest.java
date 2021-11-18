@@ -10,7 +10,7 @@ class WinWindowTest {
     void constructorTest(){
         WinWindow window = new WinWindow();
 
-      assertEquals(window.winText.getText(),"          \u265A You WIN \u265A");
+        assertEquals(window.winText.getText(),"          \u265A You WIN \u265A");
     }
 
 }
