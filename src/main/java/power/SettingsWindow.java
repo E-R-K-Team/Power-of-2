@@ -9,7 +9,7 @@ import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 
 public class SettingsWindow extends JFrame {
-    private JComboBox box = new JComboBox();
+    private JComboBox box = new JComboBox<>();
     JSlider chanceSlider = new JSlider();
     private JPanel panel = new JPanel();
     private JLabel tile = new JLabel("                Choose max tile:                ");
@@ -19,7 +19,7 @@ public class SettingsWindow extends JFrame {
 
     public SettingsWindow(){
         Container container = getContentPane();
-        preferences = SaveLoad.LoadPreferences();
+        preferences = SaveLoad.loadPreferences();
         if(preferences==null){
             preferences = new PlayerPreferences();
         }
@@ -47,7 +47,7 @@ public class SettingsWindow extends JFrame {
                 currentIndex++;
             }
         }
-        box=new JComboBox(strings.stream().toArray());
+        box=new JComboBox<>(strings.stream().toArray());
         box.setSelectedIndex(selectedIndex);
         panel.add(box);
         panel.add(choose, BorderLayout.CENTER);
@@ -65,11 +65,12 @@ public class SettingsWindow extends JFrame {
 
 
         // implement windowClosing method
+        @Override
         public void windowClosing(WindowEvent e) {
            preferences.chanceToSpawnFour =((float) chanceSlider.getValue())/100;
            String str =(String) box.getSelectedItem();
            preferences.maxTileValue = Integer.parseInt(str);
-           SaveLoad.SavePreferences(preferences);
+           SaveLoad.savePreferences(preferences);
         }
     }
 

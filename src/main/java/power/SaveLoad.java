@@ -1,56 +1,61 @@
 package power;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class SaveLoad {
 
+    private SaveLoad(){}
 
-    public static void SaveBoardToFile(Board board){
-        SaveObjectToFile(FilePaths.saveFilePath,board);
+
+    public static void saveBoardToFile(Board board){
+        saveObjectToFile(FilePaths.SAVE_FILE_PATH,board);
     }
 
-    public static void SavePreferences(PlayerPreferences preferences){
-        SaveObjectToFile(FilePaths.preferencesFilePath,preferences);
+    public static void savePreferences(PlayerPreferences preferences){
+        saveObjectToFile(FilePaths.PREFERENCES_FILE_PATH,preferences);
     }
 
-    public static void SaveStatistic(Statistic statistic){
-        SaveObjectToFile(FilePaths.statisticFilePath,statistic);
+    public static void saveStatistic(Statistic statistic){
+        saveObjectToFile(FilePaths.STATISTIC_FILE_PATH,statistic);
     }
 
-    public static Board LoadBoard() {
-        return LoadObjectFromFile(FilePaths.saveFilePath);
+    public static Board loadBoard() {
+        return loadObjectFromFile(FilePaths.SAVE_FILE_PATH);
     }
 
-    public static PlayerPreferences LoadPreferences(){
-        return LoadObjectFromFile(FilePaths.preferencesFilePath);
+    public static PlayerPreferences loadPreferences(){
+        return loadObjectFromFile(FilePaths.PREFERENCES_FILE_PATH);
     }
 
-    public static Statistic LoadStatistic(){
-        return LoadObjectFromFile(FilePaths.statisticFilePath);
+    public static Statistic loadStatistic(){
+        return loadObjectFromFile(FilePaths.STATISTIC_FILE_PATH);
     }
 
-    private static <T> void SaveObjectToFile(String filePath, T obj){
+    private static <T> void saveObjectToFile(String filePath, T obj){
         try(ObjectOutputStream objectOutputStream = new ObjectOutputStream(
                 new FileOutputStream(filePath)) ) {
             objectOutputStream.writeObject(obj);
-        }catch (Exception exception){}
+        }catch (Exception exception){
+            //this is mis
+        }
     }
 
-    private static <T>  T LoadObjectFromFile(String filePath){
+    private static <T>  T loadObjectFromFile(String filePath){
         T result = null;
         try(ObjectInputStream objectStream = new  ObjectInputStream(
                 new FileInputStream(filePath))){
             result = (T)objectStream.readObject();
         } catch(Exception exception){
+            //this is mis
         }
         return result;
     }
 
-    public static void ClearSaveFile(){
-        try(PrintWriter writer = new PrintWriter(FilePaths.saveFilePath)) {
+    public static void clearSaveFile(){
+        try(PrintWriter writer = new PrintWriter(FilePaths.SAVE_FILE_PATH)) {
             writer.print("");
-        }catch (Exception exception){}
+        }catch (Exception exception){
+            //this is mis
+        }
     }
 }

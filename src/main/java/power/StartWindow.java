@@ -117,14 +117,14 @@ public class StartWindow extends JFrame{
 
     class StartButtonListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
-            PlayerPreferences preferences = SaveLoad.LoadPreferences();
+            PlayerPreferences preferences = SaveLoad.loadPreferences();
             if(preferences==null) {
                 board = new Board(size);
             }
             else{
                 board = new Board(size,preferences);
             }
-            gameGUI = new GameGUI(board, board.sideLength);
+            gameGUI = new GameGUI(board, board.getSideLength());
             gameGUI.setVisible(true);
             gameGUI.setResizable(false);
             gameGUI.setSize(windowWidth, windowHeight);
@@ -182,9 +182,9 @@ public class StartWindow extends JFrame{
 
     class ResumeButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            board = SaveLoad.LoadBoard();
+            board = SaveLoad.loadBoard();
             if(board != null){
-                gameGUI = new GameGUI(board, board.sideLength);
+                gameGUI = new GameGUI(board, board.getSideLength());
                 gameGUI.setVisible(true);
                 gameGUI.setResizable(false);
                 gameGUI.setSize(windowWidth, windowHeight);
@@ -206,7 +206,7 @@ public class StartWindow extends JFrame{
 
     class StatsButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            Statistic statistic = SaveLoad.LoadStatistic();
+            Statistic statistic = SaveLoad.loadStatistic();
             statistic = statistic==null ? new Statistic(): statistic;
             String text = statistic.toString();
             JOptionPane.showMessageDialog(null, text, "Stats", JOptionPane.PLAIN_MESSAGE);

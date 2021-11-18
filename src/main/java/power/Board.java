@@ -11,7 +11,7 @@ import java.util.List;
  * @author Kirill
  */
 public class Board implements Serializable {
-    public  int sideLength;
+    private int sideLength;
     private List<Tile> tiles;
     /**
      * true if any tile was moved after last spawn , otherwise false
@@ -63,7 +63,7 @@ public class Board implements Serializable {
     }
 
     public void spawnTile() {
-        ArrayList<Tile> emptyTiles = findEmptyTiles();
+        List<Tile> emptyTiles = findEmptyTiles();
         int index = random.nextInt(emptyTiles.size());
         emptyTiles.get(index).setValue(takeSpawnTileValue());
         wasMoved = false;
@@ -89,7 +89,7 @@ public class Board implements Serializable {
     /**
      * @return all tiles with 0 value
      */
-    public ArrayList<Tile> findEmptyTiles() {
+    public List<Tile> findEmptyTiles() {
         List<Tile> tilesList = tiles.stream().filter(tile -> tile.getValue() == 0).toList();
         return new ArrayList<>(tilesList);
     }
@@ -229,4 +229,7 @@ public class Board implements Serializable {
     }
     public int getScore(){return score;}
 
+    public int getSideLength(){
+        return sideLength;
+    }
 }

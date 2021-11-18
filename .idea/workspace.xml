@@ -8,10 +8,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dcecbc32-d30d-4696-bbe4-cfa24b49dd8a" name="Changes" comment="Resume button, top button panel, SettingsWindow, ScoreWindow, Stats button, Design -&gt; new tiles">
+    <list default="true" id="dcecbc32-d30d-4696-bbe4-cfa24b49dd8a" name="Changes" comment="Score closing, winWindow closing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/power/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/power/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/power/FilePaths.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/power/FilePaths.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/power/GameGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/power/GameGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/power/WinWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/power/WinWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/power/PlayerPreferences.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/power/PlayerPreferences.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/power/SaveLoad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/power/SaveLoad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/power/SettingsWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/power/SettingsWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/power/StartWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/power/StartWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637176858932</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Score closing, winWindow closing">
+      <created>1637217709264</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1637217709264</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -246,7 +258,8 @@
     <MESSAGE value="Code smells, mostly Design" />
     <MESSAGE value="Package code smells" />
     <MESSAGE value="Resume button, top button panel, SettingsWindow, ScoreWindow, Stats button, Design -&gt; new tiles" />
-    <option name="LAST_COMMIT_MESSAGE" value="Resume button, top button panel, SettingsWindow, ScoreWindow, Stats button, Design -&gt; new tiles" />
+    <MESSAGE value="Score closing, winWindow closing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Score closing, winWindow closing" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Power_of_2$GameGUITest_keyReleased.ic" NAME="GameGUITest.keyReleased Coverage Results" MODIFIED="1636625956873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

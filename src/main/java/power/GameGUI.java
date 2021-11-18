@@ -23,7 +23,7 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
         addKeyListener(this);
         this.board = board;
         initializeUITiles(board.getTiles(), boardSize);
-        statistic = SaveLoad.LoadStatistic();
+        statistic = SaveLoad.loadStatistic();
         if(statistic==null){
             statistic = new Statistic();
         }
@@ -121,10 +121,11 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
         }
 
         // implement windowClosing method
+        @Override
         public void windowClosing(WindowEvent e) {
             statistic.sessionsCount++;
             if(board.getGameState()==GameState.IN_PROGRESS) {
-                SaveLoad.SaveBoardToFile(board);
+                SaveLoad.saveBoardToFile(board);
             } else{
                 if(board.getGameState()==GameState.WIN){
                     statistic.wins++;
@@ -132,7 +133,7 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
                 else{
                     statistic.losses++;
                 }
-                SaveLoad.ClearSaveFile();
+                SaveLoad.clearSaveFile();
             }
             if(statistic.highestTile < board.getHighestTileValue()){
                 statistic.highestTile = board.getHighestTileValue();
@@ -141,7 +142,7 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
                 statistic.highestScore = board.getScore();
             }
             score.dispose();
-            SaveLoad.SaveStatistic(statistic);
+            SaveLoad.saveStatistic(statistic);
         }
     }
 }
