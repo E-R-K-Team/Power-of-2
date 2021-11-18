@@ -57,6 +57,10 @@ public class SettingsWindow extends JFrame {
         addWindowListener(new CustomWindowAdapter());
     }
 
+    public JLabel getChanceTile(){
+        return chance;
+    }
+
     class CustomWindowAdapter extends WindowAdapter {
 
 

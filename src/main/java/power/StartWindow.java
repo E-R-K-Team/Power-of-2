@@ -114,6 +114,10 @@ public class StartWindow extends JFrame{
 
     }
 
+    public JLabel getLogo(){
+        return logoFirst;
+    }
+
 
     class StartButtonListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
