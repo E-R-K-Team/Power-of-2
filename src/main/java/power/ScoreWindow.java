@@ -17,6 +17,10 @@ public class ScoreWindow extends JFrame {
 
 
     }
+
+    public JLabel getScoreLabel(){
+        return score;
+    }
     public void scoreUpdate(Board board){
         score.setVisible(true);
         score.setOpaque(true);

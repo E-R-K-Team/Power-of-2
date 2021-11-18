@@ -81,13 +81,17 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_A) {
+      onKeyReleased(e.getKeyCode());
+    }
+
+    public void onKeyReleased(int keyCode){
+        if (keyCode == KeyEvent.VK_A) {
             board.slideLeft();
-        } else if (e.getKeyCode() == KeyEvent.VK_W) {
+        } else if (keyCode == KeyEvent.VK_W) {
             board.slideUp();
-        } else if ((e.getKeyCode() == KeyEvent.VK_D)) {
+        } else if ((keyCode == KeyEvent.VK_D)) {
             board.slideRight();
-        } else if (e.getKeyCode() == KeyEvent.VK_S) {
+        } else if (keyCode == KeyEvent.VK_S) {
             board.slideDown();
         }
         if (board.wasMoved()) {
