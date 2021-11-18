@@ -1,7 +1,6 @@
 package power;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class ScoreWindow extends JFrame {
     private JLabel score = new JLabel();

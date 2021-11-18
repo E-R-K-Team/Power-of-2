@@ -8,7 +8,7 @@ import javax.swing.*;
  * @author Kirill
  */
 public class TileUI {
-    public JLabel label;
+    protected JLabel label;
     private Tile tile;
 
     public TileUI(JLabel label, Tile tile){

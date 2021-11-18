@@ -3,11 +3,11 @@ package power;
 import java.io.Serializable;
 
 public class Statistic implements Serializable {
-    public int sessionsCount;
-    public int wins;
-    public int losses;
-    public int highestScore;
-    public int highestTile;
+    protected int sessionsCount;
+    protected int wins;
+    protected int losses;
+    protected int highestScore;
+    protected int highestTile;
 
     public float calculateWinRate(){
         if(sessionsCount==0){
