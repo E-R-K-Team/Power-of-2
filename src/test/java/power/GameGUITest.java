@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class GameGUITest {
 
-    @Test
+    /* @Test
    void initializeUITiles() {
        Board board = new Board(2);
        GameGUI gui = new GameGUI(board,2);     gui.initializeUITiles(board.getTiles(),2);
@@ -35,7 +35,7 @@ class GameGUITest {
 
         board.updateGameState();
         assertEquals(GameState.IN_PROGRESS,board.getGameState());
-    }
+    }*/
 
 
 }

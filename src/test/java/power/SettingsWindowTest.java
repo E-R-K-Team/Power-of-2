@@ -6,10 +6,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class SettingsWindowTest {
 
-    @Test
+   /* @Test
     public void creationTest(){
         SettingsWindow window = new SettingsWindow();
         assertEquals(true,window.getChanceTile().isVisible());
-    }
+    }*/
 
 }
