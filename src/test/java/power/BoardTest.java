@@ -99,6 +99,7 @@ class BoardTest {
         assertEquals(GameState.LOSE, board.getGameState());
     }*/
 
+
     @Test
     void findEmptyTiles(){
         Board board = new Board(2);
