@@ -8,9 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dcecbc32-d30d-4696-bbe4-cfa24b49dd8a" name="Changes" comment="Pull">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="dcecbc32-d30d-4696-bbe4-cfa24b49dd8a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -250,7 +248,21 @@
       <option name="project" value="LOCAL" />
       <updated>1637604398215</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Pull into current using rebase (sonar-cloud-for-test to main)">
+      <created>1637605773410</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1637605773410</updated>
+    </task>
+    <task id="LOCAL-00012" summary="commented tests, which are blocked for ubuntu-latest OC">
+      <created>1637605991502</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1637605991502</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,6 +322,7 @@
     <MESSAGE value="test coverage fix" />
     <MESSAGE value="win tests added" />
     <MESSAGE value="changed OC for sonar tests" />
+    <MESSAGE value="Pull into current using rebase (sonar-cloud-for-test to main)" />
     <MESSAGE value="commented tests, which are blocked for ubuntu-latest OC" />
     <option name="LAST_COMMIT_MESSAGE" value="commented tests, which are blocked for ubuntu-latest OC" />
   </component>
