@@ -8,7 +8,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dcecbc32-d30d-4696-bbe4-cfa24b49dd8a" name="Changes" comment="analyse file inclusion added" />
+    <list default="true" id="dcecbc32-d30d-4696-bbe4-cfa24b49dd8a" name="Changes" comment="Pull">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,29 +19,29 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="code_smells_fix" />
+        <entry key="$PROJECT_DIR$" value="sonar_cloud_tests" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/power/Main.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/power/TileUI.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/power/StartWindow.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/power/Tile.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/test/java/power/BoardTest.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/power/GameConstants.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/power/Board.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/power/Design.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/power/Board.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/test/java/power/BoardTest.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/power/TileUI.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/power/Tile.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/power/StartWindow.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/power/Main.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="20iGKyxwUc1GtbS68oexrRCYKlg" />
   <component name="ProjectViewState">
@@ -77,7 +79,50 @@
       <command value="mvn -B verify" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SaveLoadTest">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="power.Main" />
+      <module name="PowerOf2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="power.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PowerOf2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="power.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="power" />
+      <option name="MAIN_CLASS_NAME" value="power.BoardTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DesignTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PowerOf2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="power.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="power" />
+      <option name="MAIN_CLASS_NAME" value="power.DesignTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GameGUITest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PowerOf2" />
       <extension name="coverage">
@@ -93,7 +138,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SaveLoadTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TileUITest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PowerOf2" />
       <extension name="coverage">
         <pattern>
@@ -102,71 +147,26 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="power" />
-      <option name="MAIN_CLASS_NAME" value="power.SaveLoadTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SettingsWindowTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="PowerOf2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="power.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="power" />
-      <option name="MAIN_CLASS_NAME" value="power.SettingsWindowTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StartWindowTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="PowerOf2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="power.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="power" />
-      <option name="MAIN_CLASS_NAME" value="power.StartWindowTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StatisticTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="PowerOf2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="power.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="power" />
-      <option name="MAIN_CLASS_NAME" value="power.StatisticTest" />
+      <option name="MAIN_CLASS_NAME" value="power.TileUITest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.StatisticTest" />
-      <item itemvalue="JUnit.StartWindowTest" />
-      <item itemvalue="JUnit.SettingsWindowTest" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.BoardTest" />
+      <item itemvalue="JUnit.DesignTest" />
       <item itemvalue="JUnit.GameGUITest" />
-      <item itemvalue="JUnit.SaveLoadTest" />
+      <item itemvalue="JUnit.TileUITest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SaveLoadTest" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TileUITest" />
+        <item itemvalue="JUnit.DesignTest" />
+        <item itemvalue="JUnit.BoardTest" />
         <item itemvalue="JUnit.GameGUITest" />
-        <item itemvalue="JUnit.SettingsWindowTest" />
-        <item itemvalue="JUnit.StartWindowTest" />
-        <item itemvalue="JUnit.StatisticTest" />
       </list>
     </recent_temporary>
   </component>
@@ -236,63 +236,21 @@
       <option name="project" value="LOCAL" />
       <updated>1637226473732</updated>
     </task>
-    <task id="LOCAL-00009" summary="game gui test added">
-      <created>1637227410509</created>
+    <task id="LOCAL-00009" summary="changed OC for sonar tests">
+      <created>1637603899645</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1637227410509</updated>
+      <updated>1637603899645</updated>
     </task>
-    <task id="LOCAL-00010" summary="major smell fixed">
-      <created>1637228774592</created>
+    <task id="LOCAL-00010" summary="commented tests, which are blocked for ubuntu-latest OC">
+      <created>1637604398215</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1637228774592</updated>
+      <updated>1637604398215</updated>
     </task>
-    <task id="LOCAL-00011" summary="major smell fixed">
-      <created>1637229660270</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1637229660270</updated>
-    </task>
-    <task id="LOCAL-00012" summary="pom.xml changed">
-      <created>1637599205472</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1637599205472</updated>
-    </task>
-    <task id="LOCAL-00013" summary="pom.xml fix">
-      <created>1637600363981</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1637600363981</updated>
-    </task>
-    <task id="LOCAL-00014" summary="coverage path updated">
-      <created>1637601647053</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1637601647053</updated>
-    </task>
-    <task id="LOCAL-00015" summary="jacoco path changed">
-      <created>1637602348401</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1637602348401</updated>
-    </task>
-    <task id="LOCAL-00016" summary="analyse file inclusion added">
-      <created>1637602723795</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1637602723795</updated>
-    </task>
-    <option name="localTasksCounter" value="17" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,7 +267,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/unit_test_for_board" />
+                        <option value="origin/sonar_cloud_tests" />
                       </list>
                     </value>
                   </entry>
@@ -325,6 +283,11 @@
         <entry key="Branch">
           <value>
             <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/sonar_cloud_tests" />
+                </option>
+              </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="origin/unit_test_for_board" />
@@ -346,80 +309,75 @@
     <MESSAGE value="Score closing, winWindow closing" />
     <MESSAGE value="test coverage fix" />
     <MESSAGE value="win tests added" />
-    <MESSAGE value="game gui test added" />
-    <MESSAGE value="major smell fixed" />
-    <MESSAGE value="pom.xml changed" />
-    <MESSAGE value="pom.xml fix" />
-    <MESSAGE value="coverage path updated" />
-    <MESSAGE value="jacoco path changed" />
-    <MESSAGE value="analyse file inclusion added" />
-    <option name="LAST_COMMIT_MESSAGE" value="analyse file inclusion added" />
+    <MESSAGE value="changed OC for sonar tests" />
+    <MESSAGE value="commented tests, which are blocked for ubuntu-latest OC" />
+    <option name="LAST_COMMIT_MESSAGE" value="commented tests, which are blocked for ubuntu-latest OC" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Board_java$Main.ic" NAME="Main Coverage Results" MODIFIED="1636016234531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Power_of_2$ScoreTest.ic" NAME="ScoreTest Coverage Results" MODIFIED="1637228498126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Power_of_2$BoardTest_trySlide.ic" NAME="BoardTest.trySlide Coverage Results" MODIFIED="1636625706727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>power.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Board_java$BoardTest.ic" NAME="BoardTest Coverage Results" MODIFIED="1636476176202" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Power_of_2$WinWindowTest_constructorTest.ic" NAME="WinWindowTest.constructorTest Coverage Results" MODIFIED="1636626320685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>power.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Board_java$BoardTest_testBoardCreation.ic" NAME="BoardTest.testBoardCreation Coverage Results" MODIFIED="1636402463200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Power_of_2$BoardTest_getNeighbour.ic" NAME="BoardTest.getNeighbour Coverage Results" MODIFIED="1636626795320" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>power.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Power_of_2$WinWindowTest.ic" NAME="WinWindowTest Coverage Results" MODIFIED="1637223854837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>power.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Power_of_2$BoardTest.ic" NAME="BoardTest Coverage Results" MODIFIED="1637604307617" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>power.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Board_java$BoardTest_testSlideLeft.ic" NAME="BoardTest.testSlideLeft Coverage Results" MODIFIED="1636390450383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Power_of_2$BoardTest_testBoardCreation.ic" NAME="BoardTest.testBoardCreation Coverage Results" MODIFIED="1636476279494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Power_of_2$BoardTest_testWinGameState.ic" NAME="BoardTest.testWinGameState Coverage Results" MODIFIED="1636576002336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>power.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Power_of_2$SettingsWindowTest.ic" NAME="SettingsWindowTest Coverage Results" MODIFIED="1637229319457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>power.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Power_of_2$DesignTest_of.ic" NAME="DesignTest.of Coverage Results" MODIFIED="1636622144037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>power.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Power_of_2$BoardTest_getNeighbour.ic" NAME="BoardTest.getNeighbour Coverage Results" MODIFIED="1636626795320" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>power.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Power_of_2$BoardTest_trySlide.ic" NAME="BoardTest.trySlide Coverage Results" MODIFIED="1636625706727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>power.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Power_of_2$SaveLoadTest.ic" NAME="SaveLoadTest Coverage Results" MODIFIED="1637229614283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>power.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Board_java$BoardTest_testBoardCreation.ic" NAME="BoardTest.testBoardCreation Coverage Results" MODIFIED="1636402463200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Power_of_2$BoardTest_findEmptyTiles.ic" NAME="BoardTest.findEmptyTiles Coverage Results" MODIFIED="1636625554530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>power.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Power_of_2$StatisticTest.ic" NAME="StatisticTest Coverage Results" MODIFIED="1637228617482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>power.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Power_of_2$DesignTest.ic" NAME="DesignTest Coverage Results" MODIFIED="1637228030938" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>power.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Power_of_2$GameGUITest.ic" NAME="GameGUITest Coverage Results" MODIFIED="1637229431050" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>power.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Power_of_2$WinWindowTest_constructorTest.ic" NAME="WinWindowTest.constructorTest Coverage Results" MODIFIED="1636626320685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Power_of_2$BoardTest_testSlideLeft.ic" NAME="BoardTest.testSlideLeft Coverage Results" MODIFIED="1636041173030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Power_of_2$ScoreTest.ic" NAME="ScoreTest Coverage Results" MODIFIED="1637227183835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>power.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Power_of_2$GameGUITest_initializeUITiles.ic" NAME="GameGUITest.initializeUITiles Coverage Results" MODIFIED="1636624296524" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>power.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Power_of_2$BoardTest_testWinGameState.ic" NAME="BoardTest.testWinGameState Coverage Results" MODIFIED="1636576002336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Power_of_2$SaveLoadTest.ic" NAME="SaveLoadTest Coverage Results" MODIFIED="1637229614283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>power.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Power_of_2$BoardTest.ic" NAME="BoardTest Coverage Results" MODIFIED="1637228472372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Power_of_2$DesignTest_of.ic" NAME="DesignTest.of Coverage Results" MODIFIED="1636622144037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>power.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Power_of_2$GameGUITest_keyReleased.ic" NAME="GameGUITest.keyReleased Coverage Results" MODIFIED="1636625956873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Board_java$Main.ic" NAME="Main Coverage Results" MODIFIED="1636476090760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Power_of_2$BoardTest_findEmptyTiles.ic" NAME="BoardTest.findEmptyTiles Coverage Results" MODIFIED="1636625554530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>power.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Power_of_2$Main.ic" NAME="Main Coverage Results" MODIFIED="1637226530356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Power_of_2$DesignTest.ic" NAME="DesignTest Coverage Results" MODIFIED="1637604313425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>power.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Power_of_2$StartWindowTest.ic" NAME="StartWindowTest Coverage Results" MODIFIED="1637229147737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>power.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Board_java$BoardTest.ic" NAME="BoardTest Coverage Results" MODIFIED="1636462349754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Power_of_2$BoardTest_testBoardCreation.ic" NAME="BoardTest.testBoardCreation Coverage Results" MODIFIED="1636476279494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Power_of_2$BoardTest_testSlideLeft.ic" NAME="BoardTest.testSlideLeft Coverage Results" MODIFIED="1636041173030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Power_of_2$WinWindowTest.ic" NAME="WinWindowTest Coverage Results" MODIFIED="1637228529490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Power_of_2$Main.ic" NAME="Main Coverage Results" MODIFIED="1637604295155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>power.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Power_of_2$TileUITest.ic" NAME="TileUITest Coverage Results" MODIFIED="1637228510601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Power_of_2$GameGUITest.ic" NAME="GameGUITest Coverage Results" MODIFIED="1637223844680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>power.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Board_java$BoardTest_testSlideLeft.ic" NAME="BoardTest.testSlideLeft Coverage Results" MODIFIED="1636016247577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Power_of_2$TileUITest.ic" NAME="TileUITest Coverage Results" MODIFIED="1637604324845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>power.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Power_of_2$GameGUITest_keyReleased.ic" NAME="GameGUITest.keyReleased Coverage Results" MODIFIED="1636625956873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>power.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/Power_of_2$TileUITest_update.ic" NAME="TileUITest.update Coverage Results" MODIFIED="1636625289894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>power.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Power_of_2$StatisticTest.ic" NAME="StatisticTest Coverage Results" MODIFIED="1637228617482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>power.*</FILTER>
     </SUITE>
   </component>
