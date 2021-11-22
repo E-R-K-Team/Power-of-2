@@ -9,7 +9,7 @@ public class WinWindow extends JFrame {
     public JLabel winText = new JLabel();
     private JButton quit = new JButton("Quit");
     private JPanel resultPanel = new JPanel();
-    public WinWindow(){
+   public WinWindow(){
 
         this.setDefaultCloseOperation(HIDE_ON_CLOSE);
 
