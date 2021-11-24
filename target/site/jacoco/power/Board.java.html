@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Board.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PowerOf2</a> &gt; <a href="index.source.html" class="el_package">power</a> &gt; <span class="el_source">Board.java</span></div><h1>Board.java</h1><pre class="source lang-java linenums">package power;
+
+import java.io.Serializable;
+import java.security.SecureRandom;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Game field and operations with it
+ *
+ * @author Kirill
+ */
+public class Board implements Serializable {
+    private int sideLength;
+    private List&lt;Tile&gt; tiles;
+    /**
+     * true if any tile was moved after last spawn , otherwise false
+     */
+<span class="fc" id="L19">    private boolean wasMoved = false;</span>
+    private int lastMergedX;
+    private int lastMergedY;
+    private GameState currentState;
+    private PlayerPreferences preferences;
+<span class="fc" id="L24">    private final SecureRandom random = new SecureRandom();</span>
+    private int score;
+
+
+    public  Board(int sideLength){
+<span class="fc" id="L29">        this(sideLength,new PlayerPreferences());</span>
+<span class="fc" id="L30">    }</span>
+
+<span class="fc" id="L32">    public Board (int sideLength,PlayerPreferences preferences){</span>
+<span class="fc" id="L33">        this.sideLength = sideLength;</span>
+<span class="fc" id="L34">        initializeBoard(sideLength);</span>
+<span class="fc" id="L35">        this.preferences = preferences;</span>
+<span class="fc" id="L36">        spawnTile();</span>
+<span class="fc" id="L37">    }</span>
+
+
+    public GameState getGameState() {
+<span class="fc" id="L41">        return currentState;</span>
+    }
+
+    public List&lt;Tile&gt; getTiles() {
+<span class="fc" id="L45">        return tiles;</span>
+    }
+
+    public boolean wasMoved() {
+<span class="fc" id="L49">        return wasMoved;</span>
+    }
+
+    public void setTiles(List&lt;Tile&gt; tiles) {
+<span class="fc" id="L53">        this.tiles = tiles;</span>
+<span class="fc" id="L54">    }</span>
+
+    private void initializeBoard(int sideLength) {
+<span class="fc" id="L57">        setTiles(new ArrayList&lt;&gt;());</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">        for (int y = 0; y &lt; sideLength; y++) {</span>
+<span class="fc bfc" id="L59" title="All 2 branches covered.">            for (int x = 0; x &lt; sideLength; x++) {</span>
+<span class="fc" id="L60">                getTiles().add(new Tile(y, x));</span>
+            }
+        }
+<span class="fc" id="L63">    }</span>
+
+    public void spawnTile() {
+<span class="fc" id="L66">        List&lt;Tile&gt; emptyTiles = findEmptyTiles();</span>
+<span class="fc" id="L67">        int index = random.nextInt(emptyTiles.size());</span>
+<span class="fc" id="L68">        emptyTiles.get(index).setValue(takeSpawnTileValue());</span>
+<span class="fc" id="L69">        wasMoved = false;</span>
+<span class="fc" id="L70">        updateGameState();</span>
+<span class="fc" id="L71">        lastMergedX = -1;</span>
+<span class="fc" id="L72">        lastMergedY = -1;</span>
+<span class="fc" id="L73">    }</span>
+
+
+    /**
+     * randomly chooses 2 or 4
+     *
+     * @return value , that should be spawned to empty tile
+     */
+    private int takeSpawnTileValue() {
+<span class="pc bpc" id="L82" title="1 of 2 branches missed.">        return random.nextDouble() &lt; preferences.chanceToSpawnFour ? 4 : 2;</span>
+    }
+
+    private int coordinatesToIndex(int y, int x) {
+<span class="fc" id="L86">        return y * sideLength + x;</span>
+    }
+
+    /**
+     * @return all tiles with 0 value
+     */
+    public List&lt;Tile&gt; findEmptyTiles() {
+<span class="fc bfc" id="L93" title="All 2 branches covered.">        return tiles.stream().filter(tile -&gt; tile.getValue() == 0).toList();</span>
+    }
+
+    public int getHighestTileValue() {
+<span class="fc" id="L97">        return getTiles().stream().mapToInt(Tile::getValue).max().orElse(0);</span>
+    }
+
+
+    public void updateGameState() {
+<span class="fc bfc" id="L102" title="All 2 branches covered.">        if (getHighestTileValue() == preferences.maxTileValue) {</span>
+<span class="fc" id="L103">            currentState = GameState.WIN;</span>
+<span class="pc bpc" id="L104" title="1 of 4 branches missed.">        } else if (getTiles().stream().noneMatch(tile -&gt; tile.getValue() == 0) &amp;&amp; !canSlide()) {</span>
+<span class="fc" id="L105">            currentState = GameState.LOSE;</span>
+        } else {
+<span class="fc" id="L107">            currentState = GameState.IN_PROGRESS;</span>
+        }
+<span class="fc" id="L109">    }</span>
+
+    /**
+     * @see #trySlide
+     * calls trySlide for all tiles that can be moved up
+     */
+    public void slideUp() {
+<span class="fc bfc" id="L116" title="All 2 branches covered.">        for (int x = 0; x &lt; sideLength; x++) {</span>
+<span class="fc bfc" id="L117" title="All 2 branches covered.">            for (int y = 1; y &lt; sideLength; y++) {</span>
+<span class="fc bfc" id="L118" title="All 2 branches covered.">                if (trySlide(getTileByCoordinates(y, x), -1, 0)) {</span>
+<span class="fc" id="L119">                    wasMoved = true;</span>
+                }
+            }
+        }
+<span class="fc" id="L123">    }</span>
+
+    /**
+     * @see #trySlide
+     * calls trySlide for all tiles that can be moved down
+     */
+    public void slideDown() {
+<span class="fc bfc" id="L130" title="All 2 branches covered.">        for (int x = 0; x &lt; sideLength; x++) {</span>
+<span class="fc bfc" id="L131" title="All 2 branches covered.">            for (int y = sideLength - 2; y &gt;= 0; y--) {</span>
+<span class="fc bfc" id="L132" title="All 2 branches covered.">                if (trySlide(getTileByCoordinates(y, x), 1, 0)) {</span>
+<span class="fc" id="L133">                    wasMoved = true;</span>
+                }
+            }
+        }
+<span class="fc" id="L137">    }</span>
+
+    /**
+     * @see #trySlide
+     * calls trySlide for all tiles that can be moved right
+     */
+    public void slideRight() {
+<span class="fc bfc" id="L144" title="All 2 branches covered.">        for (int y = 0; y &lt; sideLength; y++) {</span>
+<span class="fc bfc" id="L145" title="All 2 branches covered.">            for (int x = sideLength - 2; x &gt;= 0; x--) {</span>
+<span class="fc bfc" id="L146" title="All 2 branches covered.">                if (trySlide(getTileByCoordinates(y, x), 0, 1)) {</span>
+<span class="fc" id="L147">                    wasMoved = true;</span>
+                }
+            }
+        }
+<span class="fc" id="L151">    }</span>
+
+    /**
+     * @see #trySlide
+     * calls trySlide for all tiles that can be moved left
+     */
+    public void slideLeft() {
+<span class="fc bfc" id="L158" title="All 2 branches covered.">        for (int y = 0; y &lt; sideLength; y++) {</span>
+<span class="fc bfc" id="L159" title="All 2 branches covered.">            for (int x = 1; x &lt; sideLength; x++) {</span>
+<span class="fc bfc" id="L160" title="All 2 branches covered.">                if (trySlide(getTileByCoordinates(y, x), 0, -1)) {</span>
+<span class="fc" id="L161">                    wasMoved = true;</span>
+                }
+            }
+        }
+<span class="fc" id="L165">    }</span>
+
+    /**
+     * slides tiles through neighbour tiles with 0 value or merges with tile with the same value
+     *
+     * @param tile current tile, that might be merged with  another tile
+     * @return true, if tile was merged with another tile, otherwise false
+     */
+    public boolean trySlide(Tile tile, int yDirection, int xDirection) {
+<span class="fc bfc" id="L174" title="All 2 branches covered.">        if (tile.getValue() != 0) {</span>
+<span class="fc" id="L175">            int neighbourY = tile.getY() + yDirection;</span>
+<span class="fc" id="L176">            int neighbourX = tile.getX() + xDirection;</span>
+<span class="fc bfc" id="L177" title="All 6 branches covered.">            if (isCoordinatesInBound(neighbourY, neighbourX) &amp;&amp; (neighbourX != lastMergedX || neighbourY != lastMergedY)) {</span>
+<span class="fc" id="L178">                Tile neighbour = getTileByCoordinates(neighbourY, neighbourX);</span>
+<span class="fc bfc" id="L179" title="All 2 branches covered.">                if (neighbour.getValue() == tile.getValue()) {</span>
+<span class="fc" id="L180">                    score += neighbour.getValue() * 2;</span>
+<span class="fc" id="L181">                    neighbour.setValue(neighbour.getValue() * 2);</span>
+<span class="fc" id="L182">                    tile.setValue(0);</span>
+<span class="fc" id="L183">                    lastMergedX = neighbourX;</span>
+<span class="fc" id="L184">                    lastMergedY = neighbourY;</span>
+<span class="fc" id="L185">                    return true;</span>
+<span class="fc bfc" id="L186" title="All 2 branches covered.">                } else if (neighbour.getValue() == 0) {</span>
+<span class="fc" id="L187">                    neighbour.setValue(tile.getValue());</span>
+<span class="fc" id="L188">                    tile.setValue(0);</span>
+<span class="fc" id="L189">                    trySlide(neighbour, yDirection, xDirection);</span>
+<span class="fc" id="L190">                    return true;</span>
+                }
+            }
+        }
+<span class="fc" id="L194">        return false;</span>
+    }
+
+    public List&lt;Integer&gt; getNeighbours(int y, int x) {
+<span class="fc" id="L198">        List&lt;Integer&gt; neighbours = new ArrayList&lt;&gt;();</span>
+        //left neighbour
+<span class="fc bfc" id="L200" title="All 2 branches covered.">        if (y &gt; 0) {</span>
+<span class="fc" id="L201">            neighbours.add(tiles.get(x * sideLength + y - 1).getValue());</span>
+        }
+        //right neighbour
+<span class="fc bfc" id="L204" title="All 2 branches covered.">        if (y &lt; sideLength - 1) {</span>
+<span class="fc" id="L205">            neighbours.add(tiles.get(x * sideLength + y + 1).getValue());</span>
+        }
+        //down neighbour
+<span class="fc bfc" id="L208" title="All 2 branches covered.">        if (x &lt; sideLength - 1) {</span>
+<span class="fc" id="L209">            neighbours.add(tiles.get((x + 1) * sideLength + y).getValue());</span>
+        }
+        //up neighbour
+<span class="fc bfc" id="L212" title="All 2 branches covered.">        if (x &gt; 0) {</span>
+<span class="fc" id="L213">            neighbours.add(tiles.get((x - 1) * sideLength + y).getValue());</span>
+        }
+<span class="fc" id="L215">        return neighbours;</span>
+    }
+
+    private boolean canSlide() {
+<span class="fc" id="L219">        return tiles.stream().anyMatch(t -&gt; getNeighbours(t.getX(), t.getY()).contains(t.getValue()));</span>
+    }
+
+    private boolean isCoordinatesInBound(int y, int x) {
+<span class="pc bpc" id="L223" title="2 of 8 branches missed.">        return y &gt;= 0 &amp;&amp; y &lt; sideLength &amp;&amp; x &gt;= 0 &amp;&amp; x &lt; sideLength;</span>
+    }
+
+    private Tile getTileByCoordinates(int y, int x) {
+<span class="fc" id="L227">        return getTiles().get(coordinatesToIndex(y, x));</span>
+    }
+<span class="fc" id="L229">    public int getScore(){return score;}</span>
+
+    public int getSideLength(){
+<span class="nc" id="L232">        return sideLength;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>WinWindow.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PowerOf2</a> &gt; <a href="index.source.html" class="el_package">power</a> &gt; <span class="el_source">WinWindow.java</span></div><h1>WinWindow.java</h1><pre class="source lang-java linenums">package power;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class WinWindow extends JFrame {
+<span class="fc" id="L9">    public JLabel winText = new JLabel();</span>
+<span class="fc" id="L10">    private JButton quit = new JButton(&quot;Quit&quot;);</span>
+<span class="fc" id="L11">    private JPanel resultPanel = new JPanel();</span>
+<span class="fc" id="L12">    public WinWindow(){</span>
+
+<span class="fc" id="L14">        this.setDefaultCloseOperation(HIDE_ON_CLOSE);</span>
+
+<span class="fc" id="L16">        winText.setForeground(GUIConstants.WIN_COLOR);</span>
+<span class="fc" id="L17">        winText.setFont(GUIConstants.RESULT_FONT);</span>
+<span class="fc" id="L18">        winText.setText(&quot;          \u265A You WIN \u265A&quot;);</span>
+
+<span class="fc" id="L20">        quit.setPreferredSize(GUIConstants.QUIT_BUTTON_DIMENSION);</span>
+<span class="fc" id="L21">        quit.setBorder(GUIConstants.START_BUTTON_BOARDER);</span>
+<span class="fc" id="L22">        quit.addActionListener(new QuitButtonListener());</span>
+
+<span class="fc" id="L24">        resultPanel.setBackground(GUIConstants.PANEL_COLOR);</span>
+<span class="fc" id="L25">        resultPanel.add(quit);</span>
+
+<span class="fc" id="L27">        this.add(resultPanel);</span>
+<span class="fc" id="L28">        this.add(winText, BorderLayout.NORTH);</span>
+<span class="fc" id="L29">    }</span>
+<span class="fc" id="L30">    class QuitButtonListener implements ActionListener {</span>
+        public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L32">            System.exit(0);</span>
+<span class="nc" id="L33">        }</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

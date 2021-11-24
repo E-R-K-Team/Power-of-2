@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SettingsWindow.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PowerOf2</a> &gt; <a href="index.source.html" class="el_package">power</a> &gt; <span class="el_source">SettingsWindow.java</span></div><h1>SettingsWindow.java</h1><pre class="source lang-java linenums">package power;
+
+import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.util.ArrayList;
+
+public class SettingsWindow extends JFrame {
+<span class="fc" id="L12">    private JComboBox box = new JComboBox&lt;&gt;();</span>
+<span class="fc" id="L13">    JSlider chanceSlider = new JSlider();</span>
+<span class="fc" id="L14">    private JPanel panel = new JPanel();</span>
+<span class="fc" id="L15">    private JLabel tile = new JLabel(&quot;                Choose max tile:                &quot;);</span>
+<span class="fc" id="L16">    private JLabel choose = new JLabel(&quot;           Choose chance of spawn 4:            &quot;);</span>
+<span class="fc" id="L17">    private JLabel chance = new JLabel(&quot;&quot;);</span>
+    private PlayerPreferences preferences;
+
+<span class="fc" id="L20">    public SettingsWindow(){</span>
+<span class="fc" id="L21">        Container container = getContentPane();</span>
+<span class="fc" id="L22">        preferences = SaveLoad.loadPreferences();</span>
+<span class="pc bpc" id="L23" title="1 of 2 branches missed.">        if(preferences==null){</span>
+<span class="nc" id="L24">            preferences = new PlayerPreferences();</span>
+        }
+
+<span class="fc" id="L27">        chanceSlider.setMaximum(100);</span>
+<span class="fc" id="L28">        chanceSlider.setMinimum(0);</span>
+<span class="fc" id="L29">        chanceSlider.setValue((int)(preferences.chanceToSpawnFour*100));</span>
+<span class="pc" id="L30">        chanceSlider.addChangeListener( e -&gt; chance.setText(String.valueOf(chanceSlider.getValue())));</span>
+<span class="fc" id="L31">        chance.setText(String.valueOf(chanceSlider.getValue()));</span>
+
+<span class="fc" id="L33">        panel.add(tile, BorderLayout.NORTH);</span>
+<span class="fc" id="L34">        int selectedIndex = 0;</span>
+<span class="fc" id="L35">        int currentIndex =0 ;</span>
+<span class="fc" id="L36">        ArrayList&lt;String&gt; strings = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L37" title="All 2 branches covered.">        for(int i = 8 ; i&lt;=8192;i+=i){</span>
+<span class="fc" id="L38">            strings.add(String.valueOf(i));</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">            if(i==preferences.maxTileValue){</span>
+<span class="fc" id="L40">                selectedIndex=currentIndex;</span>
+            }
+            else{
+<span class="fc" id="L43">                currentIndex++;</span>
+            }
+        }
+<span class="fc" id="L46">        box=new JComboBox&lt;&gt;(strings.stream().toArray());</span>
+<span class="fc" id="L47">        box.setSelectedIndex(selectedIndex);</span>
+<span class="fc" id="L48">        panel.add(box);</span>
+<span class="fc" id="L49">        panel.add(choose, BorderLayout.CENTER);</span>
+<span class="fc" id="L50">        panel.add(chanceSlider);</span>
+<span class="fc" id="L51">        panel.add(chance);</span>
+
+
+<span class="fc" id="L54">        panel.setBackground(GUIConstants.BG_COLOR);</span>
+
+<span class="fc" id="L56">        container.add(panel);</span>
+<span class="fc" id="L57">        addWindowListener(new CustomWindowAdapter());</span>
+<span class="fc" id="L58">    }</span>
+
+    public JLabel getChanceTile(){
+<span class="fc" id="L61">        return chance;</span>
+    }
+
+<span class="fc" id="L64">    class CustomWindowAdapter extends WindowAdapter {</span>
+
+
+        // implement windowClosing method
+        @Override
+        public void windowClosing(WindowEvent e) {
+<span class="nc" id="L70">           preferences.chanceToSpawnFour =((float) chanceSlider.getValue())/100;</span>
+<span class="nc" id="L71">           String str =(String) box.getSelectedItem();</span>
+<span class="nc" id="L72">           preferences.maxTileValue = Integer.parseInt(str);</span>
+<span class="nc" id="L73">           SaveLoad.savePreferences(preferences);</span>
+<span class="nc" id="L74">        }</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
