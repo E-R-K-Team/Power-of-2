@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Design.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PowerOf2</a> &gt; <a href="index.source.html" class="el_package">power</a> &gt; <span class="el_source">Design.java</span></div><h1>Design.java</h1><pre class="source lang-java linenums">package power;
+
+import java.awt.*;
+
+/**
+ * Colors for tiles
+ * @author Egor
+ */
+<span class="fc" id="L9">public enum Design {</span>
+<span class="fc" id="L10">    E_0     (0,    0xcdc0b4, 0x776e65),</span>
+<span class="fc" id="L11">    E_2     (2,    0x776E65, 0xEEE4DA),</span>
+<span class="fc" id="L12">    E_4     (4,    0x776E65, 0xEDE0C8),</span>
+<span class="fc" id="L13">    E_8     (8,    0xF9F6F2, 0xF2B179),</span>
+<span class="fc" id="L14">    E_16    (16,   0xF9F6F2, 0xF59563),</span>
+<span class="fc" id="L15">    E_32    (32,   0xF9F6F2, 0xF67C5F),</span>
+<span class="fc" id="L16">    E_64    (64,   0xF9F6F2, 0xF65E3B),</span>
+<span class="fc" id="L17">    E_128   (128,  0xF9F6F2, 0xEDCF72),</span>
+<span class="fc" id="L18">    E_256   (256,  0xF9F6F2, 0xEDCC61),</span>
+<span class="fc" id="L19">    E_512   (512,  0xF9F6F2, 0xEDC850),</span>
+<span class="fc" id="L20">    E_1024  (1024, 0xF9F6F2, 0xEDC53F),</span>
+<span class="fc" id="L21">    E_2048  (2048, 0xF9F6F2, 0xEDC22E),</span>
+<span class="fc" id="L22">    E_4096  (4096, 0xF9F6F2, 0x0FAB87),</span>
+<span class="fc" id="L23">    E_8192  (8192, 0xF9F6F2, 0x4334A7);</span>
+    private final int value;
+    private final Color color;
+    private final Color fontColor;
+
+
+
+<span class="fc" id="L30">    Design(int n, int f, int c) {</span>
+<span class="fc" id="L31">        value = n;</span>
+<span class="fc" id="L32">        color = new Color(c);</span>
+<span class="fc" id="L33">        fontColor = new Color(f);</span>
+<span class="fc" id="L34">    }</span>
+
+    /**
+     * @param num value of tile
+     * @return font and background color of tile by its value
+     */
+    static Design of(int num) {
+<span class="fc" id="L41">        return Design.valueOf(&quot;E_&quot; + num);</span>
+    }
+
+    public Color fontColor() {
+<span class="fc" id="L45">        return fontColor;</span>
+    }
+
+    public Color color() {
+<span class="fc" id="L49">        return color;</span>
+    }
+
+    public int value() {
+<span class="nc" id="L53">        return value;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

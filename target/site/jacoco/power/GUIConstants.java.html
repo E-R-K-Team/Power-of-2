@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GUIConstants.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PowerOf2</a> &gt; <a href="index.source.html" class="el_package">power</a> &gt; <span class="el_source">GUIConstants.java</span></div><h1>GUIConstants.java</h1><pre class="source lang-java linenums">package power;
+
+import javax.swing.*;
+import javax.swing.border.Border;
+import java.awt.*;
+
+/**
+ * Class that contains constants for size, position etc. of UI elements
+ * @author Roman
+ */
+public class GUIConstants {
+    private GUIConstants(){}
+    public static final int NORM_LEVEL_WINDOW_WIDTH = 400;
+    public static final int NORM_LEVEL_WINDOW_HEIGHT = 425;
+    public static final int EASY_LEVEL_WINDOW_WIDTH = 700;
+    public static final int EASY_LEVEL_WINDOW_HEIGHT = 725;
+    public static final int HARD_LEVEL_WINDOW_WIDTH = 300;
+    public static final int HARD_LEVEL_WINDOW_HEIGHT = 325;
+    public static final int SET_WINDOW_LOCATION_X = 550;
+    public static final int SET_WINDOW_LOCATION_Y = 250;
+    public static final int LEFT_UPPER_X = 0;
+    public static final int LEFT_UPPER_Y = 0;
+    public static final int LABEL_WIDTH = 100;
+    public static final int LABEL_HEIGHT = 100;
+<span class="nc" id="L25">    public static final Color BG_COLOR = new Color(0xbbada0);</span>
+<span class="nc" id="L26">    public static final Font STR_FONT = new Font(Font.SERIF, Font.BOLD, 22);</span>
+    public static final int START_WINDOW_HEIGHT = 500;
+    public static final int START_WINDOW_WIDTH = 900;
+<span class="nc" id="L29">    public static final Color BORDER_COLOR = Color.BLACK;</span>
+<span class="nc" id="L30">    public static final Color LABEL_BOARDER_COLOR = new Color(0xbbada0);</span>
+<span class="nc" id="L31">    public static final Dimension START_BUTTON_DIMENSION = new Dimension(100, 50);</span>
+<span class="nc" id="L32">    public static final Dimension QUIT_BUTTON_DIMENSION = new Dimension(100, 50);</span>
+<span class="nc" id="L33">    public static final Dimension GAME_RULES_DIMENSION= new Dimension(150, 20);</span>
+<span class="nc" id="L34">    public static final Dimension DIFFICULTY_LEVEL_DIMENSION= new Dimension(150, 50);</span>
+<span class="nc" id="L35">    public static final Border START_BUTTON_BOARDER = BorderFactory.createLineBorder(BORDER_COLOR,4, true);</span>
+<span class="nc" id="L36">    public static final Border LABEL_BOARDER = BorderFactory.createLineBorder(LABEL_BOARDER_COLOR,5, false);</span>
+<span class="nc" id="L37">    public static final Font LOGO_FONT = new Font(Font.SANS_SERIF, Font.BOLD, 150);</span>
+<span class="nc" id="L38">    public static final Color LOGO_COLOR = new Color(255, 218, 185);</span>
+<span class="nc" id="L39">    public static final Color PANEL_COLOR = new Color(255, 160, 122);</span>
+    public static final int SET_RESULT_WINDOW_LOCATION_X = 550;
+    public static final int SET_RESULT_WINDOW_LOCATION_Y = 250;
+    public static final int RESULT_WINDOW_HEIGHT = 125;
+    public static final int RESULT_WINDOW_WIDTH = 300;
+<span class="nc" id="L44">    public static final Font RESULT_FONT = new Font(Font.SANS_SERIF, Font.BOLD, 25);</span>
+<span class="nc" id="L45">    public static final Color WIN_COLOR = new Color(65,105,225);</span>
+    public static final int EASY_LEVEL_SIZE = 7;
+    public static final int NORM_LEVEL_SIZE = 4;
+    public static final int HARD_LEVEL_SIZE = 3;
+    public static final int SCORE_WINDOW_HEIGHT = 75;
+    public static final int SCORE_WINDOW_WIDTH = 400;
+<span class="nc" id="L51">    public static final Color SCORE_WINDOW_COLOR = new Color(214,192,125);</span>
+<span class="nc" id="L52">    public static final Color SCORE_COLOR = new Color(110,98,64);</span>
+<span class="nc" id="L53">    public static final Dimension SETTINGS_DIMENSION= new Dimension(70, 20);</span>
+<span class="nc" id="L54">    public static final Dimension STATS_DIMENSION = new Dimension(70, 20);</span>
+<span class="nc" id="L55">    public static final Border TOP_ELEMENTS_BOARDER = BorderFactory.createLineBorder(BORDER_COLOR,1, true);</span>
+    public static final int SETTINGS_WINDOW_HEIGHT = 175;
+    public static final int SETTING_WINDOW_WIDTH = 300;
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

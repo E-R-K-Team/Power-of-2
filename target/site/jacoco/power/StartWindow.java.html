@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>StartWindow.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PowerOf2</a> &gt; <a href="index.source.html" class="el_package">power</a> &gt; <span class="el_source">StartWindow.java</span></div><h1>StartWindow.java</h1><pre class="source lang-java linenums">package power;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+/**
+ * Creates start UI ( start button, rules button, choice of difficulty level and etc.)
+ * @author Egor
+ */
+public class StartWindow extends JFrame{
+<span class="nc" id="L13">    private JButton startButton = new JButton(&quot;New Game&quot;);</span>
+<span class="nc" id="L14">    private JButton resume = new JButton(&quot;Resume&quot;);</span>
+<span class="nc" id="L15">    private JButton creators = new JButton(&quot;Developers&quot;);</span>
+<span class="nc" id="L16">    private JButton gameRulesButton = new JButton(&quot;The Game Rules&quot;);</span>
+<span class="nc" id="L17">    private JPanel panel = new JPanel(new FlowLayout(FlowLayout.CENTER));</span>
+<span class="nc" id="L18">    private JPanel topPanel = new JPanel();</span>
+<span class="nc" id="L19">    private JButton settings = new JButton(&quot;Settings&quot;);</span>
+<span class="nc" id="L20">    private JButton stats = new JButton(&quot;Stats&quot;);</span>
+<span class="nc" id="L21">    private JPanel logoPanel = new JPanel();</span>
+<span class="nc" id="L22">    private JMenu difficultyLevel = new JMenu(&quot;Difficulty Level&quot;);</span>
+<span class="nc" id="L23">    private JMenuBar stuff = new JMenuBar();</span>
+<span class="nc" id="L24">    private ButtonGroup difficultyLevelGroup = new ButtonGroup();</span>
+<span class="nc" id="L25">    private JRadioButtonMenuItem easy = new JRadioButtonMenuItem(&quot;Easy&quot;);</span>
+<span class="nc" id="L26">    private JRadioButtonMenuItem norm = new JRadioButtonMenuItem(&quot;Norm&quot;);</span>
+<span class="nc" id="L27">    private JRadioButtonMenuItem hard = new JRadioButtonMenuItem(&quot;Hard&quot;);</span>
+<span class="nc" id="L28">    private JLabel logoFirst = new JLabel();</span>
+<span class="nc" id="L29">    private JLabel logoLast = new JLabel();</span>
+    private  transient Board board;
+    private  GameGUI gameGUI;
+    private SettingsWindow setWindow;
+<span class="nc" id="L33">    private int size = GUIConstants.NORM_LEVEL_SIZE;</span>
+<span class="nc" id="L34">    private int windowWidth = GUIConstants.NORM_LEVEL_WINDOW_WIDTH;</span>
+<span class="nc" id="L35">    private int windowHeight = GUIConstants.NORM_LEVEL_WINDOW_HEIGHT;</span>
+<span class="nc" id="L36">    public StartWindow() {</span>
+<span class="nc" id="L37">        this.setBounds(GUIConstants.SET_WINDOW_LOCATION_X, GUIConstants.SET_WINDOW_LOCATION_Y, GUIConstants.START_WINDOW_WIDTH, GUIConstants.START_WINDOW_HEIGHT);</span>
+<span class="nc" id="L38">        this.setLocationRelativeTo(null);</span>
+<span class="nc" id="L39">        this.setDefaultCloseOperation(EXIT_ON_CLOSE);</span>
+<span class="nc" id="L40">        this.setResizable(false);</span>
+
+<span class="nc" id="L42">        Container container = getContentPane();</span>
+
+<span class="nc" id="L44">        startButton.setPreferredSize(GUIConstants.START_BUTTON_DIMENSION);</span>
+<span class="nc" id="L45">        startButton.addActionListener(new StartButtonListener());</span>
+<span class="nc" id="L46">        startButton.setBorder(GUIConstants.START_BUTTON_BOARDER);</span>
+
+<span class="nc" id="L48">        gameRulesButton.addActionListener(new InfoButtonListener());</span>
+<span class="nc" id="L49">        gameRulesButton.setBorder(GUIConstants.TOP_ELEMENTS_BOARDER);</span>
+<span class="nc" id="L50">        gameRulesButton.setPreferredSize(GUIConstants.GAME_RULES_DIMENSION);</span>
+
+<span class="nc" id="L52">        creators.setPreferredSize(GUIConstants.GAME_RULES_DIMENSION);</span>
+<span class="nc" id="L53">        creators.setBorder(GUIConstants.TOP_ELEMENTS_BOARDER);</span>
+<span class="nc" id="L54">        creators.addActionListener(new CreatorsButtonListener());</span>
+
+<span class="nc" id="L56">        resume.setPreferredSize(GUIConstants.START_BUTTON_DIMENSION);</span>
+<span class="nc" id="L57">        resume.setBorder(GUIConstants.START_BUTTON_BOARDER);</span>
+<span class="nc" id="L58">        resume.addActionListener(new ResumeButtonListener());</span>
+<span class="nc" id="L59">        panel.add(startButton);</span>
+<span class="nc" id="L60">        panel.add(resume);</span>
+<span class="nc" id="L61">        panel.add(creators);</span>
+
+<span class="nc" id="L63">        settings.setPreferredSize(GUIConstants.SETTINGS_DIMENSION);</span>
+<span class="nc" id="L64">        settings.setBorder(GUIConstants.TOP_ELEMENTS_BOARDER);</span>
+<span class="nc" id="L65">        settings.addActionListener(new SettingsButtonListener());</span>
+
+<span class="nc" id="L67">        stats.setPreferredSize(GUIConstants.STATS_DIMENSION);</span>
+<span class="nc" id="L68">        stats.setBorder(GUIConstants.TOP_ELEMENTS_BOARDER);</span>
+<span class="nc" id="L69">        stats.addActionListener(new StatsButtonListener());</span>
+
+<span class="nc" id="L71">        topPanel.add(settings, BorderLayout.EAST);</span>
+<span class="nc" id="L72">        topPanel.add(stats, BorderLayout.EAST);</span>
+<span class="nc" id="L73">        topPanel.add(gameRulesButton);</span>
+<span class="nc" id="L74">        topPanel.add(creators);</span>
+<span class="nc" id="L75">        topPanel.setBackground(GUIConstants.PANEL_COLOR);</span>
+
+<span class="nc" id="L77">        difficultyLevelGroup.add(easy);</span>
+<span class="nc" id="L78">        difficultyLevelGroup.add(norm);</span>
+<span class="nc" id="L79">        difficultyLevelGroup.add(hard);</span>
+
+<span class="nc" id="L81">        norm.setSelected(true);</span>
+
+<span class="nc" id="L83">        easy.addActionListener(new EasyLevelActionListener());</span>
+<span class="nc" id="L84">        norm.addActionListener(new NormLevelActionListener());</span>
+<span class="nc" id="L85">        hard.addActionListener(new HardLevelActionListener());</span>
+
+<span class="nc" id="L87">        difficultyLevel.add(easy);</span>
+<span class="nc" id="L88">        difficultyLevel.add(norm);</span>
+<span class="nc" id="L89">        difficultyLevel.add(hard);</span>
+<span class="nc" id="L90">        difficultyLevel.setPreferredSize(GUIConstants.DIFFICULTY_LEVEL_DIMENSION);</span>
+
+        //paint PowerOfTwo.StartWindow
+<span class="nc" id="L93">        logoPanel.setBackground(GUIConstants.BG_COLOR);</span>
+<span class="nc" id="L94">        panel.setBackground(GUIConstants.PANEL_COLOR);</span>
+<span class="nc" id="L95">        logoFirst.setFont(GUIConstants.LOGO_FONT);</span>
+<span class="nc" id="L96">        logoFirst.setForeground(GUIConstants.LOGO_COLOR);</span>
+<span class="nc" id="L97">        logoFirst.setText(&quot;POWER OF&quot;);</span>
+
+<span class="nc" id="L99">        logoLast.setFont(GUIConstants.LOGO_FONT);</span>
+<span class="nc" id="L100">        logoLast.setForeground(GUIConstants.LOGO_COLOR);</span>
+<span class="nc" id="L101">        logoLast.setText(&quot;TWO&quot;);</span>
+
+<span class="nc" id="L103">        stuff.add(difficultyLevel);</span>
+<span class="nc" id="L104">        stuff.setBackground(GUIConstants.PANEL_COLOR);</span>
+
+<span class="nc" id="L106">        panel.add(stuff);</span>
+<span class="nc" id="L107">        logoPanel.add(logoFirst);</span>
+<span class="nc" id="L108">        logoPanel.add(logoLast);</span>
+<span class="nc" id="L109">        container.add(topPanel,BorderLayout.NORTH);</span>
+<span class="nc" id="L110">        container.add(logoPanel, BorderLayout.CENTER);</span>
+<span class="nc" id="L111">        container.add(panel, BorderLayout.SOUTH);</span>
+
+
+
+<span class="nc" id="L115">    }</span>
+
+    public JLabel getLogo(){
+<span class="nc" id="L118">        return logoFirst;</span>
+    }
+
+
+<span class="nc" id="L122">    class StartButtonListener implements ActionListener{</span>
+        public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L124">            PlayerPreferences preferences = SaveLoad.loadPreferences();</span>
+<span class="nc bnc" id="L125" title="All 2 branches missed.">            if(preferences==null) {</span>
+<span class="nc" id="L126">                board = new Board(size);</span>
+            }
+            else{
+<span class="nc" id="L129">                board = new Board(size,preferences);</span>
+            }
+<span class="nc" id="L131">            gameGUI = new GameGUI(board, board.getSideLength());</span>
+<span class="nc" id="L132">            gameGUI.setVisible(true);</span>
+<span class="nc" id="L133">            gameGUI.setResizable(false);</span>
+<span class="nc" id="L134">            gameGUI.setSize(windowWidth, windowHeight);</span>
+<span class="nc" id="L135">            gameGUI.setFocusable(true);</span>
+<span class="nc" id="L136">            gameGUI.setLocation(GUIConstants.SET_WINDOW_LOCATION_X, GUIConstants.SET_WINDOW_LOCATION_Y);</span>
+<span class="nc" id="L137">            gameGUI.updateLabels();</span>
+<span class="nc" id="L138">        }</span>
+    }
+<span class="nc" id="L140">    class InfoButtonListener implements ActionListener{</span>
+        public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L142">            String rules = &quot;Power Of Two rules\n&quot;;</span>
+<span class="nc" id="L143">            rules += &quot;Power Of Two is played on a plain 4×4 (3×3, 7×7) grid, with numbered tiles that slide when a player moves them using the four arrow keys.&quot;;</span>
+<span class="nc" id="L144">            rules += &quot;W -&gt; UP, A -&gt; LEFT, S -&gt; DOWN, D -&gt; RIGHT.\n&quot;;</span>
+<span class="nc" id="L145">            rules += &quot;Every turn, a new tile randomly appears in an empty spot on the board with a value of either 2 or 4.\n&quot;;</span>
+<span class="nc" id="L146">            rules += &quot;Tiles slide as far as possible in the chosen direction until they are stopped by either another tile or the edge of the grid.\n&quot;;</span>
+<span class="nc" id="L147">            rules += &quot;If two tiles of the same number collide while moving, they will merge into a tile with the total value of the two tiles that collided.\n&quot;;</span>
+<span class="nc" id="L148">            rules += &quot;The game is won when a tile with a value of 2048 appears on the board.\n&quot;;</span>
+<span class="nc" id="L149">            rules += &quot;When the player has no legal moves (there are no empty spaces and no adjacent tiles with the same value), the game ends.&quot;;</span>
+<span class="nc" id="L150">            JOptionPane.showMessageDialog(null, rules, &quot;GameRules&quot;, JOptionPane.PLAIN_MESSAGE);</span>
+
+<span class="nc" id="L152">        }</span>
+    }
+<span class="nc" id="L154">    class EasyLevelActionListener implements ActionListener{</span>
+        public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L156">            size = GUIConstants.EASY_LEVEL_SIZE;</span>
+<span class="nc" id="L157">            windowWidth = GUIConstants.EASY_LEVEL_WINDOW_WIDTH;</span>
+<span class="nc" id="L158">            windowHeight = GUIConstants.EASY_LEVEL_WINDOW_HEIGHT;</span>
+<span class="nc" id="L159">        }</span>
+    }
+<span class="nc" id="L161">    class NormLevelActionListener implements ActionListener {</span>
+        public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L163">            size = GUIConstants.NORM_LEVEL_SIZE;</span>
+<span class="nc" id="L164">            windowWidth = GUIConstants.NORM_LEVEL_WINDOW_WIDTH;</span>
+<span class="nc" id="L165">            windowHeight = GUIConstants.NORM_LEVEL_WINDOW_HEIGHT;</span>
+<span class="nc" id="L166">            gameGUI.setLocationRelativeTo(logoLast);</span>
+<span class="nc" id="L167">        }</span>
+    }
+<span class="nc" id="L169">    class HardLevelActionListener implements ActionListener {</span>
+        public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L171">            size = GUIConstants.HARD_LEVEL_SIZE;</span>
+<span class="nc" id="L172">            windowWidth = GUIConstants.HARD_LEVEL_WINDOW_WIDTH;</span>
+<span class="nc" id="L173">            windowHeight = GUIConstants.HARD_LEVEL_WINDOW_HEIGHT;</span>
+<span class="nc" id="L174">            gameGUI.setLocationRelativeTo(logoFirst);</span>
+<span class="nc" id="L175">        }</span>
+    }
+<span class="nc" id="L177">    class CreatorsButtonListener implements ActionListener {</span>
+        public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L179">            String text = &quot;The best ERK developers killed more than 120 hours to give you this game.\n&quot;;</span>
+<span class="nc" id="L180">            text += &quot;Respect their work and appreciate the quality of product.\n&quot;;</span>
+<span class="nc" id="L181">            text += &quot;Names of this genius:\n&quot;;</span>
+<span class="nc" id="L182">            text += &quot;Yegor Rusakovich\t\tKirill Eremeichik\t\tRoman Redkovski&quot;;</span>
+<span class="nc" id="L183">            JOptionPane.showMessageDialog(null, text, &quot;Developers&quot;, JOptionPane.PLAIN_MESSAGE);</span>
+<span class="nc" id="L184">        }</span>
+    }
+
+<span class="nc" id="L187">    class ResumeButtonListener implements ActionListener {</span>
+        public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L189">            board = SaveLoad.loadBoard();</span>
+<span class="nc bnc" id="L190" title="All 2 branches missed.">            if(board != null){</span>
+<span class="nc" id="L191">                gameGUI = new GameGUI(board, board.getSideLength());</span>
+<span class="nc" id="L192">                gameGUI.setVisible(true);</span>
+<span class="nc" id="L193">                gameGUI.setResizable(false);</span>
+<span class="nc" id="L194">                gameGUI.setSize(windowWidth, windowHeight);</span>
+<span class="nc" id="L195">                gameGUI.setFocusable(true);</span>
+<span class="nc" id="L196">                gameGUI.setLocation(GUIConstants.SET_WINDOW_LOCATION_X, GUIConstants.SET_WINDOW_LOCATION_Y);</span>
+<span class="nc" id="L197">                gameGUI.updateLabels();</span>
+            }
+
+<span class="nc" id="L200">        }</span>
+    }
+
+<span class="nc" id="L203">    class SettingsButtonListener implements ActionListener {</span>
+        public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L205">            setWindow = new SettingsWindow();</span>
+<span class="nc" id="L206">            setWindow.setVisible(true);</span>
+<span class="nc" id="L207">            setWindow.setBounds(GUIConstants.SET_RESULT_WINDOW_LOCATION_X, GUIConstants.SET_RESULT_WINDOW_LOCATION_Y, GUIConstants.SETTING_WINDOW_WIDTH, GUIConstants.SETTINGS_WINDOW_HEIGHT);</span>
+<span class="nc" id="L208">        }</span>
+    }
+
+<span class="nc" id="L211">    class StatsButtonListener implements ActionListener {</span>
+        public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L213">            Statistic statistic = SaveLoad.loadStatistic();</span>
+<span class="nc bnc" id="L214" title="All 2 branches missed.">            statistic = statistic==null ? new Statistic(): statistic;</span>
+<span class="nc" id="L215">            String text = statistic.toString();</span>
+<span class="nc" id="L216">            JOptionPane.showMessageDialog(null, text, &quot;Stats&quot;, JOptionPane.PLAIN_MESSAGE);</span>
+<span class="nc" id="L217">        }</span>
+    }
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

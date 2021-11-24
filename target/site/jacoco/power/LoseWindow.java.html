@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LoseWindow.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PowerOf2</a> &gt; <a href="index.source.html" class="el_package">power</a> &gt; <span class="el_source">LoseWindow.java</span></div><h1>LoseWindow.java</h1><pre class="source lang-java linenums">package power;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class LoseWindow extends JFrame {
+<span class="nc" id="L9">    private JLabel loseText = new JLabel();</span>
+<span class="nc" id="L10">    private JButton quit = new JButton(&quot;Quit&quot;);</span>
+<span class="nc" id="L11">    private JPanel resultPanel = new JPanel();</span>
+<span class="nc" id="L12">    public LoseWindow(){</span>
+
+<span class="nc" id="L14">        loseText.setForeground(Color.RED);</span>
+<span class="nc" id="L15">        loseText.setFont(GUIConstants.RESULT_FONT);</span>
+<span class="nc" id="L16">        loseText.setText(&quot;         \u2620 You LOSE \u2620&quot;);</span>
+
+<span class="nc" id="L18">        quit.setPreferredSize(GUIConstants.QUIT_BUTTON_DIMENSION);</span>
+<span class="nc" id="L19">        quit.setBorder(GUIConstants.START_BUTTON_BOARDER);</span>
+<span class="nc" id="L20">        quit.addActionListener(new QuitButtonListener());</span>
+
+<span class="nc" id="L22">        resultPanel.setBackground(GUIConstants.PANEL_COLOR);</span>
+<span class="nc" id="L23">        resultPanel.add(quit);</span>
+
+<span class="nc" id="L25">        this.add(resultPanel);</span>
+<span class="nc" id="L26">        this.add(loseText, BorderLayout.NORTH);</span>
+<span class="nc" id="L27">    }</span>
+<span class="nc" id="L28">    class QuitButtonListener implements ActionListener {</span>
+        public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L30">            System.exit(0);</span>
+<span class="nc" id="L31">        }</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

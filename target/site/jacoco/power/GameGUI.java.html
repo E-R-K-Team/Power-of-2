@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GameGUI.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PowerOf2</a> &gt; <a href="index.source.html" class="el_package">power</a> &gt; <span class="el_source">GameGUI.java</span></div><h1>GameGUI.java</h1><pre class="source lang-java linenums">package power;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Displays, updates tiles and read input
+ * @author Kirill + Egor + Roman
+ */
+public class GameGUI extends JFrame implements KeyListener, ActionListener {
+    private transient List&lt;TileUI&gt; uiTiles;
+    private transient Board board;
+<span class="nc" id="L16">    private  LoseWindow lose = new LoseWindow();</span>
+<span class="nc" id="L17">    private WinWindow win = new WinWindow();</span>
+    private Statistic statistic ;
+    private ScoreWindow score;
+
+<span class="nc" id="L21">    public GameGUI(Board board, int boardSize) {</span>
+<span class="nc" id="L22">        setFocusable(true);</span>
+<span class="nc" id="L23">        addKeyListener(this);</span>
+<span class="nc" id="L24">        this.board = board;</span>
+<span class="nc" id="L25">        initializeUITiles(board.getTiles(), boardSize);</span>
+<span class="nc" id="L26">        statistic = SaveLoad.loadStatistic();</span>
+<span class="nc bnc" id="L27" title="All 2 branches missed.">        if(statistic==null){</span>
+<span class="nc" id="L28">            statistic = new Statistic();</span>
+        }
+<span class="nc" id="L30">        addWindowListener(new CustomWindowAdapter(this));</span>
+<span class="nc" id="L31">        score = new ScoreWindow();</span>
+<span class="nc" id="L32">        score.setVisible(true);</span>
+<span class="nc" id="L33">        score.scoreUpdate(board);</span>
+
+<span class="nc" id="L35">    }</span>
+
+    /**
+     * calls update method for every ui tile
+     * @see TileUI#update()
+     */
+    public void updateLabels() {
+<span class="nc" id="L42">        uiTiles.forEach(TileUI::update);</span>
+<span class="nc" id="L43">    }</span>
+
+    public void initializeUITiles(List&lt;Tile&gt; tiles, int boardSize) {
+<span class="nc" id="L46">        uiTiles = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L47" title="All 2 branches missed.">        for (int y = 0; y &lt; boardSize; y++) {</span>
+<span class="nc bnc" id="L48" title="All 2 branches missed.">            for (int x = 0; x &lt; boardSize; x++) {</span>
+<span class="nc" id="L49">                JLabel label = new JLabel(&quot; &quot;, SwingConstants.CENTER);</span>
+<span class="nc" id="L50">                int xCoord = GUIConstants.LEFT_UPPER_X + x * GUIConstants.LABEL_WIDTH;</span>
+<span class="nc" id="L51">                int yCoord = GUIConstants.LEFT_UPPER_Y + y * GUIConstants.LABEL_HEIGHT;</span>
+<span class="nc" id="L52">                label.setLocation(xCoord, yCoord);</span>
+<span class="nc" id="L53">                label.setSize(GUIConstants.LABEL_WIDTH, GUIConstants.LABEL_HEIGHT);</span>
+<span class="nc" id="L54">                label.setVisible(true);</span>
+<span class="nc" id="L55">                label.setOpaque(true);</span>
+<span class="nc" id="L56">                label.setBackground(Color.pink);</span>
+<span class="nc" id="L57">                label.setFont(GUIConstants.STR_FONT);</span>
+<span class="nc" id="L58">                label.setForeground(Color.gray);</span>
+<span class="nc" id="L59">                label.setBorder(GUIConstants.LABEL_BOARDER);</span>
+<span class="nc" id="L60">                this.add(label);</span>
+<span class="nc" id="L61">                uiTiles.add(new TileUI(label, tiles.get(x + y * boardSize)));</span>
+            }
+        }
+<span class="nc" id="L64">        this.add(new JLabel());</span>
+<span class="nc" id="L65">    }</span>
+
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L70">        repaint();</span>
+<span class="nc" id="L71">    }</span>
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        // this method is empty, because it is unused
+<span class="nc" id="L76">    }</span>
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        // this method is empty, because it is unused
+<span class="nc" id="L81">    }</span>
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+<span class="nc" id="L85">      onKeyReleased(e.getKeyCode());</span>
+<span class="nc" id="L86">    }</span>
+
+    public void onKeyReleased(int keyCode){
+<span class="nc bnc" id="L89" title="All 2 branches missed.">        if (keyCode == KeyEvent.VK_A) {</span>
+<span class="nc" id="L90">            board.slideLeft();</span>
+<span class="nc bnc" id="L91" title="All 2 branches missed.">        } else if (keyCode == KeyEvent.VK_W) {</span>
+<span class="nc" id="L92">            board.slideUp();</span>
+<span class="nc bnc" id="L93" title="All 2 branches missed.">        } else if ((keyCode == KeyEvent.VK_D)) {</span>
+<span class="nc" id="L94">            board.slideRight();</span>
+<span class="nc bnc" id="L95" title="All 2 branches missed.">        } else if (keyCode == KeyEvent.VK_S) {</span>
+<span class="nc" id="L96">            board.slideDown();</span>
+        }
+<span class="nc bnc" id="L98" title="All 2 branches missed.">        if (board.wasMoved()) {</span>
+<span class="nc" id="L99">            board.spawnTile();</span>
+<span class="nc" id="L100">            updateLabels();</span>
+<span class="nc" id="L101">            score.scoreUpdate(board);</span>
+<span class="nc bnc" id="L102" title="All 2 branches missed.">            if (GameState.WIN.equals(board.getGameState())) {</span>
+<span class="nc" id="L103">                win.setBounds(GUIConstants.SET_RESULT_WINDOW_LOCATION_X, GUIConstants.SET_RESULT_WINDOW_LOCATION_Y, GUIConstants.RESULT_WINDOW_WIDTH, GUIConstants.RESULT_WINDOW_HEIGHT);</span>
+<span class="nc" id="L104">                win.setResizable(false);</span>
+<span class="nc" id="L105">                win.setVisible(true);</span>
+            }
+<span class="nc bnc" id="L107" title="All 2 branches missed.">            else if (GameState.LOSE.equals(board.getGameState())) {</span>
+<span class="nc" id="L108">                lose.setBounds(GUIConstants.SET_RESULT_WINDOW_LOCATION_X, GUIConstants.SET_RESULT_WINDOW_LOCATION_Y, GUIConstants.RESULT_WINDOW_WIDTH, GUIConstants.RESULT_WINDOW_HEIGHT);</span>
+<span class="nc" id="L109">                lose.setResizable(false);</span>
+<span class="nc" id="L110">                lose.setVisible(true);</span>
+            }
+        }
+<span class="nc" id="L113">    }</span>
+
+    public List&lt;TileUI&gt; getUITiles(){
+<span class="nc" id="L116">        return uiTiles;</span>
+    }
+
+
+    class CustomWindowAdapter extends WindowAdapter {
+
+<span class="nc" id="L122">        GameGUI window = null;</span>
+
+<span class="nc" id="L124">        CustomWindowAdapter(GameGUI window) {</span>
+<span class="nc" id="L125">            this.window = window;</span>
+<span class="nc" id="L126">        }</span>
+
+        // implement windowClosing method
+        @Override
+        public void windowClosing(WindowEvent e) {
+<span class="nc" id="L131">            statistic.sessionsCount++;</span>
+<span class="nc bnc" id="L132" title="All 2 branches missed.">            if(board.getGameState()==GameState.IN_PROGRESS) {</span>
+<span class="nc" id="L133">                SaveLoad.saveBoardToFile(board);</span>
+            } else{
+<span class="nc bnc" id="L135" title="All 2 branches missed.">                if(board.getGameState()==GameState.WIN){</span>
+<span class="nc" id="L136">                    statistic.wins++;</span>
+                }
+                else{
+<span class="nc" id="L139">                    statistic.losses++;</span>
+                }
+<span class="nc" id="L141">                SaveLoad.clearSaveFile();</span>
+            }
+<span class="nc bnc" id="L143" title="All 2 branches missed.">            if(statistic.highestTile &lt; board.getHighestTileValue()){</span>
+<span class="nc" id="L144">                statistic.highestTile = board.getHighestTileValue();</span>
+            }
+<span class="nc bnc" id="L146" title="All 2 branches missed.">            if(statistic.highestScore &lt; board.getScore()){</span>
+<span class="nc" id="L147">                statistic.highestScore = board.getScore();</span>
+            }
+<span class="nc" id="L149">            score.dispose();</span>
+<span class="nc" id="L150">            SaveLoad.saveStatistic(statistic);</span>
+<span class="nc" id="L151">        }</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SettingsWindow.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PowerOf2</a> &gt; <a href="index.source.html" class="el_package">power</a> &gt; <span class="el_source">SettingsWindow.java</span></div><h1>SettingsWindow.java</h1><pre class="source lang-java linenums">package power;
+
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.util.ArrayList;
+
+public class SettingsWindow extends JFrame {
+    private JComboBox&lt;String&gt; box;
+<span class="nc" id="L14">    JSlider chanceSlider = new JSlider();</span>
+<span class="nc" id="L15">    private JPanel panel = new JPanel();</span>
+<span class="nc" id="L16">    private JLabel tile = new JLabel(&quot;                Choose max tile:                &quot;);</span>
+<span class="nc" id="L17">    private JLabel choose = new JLabel(&quot;           Choose chance of spawn 4:            &quot;);</span>
+<span class="nc" id="L18">    private JLabel chance = new JLabel(&quot;&quot;);</span>
+    private PlayerPreferences preferences;
+<span class="nc" id="L20">    private JButton setSettings = new JButton(&quot;Save Settings&quot;);</span>
+
+<span class="nc" id="L22">    public SettingsWindow(){</span>
+<span class="nc" id="L23">        Container container = getContentPane();</span>
+<span class="nc" id="L24">        preferences = SaveLoad.loadPreferences();</span>
+<span class="nc bnc" id="L25" title="All 2 branches missed.">        if(preferences==null){</span>
+<span class="nc" id="L26">            preferences = new PlayerPreferences();</span>
+        }
+
+<span class="nc" id="L29">        chanceSlider.setMaximum(100);</span>
+<span class="nc" id="L30">        chanceSlider.setMinimum(0);</span>
+<span class="nc" id="L31">        chanceSlider.setValue((int)(preferences.chanceToSpawnFour*100));</span>
+<span class="nc" id="L32">        chanceSlider.addChangeListener( e -&gt; chance.setText(String.valueOf(chanceSlider.getValue())));</span>
+<span class="nc" id="L33">        chance.setText(String.valueOf(chanceSlider.getValue()));</span>
+
+<span class="nc" id="L35">        setSettings.addActionListener(new SetSettingsListener());</span>
+
+
+<span class="nc" id="L38">        panel.add(tile, BorderLayout.NORTH);</span>
+<span class="nc" id="L39">        int selectedIndex = 0;</span>
+<span class="nc" id="L40">        int currentIndex =0 ;</span>
+<span class="nc" id="L41">        ArrayList&lt;String&gt; strings = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L42" title="All 2 branches missed.">        for(int i = 8 ; i&lt;=8192;i+=i){</span>
+<span class="nc" id="L43">            strings.add(String.valueOf(i));</span>
+<span class="nc bnc" id="L44" title="All 2 branches missed.">            if(i==preferences.maxTileValue){</span>
+<span class="nc" id="L45">                selectedIndex=currentIndex;</span>
+            }
+            else{
+<span class="nc" id="L48">                currentIndex++;</span>
+            }
+        }
+<span class="nc" id="L51">        box=new JComboBox&lt;&gt;(strings.stream().toArray(String[]::new));</span>
+<span class="nc" id="L52">        box.setSelectedIndex(selectedIndex);</span>
+<span class="nc" id="L53">        panel.add(box);</span>
+<span class="nc" id="L54">        panel.add(choose, BorderLayout.CENTER);</span>
+<span class="nc" id="L55">        panel.add(chanceSlider);</span>
+<span class="nc" id="L56">        panel.add(chance);</span>
+<span class="nc" id="L57">        panel.add(setSettings, BorderLayout.SOUTH);</span>
+
+<span class="nc" id="L59">        panel.setBackground(GUIConstants.BG_COLOR);</span>
+
+<span class="nc" id="L61">        container.add(panel);</span>
+<span class="nc" id="L62">        addWindowListener(new CustomWindowAdapter());</span>
+<span class="nc" id="L63">    }</span>
+
+    public JLabel getChanceTile(){
+<span class="nc" id="L66">        return chance;</span>
+    }
+
+<span class="nc" id="L69">    class CustomWindowAdapter extends WindowAdapter {</span>
+        // implement windowClosing method
+        @Override
+        public void windowClosing(WindowEvent e) {
+<span class="nc" id="L73">           preferences.chanceToSpawnFour =((float) chanceSlider.getValue())/100;</span>
+<span class="nc" id="L74">           String str =(String) box.getSelectedItem();</span>
+<span class="nc" id="L75">           preferences.maxTileValue = Integer.parseInt(str);</span>
+<span class="nc" id="L76">           SaveLoad.savePreferences(preferences);</span>
+<span class="nc" id="L77">        }</span>
+    }
+
+<span class="nc" id="L80">    class SetSettingsListener implements ActionListener {</span>
+        public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L82">            preferences.chanceToSpawnFour =((float) chanceSlider.getValue())/100;</span>
+<span class="nc" id="L83">            String str =(String) box.getSelectedItem();</span>
+<span class="nc" id="L84">            preferences.maxTileValue = Integer.parseInt(str);</span>
+<span class="nc" id="L85">            SaveLoad.savePreferences(preferences);</span>
+<span class="nc" id="L86">        }</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
