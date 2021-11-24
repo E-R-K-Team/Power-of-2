@@ -14,6 +14,6 @@ class TileUITest {
         TileUI ui = new TileUI(new JLabel(),tile);
         tile.setValue(1024);
         ui.update();
-        assertEquals(ui.label.getText(),"1024");
+        assertEquals("1024", ui.label.getText());
     }
 }
