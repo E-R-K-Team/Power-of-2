@@ -9,7 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dcecbc32-d30d-4696-bbe4-cfa24b49dd8a" name="Changes" comment="jacoco.xml added">
-      <change beforePath="$PROJECT_DIR$/src/main/java/power/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/power/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Files/jacoco.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
