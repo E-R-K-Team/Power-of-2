@@ -1,21 +1,23 @@
 package power;
 
+
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 
 public class SettingsWindow extends JFrame {
-    private JComboBox box = new JComboBox<>();
+    private JComboBox<String> box;
     JSlider chanceSlider = new JSlider();
     private JPanel panel = new JPanel();
     private JLabel tile = new JLabel("                Choose max tile:                ");
     private JLabel choose = new JLabel("           Choose chance of spawn 4:            ");
     private JLabel chance = new JLabel("");
     private PlayerPreferences preferences;
+    private JButton setSettings = new JButton("Save Settings");
 
     public SettingsWindow(){
         Container container = getContentPane();
@@ -30,6 +32,9 @@ public class SettingsWindow extends JFrame {
         chanceSlider.addChangeListener( e -> chance.setText(String.valueOf(chanceSlider.getValue())));
         chance.setText(String.valueOf(chanceSlider.getValue()));
 
+        setSettings.addActionListener(new SetSettingsListener());
+
+
         panel.add(tile, BorderLayout.NORTH);
         int selectedIndex = 0;
         int currentIndex =0 ;
@@ -43,13 +48,13 @@ public class SettingsWindow extends JFrame {
                 currentIndex++;
             }
         }
-        box=new JComboBox<>(strings.stream().toArray());
+        box=new JComboBox<>(strings.stream().toArray(String[]::new));
         box.setSelectedIndex(selectedIndex);
         panel.add(box);
         panel.add(choose, BorderLayout.CENTER);
         panel.add(chanceSlider);
         panel.add(chance);
-
+        panel.add(setSettings, BorderLayout.SOUTH);
 
         panel.setBackground(GUIConstants.BG_COLOR);
 
@@ -62,8 +67,6 @@ public class SettingsWindow extends JFrame {
     }
 
     class CustomWindowAdapter extends WindowAdapter {
-
-
         // implement windowClosing method
         @Override
         public void windowClosing(WindowEvent e) {
@@ -71,6 +74,15 @@ public class SettingsWindow extends JFrame {
            String str =(String) box.getSelectedItem();
            preferences.maxTileValue = Integer.parseInt(str);
            SaveLoad.savePreferences(preferences);
+        }
+    }
+
+    class SetSettingsListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            preferences.chanceToSpawnFour =((float) chanceSlider.getValue())/100;
+            String str =(String) box.getSelectedItem();
+            preferences.maxTileValue = Integer.parseInt(str);
+            SaveLoad.savePreferences(preferences);
         }
     }
 
