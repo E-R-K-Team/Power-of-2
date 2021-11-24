@@ -38,8 +38,8 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
      * @see TileUI#update()
      */
     public void updateLabels() {
-<span class="nc" id="L41">        uiTiles.forEach(TileUI::update);</span>
-<span class="nc" id="L42">    }</span>
+<span class="fc" id="L41">        uiTiles.forEach(TileUI::update);</span>
+<span class="fc" id="L42">    }</span>
 
     public void initializeUITiles(List&lt;Tile&gt; tiles, int boardSize) {
 <span class="fc" id="L45">        uiTiles = new ArrayList&lt;&gt;();</span>
@@ -94,16 +94,16 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
 <span class="nc bnc" id="L94" title="All 2 branches missed.">        } else if (keyCode == KeyEvent.VK_S) {</span>
 <span class="nc" id="L95">            board.slideDown();</span>
         }
-<span class="pc bpc" id="L97" title="1 of 2 branches missed.">        if (board.wasMoved()) {</span>
-<span class="nc" id="L98">            board.spawnTile();</span>
-<span class="nc" id="L99">            updateLabels();</span>
-<span class="nc" id="L100">            score.scoreUpdate(board);</span>
-<span class="nc bnc" id="L101" title="All 2 branches missed.">            if (GameState.WIN.equals(board.getGameState())) {</span>
+<span class="fc bfc" id="L97" title="All 2 branches covered.">        if (board.wasMoved()) {</span>
+<span class="fc" id="L98">            board.spawnTile();</span>
+<span class="fc" id="L99">            updateLabels();</span>
+<span class="fc" id="L100">            score.scoreUpdate(board);</span>
+<span class="pc bpc" id="L101" title="1 of 2 branches missed.">            if (GameState.WIN.equals(board.getGameState())) {</span>
 <span class="nc" id="L102">                win.setBounds(GUIConstants.SET_RESULT_WINDOW_LOCATION_X, GUIConstants.SET_RESULT_WINDOW_LOCATION_Y, GUIConstants.RESULT_WINDOW_WIDTH, GUIConstants.RESULT_WINDOW_HEIGHT);</span>
 <span class="nc" id="L103">                win.setResizable(false);</span>
 <span class="nc" id="L104">                win.setVisible(true);</span>
             }
-<span class="nc bnc" id="L106" title="All 2 branches missed.">            else if (GameState.LOSE.equals(board.getGameState())) {</span>
+<span class="pc bpc" id="L106" title="1 of 2 branches missed.">            else if (GameState.LOSE.equals(board.getGameState())) {</span>
 <span class="nc" id="L107">                lose.setBounds(GUIConstants.SET_RESULT_WINDOW_LOCATION_X, GUIConstants.SET_RESULT_WINDOW_LOCATION_Y, GUIConstants.RESULT_WINDOW_WIDTH, GUIConstants.RESULT_WINDOW_HEIGHT);</span>
 <span class="nc" id="L108">                lose.setResizable(false);</span>
 <span class="nc" id="L109">                lose.setVisible(true);</span>

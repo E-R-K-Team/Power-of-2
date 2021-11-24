@@ -9,7 +9,59 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dcecbc32-d30d-4696-bbe4-cfa24b49dd8a" name="Changes" comment="maven clean/install">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/power/BoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/power/BoardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/target/jacoco.exec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/prettify.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/prettify.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/prettify.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/prettify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/report.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/report.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/sort.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-resources/sort.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/power/Board.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/power/Board.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/power/Board.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/power/Board.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/power/Design.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/power/Design.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/power/GUIConstants.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/power/GUIConstants.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/power/GameGUI.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/power/GameGUI.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/power/GameGUI.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/power/GameGUI.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/power/GameState.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/power/GameState.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/power/LoseWindow.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/power/LoseWindow.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/power/Main.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/power/Main.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/power/PlayerPreferences.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/power/PlayerPreferences.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/power/SaveLoad.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/power/SaveLoad.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/power/ScoreWindow.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/power/ScoreWindow.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/power/SettingsWindow.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/power/SettingsWindow.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/power/StartWindow.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/power/StartWindow.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/power/Statistic.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/power/Statistic.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/power/Tile.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/power/Tile.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/power/TileUI.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/power/TileUI.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/power/TileUI.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/power/TileUI.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/power/WinWindow.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/power/WinWindow.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/power/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/power/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/power/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/power/index.source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-power.BoardTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-power.BoardTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-power.DesignTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-power.DesignTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-power.GameGUITest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-power.GameGUITest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-power.ScoreTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-power.ScoreTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-power.SettingsWindowTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-power.SettingsWindowTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-power.StartWindowTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-power.StartWindowTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-power.StatisticTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-power.StatisticTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-power.TileUITest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-power.TileUITest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-power.WinWindowTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-power.WinWindowTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/power.BoardTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/power.BoardTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/power.DesignTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/power.DesignTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/power.GameGUITest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/power.GameGUITest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/power.ScoreTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/power.ScoreTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/power.SettingsWindowTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/power.SettingsWindowTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/power.StartWindowTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/power.StartWindowTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/power.StatisticTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/power.StatisticTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/power.TileUITest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/power.TileUITest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/power.WinWindowTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/power.WinWindowTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/power/BoardTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/power/BoardTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -423,6 +475,9 @@
       <FILTER>power.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Power_of_2$StatisticTest.ic" NAME="StatisticTest Coverage Results" MODIFIED="1637228617482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>power.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Power_of_2$SaveLoadTest_saveLoadBoardToFile.ic" NAME="SaveLoadTest.saveLoadBoardToFile Coverage Results" MODIFIED="1637777658221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>power.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Power_of_2$DesignTest.ic" NAME="DesignTest Coverage Results" MODIFIED="1637228030938" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

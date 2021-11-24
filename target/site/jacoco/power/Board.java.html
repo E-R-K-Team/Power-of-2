@@ -79,7 +79,7 @@ public class Board implements Serializable {
      * @return value , that should be spawned to empty tile
      */
     private int takeSpawnTileValue() {
-<span class="pc bpc" id="L82" title="1 of 2 branches missed.">        return random.nextDouble() &lt; preferences.chanceToSpawnFour ? 4 : 2;</span>
+<span class="fc bfc" id="L82" title="All 2 branches covered.">        return random.nextDouble() &lt; preferences.chanceToSpawnFour ? 4 : 2;</span>
     }
 
     private int coordinatesToIndex(int y, int x) {
@@ -220,7 +220,7 @@ public class Board implements Serializable {
     }
 
     private boolean isCoordinatesInBound(int y, int x) {
-<span class="pc bpc" id="L223" title="2 of 8 branches missed.">        return y &gt;= 0 &amp;&amp; y &lt; sideLength &amp;&amp; x &gt;= 0 &amp;&amp; x &lt; sideLength;</span>
+<span class="pc bpc" id="L223" title="1 of 8 branches missed.">        return y &gt;= 0 &amp;&amp; y &lt; sideLength &amp;&amp; x &gt;= 0 &amp;&amp; x &lt; sideLength;</span>
     }
 
     private Tile getTileByCoordinates(int y, int x) {

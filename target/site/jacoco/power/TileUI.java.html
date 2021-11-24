@@ -20,10 +20,10 @@ public class TileUI {
      * Updates tiles text and color according to value
      */
     public void update(){
-<span class="pc bpc" id="L23" title="1 of 2 branches missed.">        if(tile.getValue() != 0) {</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        if(tile.getValue() != 0) {</span>
 <span class="fc" id="L24">            label.setText(String.valueOf(tile.getValue()));</span>
         } else {
-<span class="nc" id="L26">            label.setText(&quot; &quot;);</span>
+<span class="fc" id="L26">            label.setText(&quot; &quot;);</span>
         }
 <span class="fc" id="L28">        label.setOpaque(true);</span>
 <span class="fc" id="L29">        label.setBackground(Design.of(tile.getValue()).color());</span>
