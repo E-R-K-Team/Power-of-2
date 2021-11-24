@@ -6,11 +6,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class SaveLoadTest {
 
-    /*@Test
+    @Test
     void saveLoadBoardToFile() {
         Board board = new Board(5);
         SaveLoad.saveBoardToFile(board);
         assertEquals(board.getSideLength(),SaveLoad.loadBoard().getSideLength());
-    }*/
+    }
 
 }
