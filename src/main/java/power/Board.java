@@ -62,6 +62,7 @@ public class Board implements Serializable {
         }
     }
 
+
     public void spawnTile() {
         List<Tile> emptyTiles = findEmptyTiles();
         int index = random.nextInt(emptyTiles.size());
