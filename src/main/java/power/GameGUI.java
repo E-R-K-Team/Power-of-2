@@ -31,6 +31,7 @@ public class GameGUI extends JFrame implements KeyListener, ActionListener {
         score = new ScoreWindow();
         score.setVisible(true);
         score.scoreUpdate(board);
+
     }
 
     /**
