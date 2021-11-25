@@ -88,7 +88,7 @@ class BoardTest {
         assertEquals(GameState.WIN, board.getGameState());
     }
 
-  /*  @Test
+  @Test
     void testLoseGameState(){
         Board board = new Board(2);
         board.getTiles().get(0).setValue(512);
@@ -97,7 +97,7 @@ class BoardTest {
         board.spawnTile();
         board.updateGameState();
         assertEquals(GameState.LOSE, board.getGameState());
-    }*/
+    }
 
 
     @Test

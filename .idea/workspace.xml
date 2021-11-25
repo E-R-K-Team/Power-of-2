@@ -8,46 +8,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dcecbc32-d30d-4696-bbe4-cfa24b49dd8a" name="Changes" comment="maven test runned">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/power/GameGUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/power/LoseWindow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/power/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/power/ScoreWindow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/power/SettingsWindow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/power/StartWindow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/power/WinWindow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power/GameGUI$CustomWindowAdapter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power/GameGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power/LoseWindow$QuitButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power/LoseWindow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power/ScoreWindow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power/SettingsWindow$CustomWindowAdapter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power/SettingsWindow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power/StartWindow$CreatorsButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power/StartWindow$EasyLevelActionListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power/StartWindow$HardLevelActionListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power/StartWindow$InfoButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power/StartWindow$NormLevelActionListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power/StartWindow$ResumeButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power/StartWindow$SettingsButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power/StartWindow$StartButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power/StartWindow$StatsButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power/StartWindow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power/WinWindow$QuitButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/power/WinWindow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/target/jacoco.exec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-power.BoardTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-power.BoardTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-power.DesignTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-power.DesignTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-power.StatisticTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-power.StatisticTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-power.TileUITest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-power.TileUITest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/power.BoardTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/power.BoardTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/power.DesignTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/power.DesignTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/power.TileUITest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/power.TileUITest.txt" afterDir="false" />
+    <list default="true" id="dcecbc32-d30d-4696-bbe4-cfa24b49dd8a" name="Changes" comment="tests added">
+      <change beforePath="$PROJECT_DIR$/src/test/java/power/BoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/power/BoardTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +81,7 @@
       <command value="mvn -B verify" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SaveLoadTest.saveLoadBoardToFile">
+  <component name="RunManager" selected="JUnit.BoardTest.testLoseGameState">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="power.Main" />
       <module name="PowerOf2" />
@@ -133,7 +95,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DesignTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BoardTest.testLoseGameState" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PowerOf2" />
       <extension name="coverage">
         <pattern>
@@ -142,8 +104,9 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="power" />
-      <option name="MAIN_CLASS_NAME" value="power.DesignTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="power.BoardTest" />
+      <option name="METHOD_NAME" value="testLoseGameState" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -196,18 +159,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.DesignTest" />
       <item itemvalue="JUnit.TileUITest" />
       <item itemvalue="JUnit.SaveLoadTest" />
       <item itemvalue="JUnit.SaveLoadTest.saveLoadBoardToFile" />
+      <item itemvalue="JUnit.BoardTest.testLoseGameState" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BoardTest.testLoseGameState" />
         <item itemvalue="JUnit.SaveLoadTest.saveLoadBoardToFile" />
         <item itemvalue="JUnit.SaveLoadTest" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.TileUITest" />
-        <item itemvalue="JUnit.DesignTest" />
       </list>
     </recent_temporary>
   </component>
@@ -382,7 +345,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637825701255</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="tests added">
+      <created>1637831453665</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1637831453665</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -453,7 +423,8 @@
     <MESSAGE value="maven tests added" />
     <MESSAGE value="maven jacoco config changed" />
     <MESSAGE value="maven test runned" />
-    <option name="LAST_COMMIT_MESSAGE" value="maven test runned" />
+    <MESSAGE value="tests added" />
+    <option name="LAST_COMMIT_MESSAGE" value="tests added" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Board_java$Main.ic" NAME="Main Coverage Results" MODIFIED="1636016234531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

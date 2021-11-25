@@ -1,5 +1,4 @@
 power\Tile.class
-power\FilePaths.class
 power\Statistic.class
 power\GameConstants.class
 power\TileUI.class
@@ -7,5 +6,3 @@ power\Design.class
 power\GameState.class
 power\PlayerPreferences.class
 power\Board.class
-power\GUIConstants.class
-power\SaveLoad.class
