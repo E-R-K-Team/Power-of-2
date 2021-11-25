@@ -1,10 +1,4 @@
-power\GameGUITest.class
-power\SettingsWindowTest.class
-power\TileUITest.class
 power\BoardTest.class
-power\ScoreTest.class
-power\WinWindowTest.class
-power\StartWindowTest.class
-power\SaveLoadTest.class
 power\StatisticTest.class
 power\DesignTest.class
+power\TileUITest.class
