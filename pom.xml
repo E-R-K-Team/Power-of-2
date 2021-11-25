@@ -68,13 +68,13 @@
                         </goals>
                         <configuration>
                             <excludes>
-                                <exclude>classes/power/WinWindow*</exclude>
-                                <exclude>classes/power/StartWindow*</exclude>
-                                <exclude>classes/power/SettingsWindow*</exclude>
-                                <exclude>classes/power/ScoreWindow*</exclude>
-                                <exclude>classes/power/SaveLoad*</exclude>
-                                <exclude>classes/power/LoseWindow*</exclude>
-                                <exclude>classes/power/GameGUI*</exclude>
+                                <exclude>target/classes/power/WinWindow*</exclude>
+                                <exclude>target/classes/power/StartWindow*</exclude>
+                                <exclude>target/classes/power/SettingsWindow*</exclude>
+                                <exclude>target/classes/power/ScoreWindow*</exclude>
+                                <exclude>target/classes/power/SaveLoad*</exclude>
+                                <exclude>target/classes/power/LoseWindow*</exclude>
+                                <exclude>target/classes/power/GameGUI*</exclude>
                                 <exclude>src/main/java/power/GameGUI*</exclude>
                                 <exclude>src/main/java/power/LoseWindow*</exclude>
                                 <exclude>src/main/java/power/StartWindow*</exclude>
