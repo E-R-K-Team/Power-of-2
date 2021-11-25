@@ -10,15 +10,43 @@
   <component name="ChangeListManager">
     <list default="true" id="dcecbc32-d30d-4696-bbe4-cfa24b49dd8a" name="Changes" comment="maven test runned">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/power/GameGUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/power/LoseWindow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/power/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/power/ScoreWindow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/power/SettingsWindow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/power/StartWindow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/power/WinWindow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/power/GameGUI$CustomWindowAdapter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/power/GameGUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/power/LoseWindow$QuitButtonListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/power/LoseWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/power/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/power/ScoreWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/power/SettingsWindow$CustomWindowAdapter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/power/SettingsWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/power/StartWindow$CreatorsButtonListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/power/StartWindow$EasyLevelActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/power/StartWindow$HardLevelActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/power/StartWindow$InfoButtonListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/power/StartWindow$NormLevelActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/power/StartWindow$ResumeButtonListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/power/StartWindow$SettingsButtonListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/power/StartWindow$StartButtonListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/power/StartWindow$StatsButtonListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/power/StartWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/power/WinWindow$QuitButtonListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/power/WinWindow.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/target/jacoco.exec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-power.BoardTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-power.BoardTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-power.DesignTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-power.DesignTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-power.StatisticTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-power.StatisticTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-power.TileUITest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-power.TileUITest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/power.BoardTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/power.BoardTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/power.DesignTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/power.DesignTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/power.StatisticTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/power.StatisticTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/power.TileUITest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/power.TileUITest.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,9 +72,7 @@
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/power/Main.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/power/TileUI.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/power/StartWindow.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/power/Tile.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/test/java/power/BoardTest.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/power/GameConstants.java" root0="FORCE_HIGHLIGHTING" />
@@ -65,10 +91,13 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/PowerOfTwo" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/power" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\OpiProject\Power-of-2\src\main\java\power" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\User\Desktop\OpiProject\Power-of-2\src\main\Files" />
       <recent name="$PROJECT_DIR$" />
@@ -346,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637825374463</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="maven test runned">
+      <created>1637825701255</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1637825701255</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
