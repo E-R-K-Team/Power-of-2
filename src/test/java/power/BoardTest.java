@@ -88,16 +88,6 @@ class BoardTest {
         assertEquals(GameState.WIN, board.getGameState());
     }
 
-  @Test
-    void testLoseGameState(){
-        Board board = new Board(2);
-        board.getTiles().get(0).setValue(512);
-        board.getTiles().get(1).setValue(1024);
-        board.getTiles().get(2).setValue(32);
-        board.spawnTile();
-        board.updateGameState();
-        assertEquals(GameState.LOSE, board.getGameState());
-    }
 
 
     @Test
