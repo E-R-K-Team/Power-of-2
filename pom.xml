@@ -67,6 +67,15 @@
                             <goal>check</goal>
                         </goals>
                         <configuration>
+                            <excludes>
+                                <exclude>target/classes/power/WinWindow.class</exclude>
+                                <exclude>target/classes/power/StartWindow.class</exclude>
+                                <exclude>target/classes/power/SettingsWindow.class</exclude>
+                                <exclude>target/classes/power/ScoreWindow.class</exclude>
+                                <exclude>target/classes/power/SaveLoad.class</exclude>
+                                <exclude>target/classes/power/LoseWindow.class</exclude>
+                                <exclude>target/classes/power/GameGUI.class</exclude>
+                            </excludes>
                             <rules>
                                 <rule>
                                     <element>PACKAGE</element>
